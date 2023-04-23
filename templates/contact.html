@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="{% static 'css/vendor/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/vendor/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/vendor/slick.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/vendor/slick-theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+</head>
+<body>
+        <section class="case-study">
+            <div class="container">
+                <h2>Наши контакты</h2>
+                <p>Наше расположение никогда не меняеться, всегда ждем вас!</p>
+            </div>
+                <div class="container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d6470.12902524675!2d28.837265452870096!3d47.013653005519245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2s!4v1679673205025!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <br><br><br>
+
+
+
+            <div class="container">
+                <div class="case-study--sliders">
+                    <div class="case-study--left">
+                        <div class="case-study--left__textslider">
+                            <div>
+                                <div class="keep-touch--white">
+                                    <h4>Наш адрес</h4>
+                                    <p>House #13, Streat road, Cishinau<br>Moldova</p>
+                                    <h4>Горячие линии</h4>
+                                    <p>+373 673 74 592<br>+373 673 74 592 <br></p>
+                                    <h4>Наш Емаил</h4>
+                                    <p>contactus@email.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study--left__dots"></div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+    <script src="{% static 'js/vendor/jquery-3.1.0.min.js' %}"></script>
+    <script src="{% static 'js/vendor/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/vendor/tether.js' %}"></script>
+    <script src="{% static 'js/vendor/bootstrap.js' %}"></script>
+    <script src="{% static 'js/vendor/slick.js' %}"></script>
+    <script src="{% static 'js/vendor/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+{% endblock content %}

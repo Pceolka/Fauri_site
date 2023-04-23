@@ -1,0 +1,108 @@
+{% load static %}
+<html lang="en">
+
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="% static 'images/icons/favicon.png' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+
+<head>    <title>orienteering.com</title>   </head>
+	<!-- Header -->
+	<header>
+
+
+
+			<!--  -->
+			<div class="wrap-logo container">
+				<!-- Logo   desktop -->
+				<div class="logo">
+					<a href="{% url 'news' %}"><img src="{% static 'images/icons/logo-01.png' %}" alt="LOGO"></a>
+				</div>
+
+				<!-- Banner -->
+				<div class="banner-header">
+					<a href="{% url 'news' %}"><img src="{% static 'images/banner-01.jpg' %}" alt="IMG"></a>
+				</div>
+			</div>
+
+			<!--  -->
+			<div class="wrap-main-nav">
+				<div class="main-nav">
+					<!-- Menu desktop -->
+					<nav class="menu-desktop">
+						<a class="logo-stick" href="index.html">
+							<img src="images/icons/logo-01.png" alt="LOGO">
+						</a>
+
+						<ul class="main-menu">
+							<li class="mega-menu-item">
+								<a href="{% url 'news' %}">Главная</a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="{% url 'about' %}">Про нас</a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="{% url 'contact' %}">Контакты</a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="{% url 'calendars' %}">Календарь</a>
+							</li>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
+{% block content %}{% endblock content %}
+
+<!-- Footer -->
+	<footer>
+		<div class="bg11">
+			<div class="container size-h-4 flex-c-c p-tb-15">
+				<span class="f1-s-1 cl0 txt-center">
+					Fauri © 2023 <a href="{% url 'news' %}" class="f1-s-1 cl10 hov-link1">Evghenii </a>
+				</span>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<span class="fas fa-angle-up"></span>
+		</span>
+	</div>
+
+
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
