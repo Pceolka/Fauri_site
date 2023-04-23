@@ -1,5 +1,5 @@
 import datetime
-
+import uuid
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.urls import reverse
@@ -9,6 +9,7 @@ from django.urls import reverse
 
 # Новости
 class Event(models.Model):
+    id = models.AutoField(primary_key=True)
     header = models.CharField(u'Заголовок', help_text=u'Обязательное поле', max_length=25)
     author = models.CharField(u'Автор новости', help_text=u'Обязательное поле', max_length=25, default='fauri')
     image = models.ImageField(u'Картинка', help_text=u'Обязательное поле', upload_to='media/')
