@@ -81,7 +81,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    'faurisite-production.up.railway.app',
+    'https://faurisite-production.up.railway.app',
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -98,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-# Последняя№1
+
 LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'UTC'
