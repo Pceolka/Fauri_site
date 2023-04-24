@@ -7,7 +7,7 @@ from django.utils.safestring import mark_safe
 from .utils import MainCalendar
 import locale
 from .models import Event
-
+from django.utils import timezone
 
 # Создание видов
 
@@ -33,6 +33,7 @@ def contact(request):
 
 # Calendar
 def calendars(request, extra_context=None):
+    locale.setlocale(locale.LC_TIME, 'ru_RU')
     after_day = request.GET.get('day__gte', None)
     extra_context = extra_context or {}
 
@@ -64,7 +65,11 @@ def calendars(request, extra_context=None):
     extra_context['year'] = str(month_text.year)
     extra_context['month'] = calendar.month_name[month_text.month]
 
-    events = Event.objects.filter(day__isnull=False).filter(day__month=d.month).order_by('-day')
+    allevents = Event.objects.filter(day__isnull=False).filter(day__month=d.month).order_by('day')
+    extra_context['allevents'] = allevents
+
+    today = timezone.now().date()
+    events = Event.objects.filter(day__isnull=False, day__month=d.month, day__gte=today).order_by('day')
     extra_context['events'] = events
 
     cal = MainCalendar()

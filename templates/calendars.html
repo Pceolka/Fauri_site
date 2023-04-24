@@ -34,7 +34,7 @@
 	<!-- Page heading -->
 	<div class="container p-t-4 p-b-35">
 		<h2 class="f1-l-1 cl2">
-			Календарь событий
+			Календарь
 		</h2>
 	</div>
 
@@ -48,8 +48,22 @@
 						<div class="content">
 							<h1 class="date"><a href={{ previous_month }}>&#9664;</a> {{month}} <a href={{ next_month }}>&#9658;</a></h1>
 							<div class="notes">
+
 								<table>
+																	<p>Предстоящие события</p>
 								{% for event in events %}
+								<tr >
+								<ul class="noteList">
+									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li></td>
+									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li></td>
+								</ul>
+								</tr>
+								{% endfor %}
+								</table>
+								<table>
+									<p>Вcе события этого месяца</p>
+
+								{% for event in allevents %}
 								<tr >
 								<ul class="noteList">
 									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li></td>

@@ -125,7 +125,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
   height: 35px;
   bottom: -40px;
   right: 40px;
-  background-color: #17b978;
+  background-color: #19D3C5;
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -438,19 +438,6 @@ a.left-topbar-item:hover {
   transform: scaleX(0);
 }
 
-.main-menu > li > a::after {
-  content: "\f2f9";
-  font-family: Material-Design-Iconic-Font;
-  font-size: 16px;
-  color: #222;
-  line-height: 1.5;
-  margin-left: 6px;
-  margin-bottom: 1px;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-}
 
 li.main-menu-active > a::before {
   -webkit-transform: scaleX(1);
@@ -561,7 +548,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 
 .main-menu > li:hover > a {
   text-decoration: none;
-  color: #17b978;
+  color: #19D3C5;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -1145,7 +1132,7 @@ a.breadcrumb-item:hover {
 .cl7 {color: #777;}
 .cl8 {color: #888;}
 .cl9 {color: #999;}
-.cl10 {color: #17b978;}
+.cl10 {color: #19D3C5;}
 .cl11 {color: #ccc;}
 .cl12 {color: #e71d69;}
 .cl13 {color: #15a752;}
@@ -1231,6 +1218,8 @@ a.breadcrumb-item:hover {
   font-family: Roboto-Regular;
   font-size: 15px;
   line-height: 1.8;
+  padding-right: 20px;
+
 }
 
 .f1-s-13 {
@@ -1710,7 +1699,7 @@ a.breadcrumb-item:hover {
 }
 
 .how2-cl4::before {
-  background-color: #333;
+  background-color: #333;/*нвости цвет таблички*/
 }
 
 .how2-cl5::before {
@@ -1759,7 +1748,7 @@ a.breadcrumb-item:hover {
 
 /*---------------------------------------------*/
 .hov-link1:hover {
-  color: #17b978;
+  color: #19D3C5;
   text-decoration: underline;
 }
 
