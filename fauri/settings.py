@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-import locale
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -126,8 +125,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
 
-
-locale.setlocale(locale.LC_TIME, 'ru_RU')
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
