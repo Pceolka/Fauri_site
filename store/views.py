@@ -33,7 +33,7 @@ def contact(request):
 
 # Calendar
 def calendars(request, extra_context=None):
-    locale.setlocale(locale.LC_TIME, 'ru_RU')
+    locale.setlocale(locale.LC_TIME, 'ru_RU.UTF-8')
     after_day = request.GET.get('day__gte', None)
     extra_context = extra_context or {}
 
