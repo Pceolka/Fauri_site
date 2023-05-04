@@ -5,9 +5,9 @@ import datetime
 import calendar
 from django.utils.safestring import mark_safe
 from .utils import MainCalendar
-import locale
 from .models import Event
 from django.utils import timezone
+
 
 # Создание видов
 

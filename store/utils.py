@@ -16,9 +16,6 @@ class MainCalendar(HTMLCalendar):
         events_from_day = events.filter(day__day=day)
         events_html = '<ul >''</ul>'
         current_day = datetime.datetime.now().day
-        current_dayforif = datetime.datetime.now()
-
-
 
         if day == 0:
             return '<td class="noday">&nbsp;</td>'  # day outside month

@@ -10,10 +10,10 @@ from django.urls import reverse
 # Новости
 class Event(models.Model):
     id = models.AutoField(primary_key=True)
-    header = models.CharField(u'Заголовок', help_text=u'Обязательное поле', max_length=25)
+    header = models.TextField(u'Заголовок', help_text=u'Обязательное поле', max_length=25)
     author = models.CharField(u'Автор новости', help_text=u'Обязательное поле', max_length=25, default='fauri')
     image = models.ImageField(u'Картинка', help_text=u'Обязательное поле', upload_to='media/')
-    description = models.CharField(u'Описание', max_length=200, default="")
+    description = models.TextField(u'Описание', default="")
     day = models.DateField(u'Дата события', blank=True, null=True)
     start_time = models.TimeField(u'Время начала события', blank=True, null=True)
     end_time = models.TimeField(u'Время конца события ', help_text=u'Хотя бы примерное)', blank=True, null=True)

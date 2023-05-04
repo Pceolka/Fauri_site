@@ -1,18 +1,29 @@
-from django.contrib import admin
-from .models import Event
 import datetime
 import calendar
+from django import forms
+from django.contrib import admin
 from django.urls import reverse
 from django.utils.safestring import mark_safe
+from ckeditor.widgets import CKEditorWidget
+
+from .models import Event
 from .utils import EventCalendar
 
 
 # регистрация моделей
 
+class EventForm(forms.ModelForm):
+    description = forms.CharField(widget=CKEditorWidget())
+
+    class Meta:
+        model = Event
+        fields = '__all__'
+
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ['header',  'day', 'start_time', 'author', 'creation_day']
+    list_display = ['header', 'day', 'start_time', 'author', 'creation_day']
     change_list_template = 'change_list.html'
+    form = EventForm
 
     def changelist_view(self, request, extra_context=None):
         after_day = request.GET.get('day__gte', None)
