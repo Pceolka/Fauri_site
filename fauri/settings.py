@@ -81,9 +81,8 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "*"
-    # 'https://faurisite-production.up.railway.app',
-
+    'https://faurisite-production.up.railway.app',
+    'https://faurisait-production.up.railway.app'
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
