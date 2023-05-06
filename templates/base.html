@@ -1,8 +1,12 @@
+<!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="ru">
 
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="% static 'images/icons/favicon.png' %}"/>
+	<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
 <!--===============================================================================================-->
@@ -21,23 +25,58 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 <!--===============================================================================================-->
 
-<head>    <title>orienteering.com</title>   </head>
+
+  <title>orienteering.com</title>
+</head>
+<body>
 	<!-- Header -->
 	<header>
+	<div class="container-menu-desktop">
+
+			<!-- Header Mobile -->
+			<div class="wrap-header-mobile">
+				<!-- Logo moblie -->
+				<div class="logo-mobile">
+					<a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
+				</div>
+
+				<!-- Button show menu -->
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</div>
+			</div>
+
+				<!-- Menu Mobile -->
+			<div class="menu-mobile">
+
+				<ul class="main-menu-m">
+					<li>
+						<a href="{% url 'news' %}">Главная</a>
+					</li>
+
+					<li>
+						<a href="{% url 'about' %}">О нас</a>
+					</li>
+
+					<li>
+						<a href="{% url 'contact' %}">Контакты</a>
+					</li>
+
+					<li>
+						<a href="{% url 'calendars' %}">Календарь</a>
+					</li>
+
+				</ul>
+			</div>
+
 
 
 			<div class="wrap-logo container">
-
 				<div class="logo">
-					<a href="{% url 'news' %}"><img src="{% static 'images/icons/logo-01.png' %}" alt="LOGO"></a>
+					<a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
 				</div>
-
-
-				<!--
-				<div class="banner-header">
-					<a href="{% url 'news' %}"><img src="{% static 'images/banner-01.jpg' %}" alt="IMG"></a>
-				</div>
-				-->
 			</div>
 
 
@@ -47,10 +86,6 @@
 				<div class="main-nav">
 					<!-- Menu desktop -->
 					<nav class="menu-desktop">
-						<a class="logo-stick" href="index.html">
-							<img src="images/icons/logo-01.png" alt="LOGO">
-						</a>
-
 						<ul class="main-menu">
 							<li class="mega-menu-item">
 								<a href="{% url 'news' %}">Главная</a>
@@ -73,6 +108,9 @@
 				</div>
 			</div>
 		</div>
+
+	</div>
+
 	</header>
 
 {% block content %}{% endblock content %}

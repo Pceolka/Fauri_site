@@ -2,34 +2,13 @@
 {% load static %}
 {% block content %}
 
-<html lang="en">
 <head>
-	<title>Home 01</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="% static 'images/icons/favicon.png' %}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.min.css' %}">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<!--===============================================================================================-->
 
 </head>
 <body class="animsition">
-	
+
 
 <!--
 	Headline - это коментарий
@@ -44,7 +23,7 @@
 					<span class="dis-inline-block slide100-txt-item animated visible-false">
 						Наш IBAN 35273938465
 					</span>
-					
+
 					<span class="dis-inline-block slide100-txt-item animated visible-false">
 						Поддержи спортсменов!
 					</span>
@@ -165,7 +144,7 @@
 
 						{% for news in newss|slice:":10" %}
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
-							<!-- Item latest -->	
+							<!-- Item latest -->
 							<div class="m-b-45">
 								<a href="{% url 'single' news.id %}" class="wrap-pic-w hov1 trans-03">
 									<img src="{{news.image.url}}" alt="IMG">
@@ -198,22 +177,10 @@
 					</div>
 				</div>
 
-				
+
 			</div>
 		</div>
 	</section>
 
-
-<!--===============================================================================================-->	
-	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
-<!--===============================================================================================-->
-	<script src="{% static 'js/main.js' %}"></script>
-
 </body>
-</html>
 {% endblock content %}
