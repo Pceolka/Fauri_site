@@ -3,146 +3,146 @@
 <html lang="ru">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<!--===============================================================================================-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fontawesome-5.0.8/css/fontawesome-all.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
+    <!--===============================================================================================-->
 
 
-  <title>orienteering.com</title>
+    <title>orienteering.com</title>
 </head>
 <body>
-	<!-- Header -->
-	<header>
-	<div class="container-menu-desktop">
+<!-- Header -->
+<header>
+    <div class="container-menu-desktop">
 
-			<!-- Header Mobile -->
-			<div class="wrap-header-mobile">
-				<!-- Logo moblie -->
-				<div class="logo-mobile">
-					<a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
-				</div>
+        <!-- Header Mobile -->
+        <div class="wrap-header-mobile">
+            <!-- Logo moblie -->
+            <div class="logo-mobile">
+                <a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
+            </div>
 
-				<!-- Button show menu -->
-				<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+            <!-- Button show menu -->
+            <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
 					<span class="hamburger-box">
 						<span class="hamburger-inner"></span>
 					</span>
-				</div>
-			</div>
+            </div>
+        </div>
 
-				<!-- Menu Mobile -->
-			<div class="menu-mobile">
+        <!-- Menu Mobile -->
+        <div class="menu-mobile">
 
-				<ul class="main-menu-m">
-					<li>
-						<a href="{% url 'news' %}">Главная</a>
-					</li>
+            <ul class="main-menu-m">
+                <li>
+                    <a href="{% url 'news' %}">Главная</a>
+                </li>
 
-					<li>
-						<a href="{% url 'about' %}">О нас</a>
-					</li>
+                <li>
+                    <a href="{% url 'about' %}">О нас</a>
+                </li>
 
-					<li>
-						<a href="{% url 'contact' %}">Контакты</a>
-					</li>
+                <li>
+                    <a href="{% url 'contact' %}">Контакты</a>
+                </li>
 
-					<li>
-						<a href="{% url 'calendars' %}">Календарь</a>
-					</li>
+                <li>
+                    <a href="{% url 'calendars' %}">Календарь</a>
+                </li>
 
-				</ul>
-			</div>
-
-
-
-			<div class="wrap-logo container">
-				<div class="logo">
-					<a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
-				</div>
-			</div>
+            </ul>
+        </div>
 
 
+        <div class="wrap-logo container">
+            <div class="logo">
+                <a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
+            </div>
+        </div>
 
-			<!--  -->
-			<div class="wrap-main-nav">
-				<div class="main-nav">
-					<!-- Menu desktop -->
-					<nav class="menu-desktop">
-						<ul class="main-menu">
-							<li class="mega-menu-item">
-								<a href="{% url 'news' %}">Главная</a>
-							</li>
 
-							<li class="mega-menu-item">
-								<a href="{% url 'about' %}">О нас</a>
-							</li>
+        <!--  -->
+        <div class="wrap-main-nav">
+            <div class="main-nav">
+                <!-- Menu desktop -->
+                <nav class="menu-desktop">
+                    <ul class="main-menu">
+                        <li class="mega-menu-item">
+                            <a href="{% url 'news' %}">Главная</a>
+                        </li>
 
-							<li class="mega-menu-item">
-								<a href="{% url 'contact' %}">Контакты</a>
-							</li>
+                        <li class="mega-menu-item">
+                            <a href="{% url 'about' %}">О нас</a>
+                        </li>
 
-							<li class="mega-menu-item">
-								<a href="{% url 'calendars' %}">Календарь</a>
-							</li>
+                        <li class="mega-menu-item">
+                            <a href="{% url 'contact' %}">Контакты</a>
+                        </li>
 
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
+                        <li class="mega-menu-item">
+                            <a href="{% url 'calendars' %}">Календарь</a>
+                        </li>
 
-	</div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 
-	</header>
+    </div>
+
+</header>
 
 {% block content %}{% endblock content %}
 
 <!-- Footer #17b978-->
-	<footer>
-		<div class="bg11">
-			<div class="container size-h-4 flex-c-c p-tb-15">
+<footer>
+    <div class="bg11">
+        <div class="container size-h-4 flex-c-c p-tb-15">
 				<span class="f1-s-1 cl0 txt-center">
 					Fauri © 2023 <a href="{% url 'news' %}" class="f1-s-1 cl10 hov-link1">Evghenii </a>
 				</span>
-			</div>
-		</div>
-	</footer>
+        </div>
+    </div>
+</footer>
 
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
+<!-- Back to top -->
+<div class="btn-back-to-top" id="myBtn">
 		<span class="symbol-btn-back-to-top">
 			<span class="fas fa-angle-up"></span>
 		</span>
-	</div>
+</div>
 
 
 <!--===============================================================================================-->
-	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->
-	<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<script src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
 <!--===============================================================================================-->
-	<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
-	<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 <!--===============================================================================================-->
-	<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>

@@ -2,28 +2,28 @@
 {% load static %}
 {% block content %}
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
 
 <body class="animsition">
 
-	<!-- Content -->
-	<section class="bg0 p-b-140 p-t-10">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-10 col-lg-8 p-b-30">
-					<div class="p-r-10 p-r-0-sr991">
-						<!-- Blog Detail -->
-						<div class="p-b-70">
+<!-- Content -->
+<section class="bg0 p-b-140 p-t-10">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 p-b-30">
+                <div class="p-r-10 p-r-0-sr991">
+                    <!-- Blog Detail -->
+                    <div class="p-b-70">
 
 
-							<h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
-								{{news.header}}
-							</h3>
-							
-							<div class="flex-wr-s-s p-b-40">
+                        <h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
+                            {{news.header}}
+                        </h3>
+
+                        <div class="flex-wr-s-s p-b-40">
 								<span class="f1-s-3 cl8 m-r-15">
 									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
 										{{news.author}}
@@ -36,19 +36,19 @@
 									</span>
 								</span>
 
-							</div>
+                        </div>
 
-							<div class="wrap-pic-max-w p-b-30">
-								<img src="{{news.image.url}}" alt="IMG">
-							</div>
+                        <div class="wrap-pic-max-w p-b-30">
+                            <img src="{{news.image.url}}" alt="IMG">
+                        </div>
 
-							<p class="f1-s-11 cl6 p-b-25"> {{news.description|safe}}  </p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                        <p class="f1-s-11 cl6 p-b-25"> {{news.description|safe}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 </body>

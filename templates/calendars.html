@@ -2,74 +2,72 @@
 {% load static %}
 {% block content %}
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/util.min.css' %}">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
-<!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
-<!--===============================================================================================-->
-</head>
-
 <body class="animsition">
 
-	<!-- Page heading -->
-	<div class="container p-t-4 p-b-35">
-		<h2 class="f1-l-1 cl2">
-			Календарь
-		</h2>
-	</div>
+<!-- Page heading -->
+<div class="container p-t-4 p-b-35">
+    <br>
+    <h2 class="f1-l-1 cl2">
+        Календарь
+    </h2>
+</div>
 
 
 <!-- Calendar -->
-	<section class="bg0">
-		<div class="container">
-			<div class="row m-rl--1">
-				<div class="calendar spacefree">
-					<div class="col leftCol">
-						<div class="content">
-							<h1 class="date"><a href={{ previous_month }}>&#9664;</a> {{month}} <a href={{ next_month }}>&#9658;</a></h1>
-							<div class="notes">
+<section class="bg0">
+    <div class="container">
+        <div class="row m-rl--1">
+            <div class="calendar spacefree">
+                <div class="col leftCol">
+                    <div class="content">
+                        <h1 class="date"><a href={{ previous_month }}>&#9664;</a> {{month}} <a href={{ next_month }}>&#9658;</a>
+                        </h1>
+                        <div class="notes">
 
-								<table>
-																	<p>Предстоящие события</p>
-								{% for event in events %}
-								<tr >
-								<ul class="noteList">
-									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li></td>
-									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li></td>
-								</ul>
-								</tr>
-								{% endfor %}
-								</table>
-								<table>
-									<p>Вcе события этого месяца</p>
+                            <table>
+                                <p>Предстоящие события</p>
+                                {% for event in events %}
+                                <tr>
+                                    <ul class="noteList">
+                                        <td>
+                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li>
+                                        </td>
+                                        <td>
+                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li>
+                                        </td>
+                                    </ul>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                            <table>
+                                <p>Вcе события этого месяца</p>
 
-								{% for event in allevents %}
-								<tr >
-								<ul class="noteList">
-									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li></td>
-									<td><li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li></td>
-								</ul>
-								</tr>
-								{% endfor %}
-								</table>
-							</div>
-						</div>
-					</div>
+                                {% for event in allevents %}
+                                <tr>
+                                    <ul class="noteList">
+                                        <td>
+                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li>
+                                        </td>
+                                        <td>
+                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li>
+                                        </td>
+                                    </ul>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
-					<div class="col rightCol">
-						<div class="content">
-							<h2 class="year">{{year}}</h2>
-							<div>{{ calendar|safe }}</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                <div class="col rightCol">
+                    <div class="content">
+                        <h2 class="year">{{year}}</h2>
+                        <div>{{ calendar|safe }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 </body>

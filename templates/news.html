@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
 <body class="animsition">
 
 
@@ -37,24 +31,26 @@
 	</div>
 -->
 <br>
-		{% with newss|slice:"-4:" as recent_news %}
-	<!-- Feature post -->
-	<section class="bg0">
-		<div class="container">
-			<div class="row m-rl--1">
-				<div class="col-md-6 p-rl-1 p-b-2">
-					<div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url({{recent_news.0.image.url}});">
-						<a href="{% url 'single' recent_news.0.id %}" class="dis-block how1-child1 trans-03"></a>
+{% with newss|slice:"-4:" as recent_news %}
+<!-- Первые четыре новости "красивое" -->
+<section class="bg0">
+    <div class="container">
+        <div class="row m-rl--1">
+            <div class="col-md-6 p-rl-1 p-b-2">
+                <div class="bg-img1 size-a-3 how1 pos-relative"
+                     style="background-image: url({{recent_news.0.image.url}});">
+                    <a href="{% url 'single' recent_news.0.id %}" class="dis-block how1-child1 trans-03"></a>
 
-						<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
 
-							<h3 class="how1-child2 m-t-14 m-b-10">
-								<a href="{% url 'single' recent_news.0.id %}" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
-									{{recent_news.0.header}}
-								</a>
-							</h3>
+                        <h3 class="how1-child2 m-t-14 m-b-10">
+                            <a href="{% url 'single' recent_news.0.id %}"
+                               class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+                                {{recent_news.0.header}}
+                            </a>
+                        </h3>
 
-							<span class="how1-child2">
+                        <span class="how1-child2">
 								<span class="f1-s-4 cl11">
 									{{recent_news.0.author}}
 								</span>
@@ -67,97 +63,100 @@
 									{{recent_news.0.creation_day|date:"d M"}}
 								</span>
 							</span>
-						</div>
-					</div>
-				</div>
+                    </div>
+                </div>
+            </div>
 
-				<div class="col-md-6 p-rl-1">
-					<div class="row m-rl--1">
-						<div class="col-12 p-rl-1 p-b-2">
-							<div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url({{recent_news.1.image.url}});">
-								<a href="{% url 'single' recent_news.1.id %}" class="dis-block how1-child1 trans-03"></a>
+            <div class="col-md-6 p-rl-1">
+                <div class="row m-rl--1">
+                    <div class="col-12 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-4 how1 pos-relative"
+                             style="background-image: url({{recent_news.1.image.url}});">
+                            <a href="{% url 'single' recent_news.1.id %}" class="dis-block how1-child1 trans-03"></a>
 
-								<div class="flex-col-e-s s-full p-rl-25 p-tb-24">
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-24">
 
-									<h3 class="how1-child2 m-t-14">
-										<a href="{% url 'single' recent_news.1.id %}" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
-											{{recent_news.1.header}}
-										</a>
-									</h3>
-								</div>
-							</div>
-						</div>
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{% url 'single' recent_news.1.id %}"
+                                       class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
+                                        {{recent_news.1.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
 
-						<div class="col-sm-6 p-rl-1 p-b-2">
-							<div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{recent_news.2.image.url}});">
-								<a href="{% url 'single' recent_news.2.id %}" class="dis-block how1-child1 trans-03"></a>
+                    <div class="col-sm-6 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-5 how1 pos-relative"
+                             style="background-image: url({{recent_news.2.image.url}});">
+                            <a href="{% url 'single' recent_news.2.id %}" class="dis-block how1-child1 trans-03"></a>
 
-								<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
 
-									<h3 class="how1-child2 m-t-14">
-										<a href="{% url 'single' recent_news.2.id %}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-											{{recent_news.2.header}}
-										</a>
-									</h3>
-								</div>
-							</div>
-						</div>
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{% url 'single' recent_news.2.id %}"
+                                       class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        {{recent_news.2.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
 
-						<div class="col-sm-6 p-rl-1 p-b-2">
-							<div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url({{recent_news.3.image.url}});">
-								<a href="{% url 'single' recent_news.3.id %}" class="dis-block how1-child1 trans-03"></a>
+                    <div class="col-sm-6 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-5 how1 pos-relative"
+                             style="background-image: url({{recent_news.3.image.url}});">
+                            <a href="{% url 'single' recent_news.3.id %}" class="dis-block how1-child1 trans-03"></a>
 
-								<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
 
-									<h3 class="how1-child2 m-t-14">
-										<a href="{{recent_news.3.image.url}}" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
-											{{recent_news.3.header}}
-										</a>
-									</h3>
-								</div>
-							</div>
-						</div>
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{{recent_news.3.image.url}}"
+                                       class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        {{recent_news.3.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
 
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endwith %}
 
 <p><br></p>
-	<!-- Banner lolhz -->
 
+<!-- Последующие 10 новостей -->
+<section class="bg0 p-t-60 p-b-35">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 p-b-20">
+                <div class="how2 how2-cl4 flex-s-c m-r-10 m-r-0-sr991">
+                    <h3 class="f1-m-2 cl3 tab01-title">
+                        Новости
+                    </h3>
+                </div>
 
-	<!-- Latest -->
-	<section class="bg0 p-t-60 p-b-35">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-10 col-lg-8 p-b-20">
-					<div class="how2 how2-cl4 flex-s-c m-r-10 m-r-0-sr991">
-						<h3 class="f1-m-2 cl3 tab01-title">
-							Новости
-						</h3>
-					</div>
+                <div class="row p-t-35">
+                    {% for news in newss|slice:":10" %}
+                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                        <!-- Item latest -->
+                        <div class="m-b-45">
+                            <a href="{% url 'single' news.id %}" class="wrap-pic-w hov1 trans-03">
+                                <img src="{{news.image.url}}" alt="IMG">
+                            </a>
 
-					<div class="row p-t-35">
+                            <div class="p-t-16">
+                                <h5 class="p-b-5">
+                                    <a href="{% url 'single' news.id %}" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                        {{news.header}}
+                                    </a>
+                                </h5>
 
-						{% for news in newss|slice:":10" %}
-						<div class="col-sm-6 p-r-25 p-r-15-sr991">
-							<!-- Item latest -->
-							<div class="m-b-45">
-								<a href="{% url 'single' news.id %}" class="wrap-pic-w hov1 trans-03">
-									<img src="{{news.image.url}}" alt="IMG">
-								</a>
-
-								<div class="p-t-16">
-									<h5 class="p-b-5">
-										<a href="{% url 'single' news.id %}" class="f1-m-3 cl2 hov-cl10 trans-03">
-											{{news.header}}
-										</a>
-									</h5>
-
-									<span class="cl8">
+                                <span class="cl8">
 										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
 											{{news.author}}
 										</a>
@@ -170,17 +169,14 @@
 											{{news.creation_day|date:"d M"}}
 										</span>
 									</span>
-								</div>
-							</div>
-						</div>
- 						{% endfor %}
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-	</section>
-
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 </body>
 {% endblock content %}
