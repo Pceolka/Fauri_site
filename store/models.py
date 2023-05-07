@@ -10,7 +10,7 @@ from django.urls import reverse
 # Новости
 class Event(models.Model):
     id = models.AutoField(primary_key=True)
-    header = models.TextField(u'Заголовок', help_text=u'Обязательное поле', max_length=25)
+    header = models.TextField(u'Заголовок', help_text=u'Обязательное поле', default="")
     author = models.CharField(u'Автор новости', help_text=u'Обязательное поле', max_length=25, default='fauri')
     image = models.ImageField(u'Картинка', help_text=u'Обязательное поле', upload_to='media/')
     description = models.TextField(u'Описание', default="")
