@@ -3,33 +3,6 @@
 {% block content %}
 <body class="animsition">
 
-
-<!--
-	Headline - это коментарий
-
-	<div class="container">
-		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
-			<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
-				<span class="text-uppercase cl2 p-r-8">
-					Важное:
-				</span>
-				<span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Наш IBAN 35273938465
-					</span>
-
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Поддержи спортсменов!
-					</span>
-
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Не жди,свяжись с нами!
-					</span>
-				</span>
-			</div>
-		</div>
-	</div>
--->
 <br>
 {% with newss|slice:"-4:" as recent_news %}
 <!-- Первые четыре новости "красивое" -->
@@ -129,11 +102,12 @@
 
 <p><br></p>
 
-<!-- Последующие 10 новостей -->
+<!-- Последующие 8 новостей -->
 <section class="bg0 p-t-60 p-b-35">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-8 p-b-20">
+
                 <div class="how2 how2-cl4 flex-s-c m-r-10 m-r-0-sr991">
                     <h3 class="f1-m-2 cl3 tab01-title">
                         Новости
@@ -141,34 +115,33 @@
                 </div>
 
                 <div class="row p-t-35">
-                    {% for news in newss|slice:":10" %}
+
+                    {% for news in page_obj %}
                     <div class="col-sm-6 p-r-25 p-r-15-sr991">
-                        <!-- Item latest -->
+                        <!-- сам токен новости (одной) -->
                         <div class="m-b-45">
                             <a href="{% url 'single' news.id %}" class="wrap-pic-w hov1 trans-03">
-                                <img src="{{news.image.url}}" alt="IMG">
+                                <img src="{{ news.image.url }}" alt="IMG">
                             </a>
 
                             <div class="p-t-16">
                                 <h5 class="p-b-5">
                                     <a href="{% url 'single' news.id %}" class="f1-m-3 cl2 hov-cl10 trans-03">
-                                        {{news.header}}
+                                        {{ news.header }}
                                     </a>
                                 </h5>
 
                                 <span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											{{news.author}}
-										</a>
+                    <a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+                        {{ news.author }}
+                    </a>
 
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
+                    <span class="f1-s-3 m-rl-3">-</span>
 
-										<span class="f1-s-3">
-											{{news.creation_day|date:"d M"}}
-										</span>
-									</span>
+                    <span class="f1-s-3">
+                        {{ news.creation_day|date:"d M" }}
+                    </span>
+                </span>
                             </div>
                         </div>
                     </div>
@@ -177,6 +150,28 @@
             </div>
         </div>
     </div>
+    <!-- Пагинационные ссылки -->
+    <div class="d-flex justify-content-center">
+        {% if page_obj.has_previous %}
+        <a href="?page=1">&lt;&lt; &nbsp;</a>
+        <a href="?page={{ page_obj.previous_page_number }}">&lt;&nbsp;</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+        {% if num == page_obj.number %}
+        <a class="active">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <a href="?page={{ num }}">&nbsp;{{ num }}&nbsp;</a>
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">&nbsp; &gt;</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}">&nbsp; &gt;&gt;</a>
+        {% endif %}
+    </div>
 </section>
 </body>
+
+
 {% endblock content %}

@@ -1,3 +1,4 @@
+from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 from datetime import datetime
 from django.shortcuts import render
@@ -11,11 +12,16 @@ from django.utils import timezone
 
 # Создание видов
 
-
 def news(request):
+    all_events = Event.objects.order_by('-creation_day')
+    per_page = 4
+    paginator = Paginator(all_events, per_page)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     newss = Event.objects.order_by('-creation_day')
-    params = {"newss": newss}
-    return render(request, "news.html", params)
+
+    return render(request, 'news.html', {'page_obj': page_obj, 'newss': newss})
 
 
 def single(request, id):

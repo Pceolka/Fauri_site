@@ -1,9 +1,6 @@
 import datetime
-import uuid
 from django.db import models
-from django.core.exceptions import ValidationError
 from django.urls import reverse
-
 
 # Создание моделей
 
