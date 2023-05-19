@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<body class="animsition">
+
+<!-- Page heading -->
+<div class="container p-t-4 p-b-35">
+    <br>
+    <h2 class="f1-l-1 cl2">
+        Архив PDF файлов
+    </h2>
+</div>
+
+<!-- Content -->
+<section class="bg0 p-t-60 p-b-35">
+    <div class="container">
+    <ul>
+    {% for pdf in pdfs %}
+        <li><a href="{% url 'pdf_detail' pdf.id %}">{{ pdf.header }}</a></li>
+    {% empty %}
+        <li>Нет доступных PDF файлов.</li>
+    {% endfor %}
+    </ul>
+    </div>
+</section>
+
+
+</body>
+
+{% endblock content %}

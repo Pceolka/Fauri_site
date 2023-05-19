@@ -6,6 +6,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor.widgets import CKEditorWidget
 
+from .models import Pdfs
 from .models import Event
 from .utils import EventCalendar
 
@@ -22,6 +23,7 @@ class EventForm(forms.ModelForm):
 
 class EventAdmin(admin.ModelAdmin):
     list_display = ['header', 'day', 'start_time', 'author', 'creation_day']
+    ordering = ['-creation_day']
     change_list_template = 'change_list.html'
     form = EventForm
 
@@ -61,3 +63,11 @@ class EventAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Event, EventAdmin)
+
+
+class PDFAdmin(admin.ModelAdmin):
+    list_display = ['header', 'pdfile', 'creation_day']
+    ordering = ['-creation_day']
+
+
+admin.site.register(Pdfs, PDFAdmin)

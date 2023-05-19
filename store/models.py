@@ -2,7 +2,21 @@ import datetime
 from django.db import models
 from django.urls import reverse
 
+
 # Создание моделей
+
+class Pdfs(models.Model):
+    id = models.AutoField(primary_key=True)
+    header = models.TextField(u'Заголовок', help_text=u'Обязательное поле', default="")
+    discription = models.TextField(u'Описание', default="")
+    creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
+    pdfile = models.FileField(upload_to='static/pdf_files/')
+
+    def __str__(self):
+        return f"{self.header} ({self.pdfile} - {self.creation_day})"
+
+    class Meta:
+        verbose_name = u'Архив PDF файлов'
 
 # Новости
 class Event(models.Model):

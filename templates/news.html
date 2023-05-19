@@ -148,25 +148,35 @@
                     {% endfor %}
                 </div>
             </div>
+                        <div class="col-md-10 col-lg-4">
+                <div class="p-1-10 p-rl-0-sr991 p-b-20">
+                    <div class="flex-c-s p-t-8 p-b-65">
+                        <a href="#">
+                            <img class="max-w-full" src="{% static 'images/banner1.jpg' %}" alt="IMG">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+
     <!-- Пагинационные ссылки -->
+
     <div class="d-flex justify-content-center">
         {% if page_obj.has_previous %}
         <a href="?page=1">&lt;&lt; &nbsp;</a>
-        <a href="?page={{ page_obj.previous_page_number }}">&lt;&nbsp;</a>
         {% endif %}
 
         {% for num in page_obj.paginator.page_range %}
         {% if num == page_obj.number %}
-        <a class="active">{{ num }}</a>
+        <a class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">{{ num }}</a>
         {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-        <a href="?page={{ num }}">&nbsp;{{ num }}&nbsp;</a>
+        <a href="?page={{ num }}" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">&nbsp;{{ num }}&nbsp;</a>
         {% endif %}
         {% endfor %}
 
         {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">&nbsp; &gt;</a>
         <a href="?page={{ page_obj.paginator.num_pages }}">&nbsp; &gt;&gt;</a>
         {% endif %}
     </div>

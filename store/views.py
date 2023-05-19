@@ -1,4 +1,5 @@
 from django.core.paginator import Paginator
+from django.http import FileResponse
 from django.shortcuts import get_object_or_404
 from datetime import datetime
 from django.shortcuts import render
@@ -7,6 +8,7 @@ import calendar
 from django.utils.safestring import mark_safe
 from .utils import MainCalendar
 from .models import Event
+from .models import Pdfs
 from django.utils import timezone
 
 
@@ -29,6 +31,11 @@ def single(request, id):
     return render(request, 'single.html', {'news': news})
 
 
+def pdf_detail(request, pdf_id):
+    pdf = get_object_or_404(Pdfs, pk=pdf_id)
+    return FileResponse(open(pdf.pdfile.path, 'rb'), content_type='application/pdf')
+
+
 def about(request):
     return render(request, "about.html")
 
@@ -37,8 +44,9 @@ def contact(request):
     return render(request, "contact.html")
 
 
-def arhiv(request):
-    return render(request, "arhiv.html")
+def archive(request):
+    pdfs = Pdfs.objects.all()
+    return render(request, 'archive.html', {'pdfs': pdfs})
 
 
 def gallerey(request):
