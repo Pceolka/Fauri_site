@@ -37,6 +37,14 @@ def contact(request):
     return render(request, "contact.html")
 
 
+def arhiv(request):
+    return render(request, "arhiv.html")
+
+
+def gallerey(request):
+    return render(request, "gallerey.html")
+
+
 # Calendar
 def calendars(request, extra_context=None):
     after_day = request.GET.get('day__gte', None)

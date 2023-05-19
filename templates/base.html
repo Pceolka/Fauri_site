@@ -58,8 +58,18 @@
                     <a href="{% url 'news' %}">Главная</a>
                 </li>
 
+
                 <li>
                     <a href="{% url 'about' %}">О нас</a>
+                    <ul class="sub-menu-m">
+                                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                <li><a href="{% url 'gallerey' %}">Галерея</a></li>
+                                <li><a href="{% url 'arhiv' %}">Архив</a></li>
+                    </ul>
+
+                    <span class="arrow-main-menu-m">
+							<i class="fa fa-angle-right" aria-hidden="true"></i>
+						</span>
                 </li>
 
                 <li>
@@ -68,6 +78,14 @@
 
                 <li>
                     <a href="{% url 'calendars' %}">Календарь</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'gallerey' %}">Галерея</a>
+                </li>
+
+                <li>
+                    <a href="{% url 'arhiv' %}">Архив</a>
                 </li>
 
             </ul>
@@ -91,8 +109,13 @@
                             <a href="{% url 'news' %}">Главная</a>
                         </li>
 
-                        <li class="mega-menu-item">
+                        <li>
                             <a href="{% url 'about' %}">О нас</a>
+                            <ul class="sub-menu">
+                                <li><a href="{% url 'contact' %}">Контакты</a></li>
+                                <li><a href="{% url 'gallerey' %}">Галерея</a></li>
+                                <li><a href="{% url 'arhiv' %}">Архив</a></li>
+                            </ul>
                         </li>
 
                         <li class="mega-menu-item">
@@ -101,6 +124,14 @@
 
                         <li class="mega-menu-item">
                             <a href="{% url 'calendars' %}">Календарь</a>
+                        </li>
+
+                        <li class="mega-menu-item">
+                            <a href="{% url 'gallerey' %}">Галерея</a>
+                        </li>
+
+                        <li class="mega-menu-item">
+                            <a href="{% url 'arhiv' %}">Архив</a>
                         </li>
 
                     </ul>

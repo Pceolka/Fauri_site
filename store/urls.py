@@ -9,4 +9,6 @@ urlpatterns = [
     path("contact/", views.contact, name='contact'),
     path('news/<int:id>/', views.single, name='single'),
     path('calendars/', views.calendars, name='calendars'),
+    path('arhiv/', views.arhiv, name='arhiv'),
+    path('gallerey/', views.gallerey, name='gallerey'),
 ]
