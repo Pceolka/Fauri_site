@@ -28,118 +28,45 @@
     <!--===============================================================================================-->
 
 
-    <title>orienteering.com</title>
+    <title>Fauri</title>
 </head>
-<body>
+
+<body class="animsition">
 <!-- Header -->
-<header>
-    <div class="container-menu-desktop">
-
-        <!-- Header Mobile -->
-        <div class="wrap-header-mobile">
-            <!-- Logo moblie -->
-            <div class="logo-mobile">
-                <a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
-            </div>
-
-            <!-- Button show menu -->
-            <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
-					<span class="hamburger-box">
-						<span class="hamburger-inner"></span>
-					</span>
-            </div>
-        </div>
-
-        <!-- Menu Mobile -->
-        <div class="menu-mobile">
-				<ul class="topbar-mobile">
-					<li class="right-topbar">
-						<a href="#">
-							<span class="fab fa-facebook-f"></span>
-						</a>
-
-						<a href="#">
-							<span class="fab fa-twitter"></span>
-						</a>
-
-						<a href="#">
-							<span class="fab fa-pinterest-p"></span>
-						</a>
-
-						<a href="#">
-							<span class="fab fa-vimeo-v"></span>
-						</a>
-
-						<a href="#">
-							<span class="fab fa-youtube"></span>
-						</a>
-					</li>
-				</ul>
-
-            <ul class="main-menu-m">
-                <li>
-                    <a href="{% url 'news' %}">Главная</a>
-                </li>
-
-
-                <li>
-                    <a href="{% url 'about' %}">О нас</a>
-                    <ul class="sub-menu-m">
-                                <li><a href="{% url 'contact' %}">Контакты</a></li>
-                                <li><a href="{% url 'gallerey' %}">Галерея</a></li>
-                                <li><a href="{% url 'archive' %}">Архив</a></li>
-                    </ul>
-
-                    <span class="arrow-main-menu-m">
-							<i class="fa fa-angle-right" aria-hidden="true"></i>
-						</span>
-                </li>
-
-                <li>
-                    <a href="{% url 'contact' %}">Контакты</a>
-                </li>
-
-                <li>
-                    <a href="{% url 'calendars' %}">Календарь</a>
-                </li>
-
-                <li>
-                    <a href="{% url 'gallerey' %}">Галерея</a>
-                </li>
-
-                <li>
-                    <a href="{% url 'archive' %}">Архив</a>
-                </li>
-
-            </ul>
-        </div>
-
+	<header>
+		<!-- Header desktop -->
+		<div class="container-menu-desktop">
 			<div class="topbar">
 				<div class="content-topbar h-100 p-rl-30">
 					<div class="align-self-stretch size-w-0 pos-relative m-r-30">
 						<div class="f2-s-1 flex-wr-s-c s-full ab-t-l p-b-2">
+
 							<span class="text-uppercase cl0 p-r-8">
-								Trending Now:
+								Срочные новости:
 							</span>
 
 							<span class="dis-inline-block cl16 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
+								{% for text in trending_texts %}
 								<span class="dis-inline-block slide100-txt-item animated visible-false">
-									Старт переноситься на час
+									{{ text }}
 								</span>
-
-								<span class="dis-inline-block slide100-txt-item animated visible-false">
-									Поддержите организаторов
-								</span>
-
-								<span class="dis-inline-block slide100-txt-item animated visible-false">
-									Наш IBAN:46292274920
-								</span>
+								{% endfor %}
 							</span>
 						</div>
 					</div>
 
 					<div class="flex-wr-e-c">
 						<div class="left-topbar">
+							<a href="#" class="left-topbar-item"></a>
+
+							<a href="{% url 'about' %}" class="left-topbar-item">
+								О нас
+							</a>
+
+							<a href="{% url 'contact' %}" class="left-topbar-item">
+								Контакты
+							</a>
+
 							<a href="#" class="left-topbar-item"></a>
 						</div>
 
@@ -168,61 +95,903 @@
 				</div>
 			</div>
 
-        <div class="wrap-logo container">
-            <div class="logo">
-                <a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
-            </div>
-        </div>
+			<!-- Header Mobile -->
+			<div class="wrap-header-mobile">
+				<!-- Logo moblie -->
+				<div class="logo-mobile">
+					<a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
+				</div>
 
+				<!-- Button show menu -->
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r--8">
+					<span class="hamburger-box">
+						<span class="hamburger-inner"></span>
+					</span>
+				</div>
+			</div>
 
-        <!--  -->
-        <div class="wrap-main-nav">
-            <div class="main-nav">
-                <!-- Menu desktop -->
-                <nav class="menu-desktop">
-                    <ul class="main-menu">
-                        <li class="mega-menu-item">
-                            <a href="{% url 'news' %}">Главная</a>
-                        </li>
+			<!-- Menu Mobile -->
+			<div class="menu-mobile">
+				<ul class="topbar-mobile">
+					<li class="left-topbar">
+						<a href="{% url 'about' %}" class="left-topbar-item">
+							 О нас
+						</a>
 
-                        <li>
-                            <a href="{% url 'about' %}">О нас</a>
-                            <ul class="sub-menu">
-                                <li><a href="{% url 'contact' %}">Контакты</a></li>
-                                <li><a href="{% url 'gallerey' %}">Галерея</a></li>
-                                <li><a href="{% url 'archive' %}">Архив</a></li>
-                            </ul>
-                        </li>
+						<a href="{% url 'contact' %}" class="left-topbar-item">
+							Контакты
+						</a>
+					</li>
 
-                        <li class="mega-menu-item">
-                            <a href="{% url 'contact' %}">Контакты</a>
-                        </li>
+					<li class="right-topbar">
+						<a href="#">
+							<span class="fab fa-facebook-f"></span>
+						</a>
 
-                        <li class="mega-menu-item">
-                            <a href="{% url 'calendars' %}">Календарь</a>
-                        </li>
+						<a href="#">
+							<span class="fab fa-twitter"></span>
+						</a>
 
-                        <li class="mega-menu-item">
-                            <a href="{% url 'gallerey' %}">Галерея</a>
-                        </li>
+						<a href="#">
+							<span class="fab fa-pinterest-p"></span>
+						</a>
 
-                        <li class="mega-menu-item">
-                            <a href="{% url 'archive' %}">Архив</a>
-                        </li>
+						<a href="#">
+							<span class="fab fa-vimeo-v"></span>
+						</a>
 
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
+						<a href="#">
+							<span class="fab fa-youtube"></span>
+						</a>
+					</li>
+				</ul>
 
-    </div>
+				<ul class="main-menu-m">
 
-</header>
+					<li>
+						<a href="{% url 'news' %}">Новости</a>
+					</li>
+
+					<li>
+						<a href="{% url 'gallerey' %}">Галерея</a>
+					</li>
+
+					<li>
+						<a href="{% url 'archive' %}">Архив</a>
+					</li>
+
+					<li>
+						<a href="{% url 'calendars' %}">Календарь</a>
+					</li>
+
+				</ul>
+			</div>
+
+			<!--  -->
+			<div class="wrap-logo no-banner container">
+				<!-- Logo desktop -->
+				<div class="logo">
+					<a href="{% url 'news' %}"><img src="{% static 'images/logo-01.png' %}" alt="LOGO"></a>
+				</div>
+			</div>
+
+			<!--  -->
+			<div class="wrap-main-nav">
+				<div class="main-nav">
+					<!-- Menu desktop -->
+					<nav class="menu-desktop">
+
+						<ul class="main-menu justify-content-center">
+
+							<li class="mega-menu-item">
+								<a href="{% url 'news' %}">Новости</a>
+
+								<div class="sub-mega-menu">
+									<div class="nav flex-column nav-pills" role="tablist">
+										<a class="nav-link active" data-toggle="pill" href="#news-0" role="tab">All</a>
+										<a class="nav-link" data-toggle="pill" href="#news-1" role="tab">Соревнования</a>
+										<a class="nav-link" data-toggle="pill" href="#news-2" role="tab">Тренировка</a>
+										<a class="nav-link" data-toggle="pill" href="#news-3" role="tab">Новость</a>
+										<a class="nav-link" data-toggle="pill" href="#news-4" role="tab">Статья</a>
+										<a class="nav-link" data-toggle="pill" href="#news-5" role="tab">Международные соревнования</a>
+									</div>
+
+									<div class="tab-content">
+										<div class="tab-pane show active" id="news-0" role="tabpanel">
+											<div class="row">
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-05.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 18
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-10.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Finance
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 15
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-14.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Beach
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 12
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-36.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Technology
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 20
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="news-1" role="tabpanel">
+											<div class="row">
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-50.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 18
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-08.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 12
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-07.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 20
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-06.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 15
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="news-2" role="tabpanel">
+											<div class="row">
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-21.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 18
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-24.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 15
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-22.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 12
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-23.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 20
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="news-3" role="tabpanel">
+											<div class="row">
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-25.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 18
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-27.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 20
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-26.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 12
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-34.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 15
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="news-4" role="tabpanel">
+											<div class="row">
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-35.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 18
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-36.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 12
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-37.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 20
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-38.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 15
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="tab-pane" id="news-5" role="tabpanel">
+											<div class="row">
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-39.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 18
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-41.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 20
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-42.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Jan 15
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+
+												<div class="col-3">
+													<!-- Item post -->
+													<div>
+														<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+															<img src="images/post-40.jpg" alt="IMG">
+														</a>
+
+														<div class="p-t-10">
+															<h5 class="p-b-5">
+																<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+																	Donec metus orci, malesuada et lectus vitae
+																</a>
+															</h5>
+
+															<span class="cl8">
+																<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+																	Music
+																</a>
+
+																<span class="f1-s-3 m-rl-3">
+																	-
+																</span>
+
+																<span class="f1-s-3">
+																	Feb 12
+																</span>
+															</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="{% url 'gallerey' %}">Галерея </a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="{% url 'archive' %}">Архив</a>
+							</li>
+
+							<li class="mega-menu-item">
+								<a href="{% url 'calendars' %}">Календарь</a>
+							</li>
+
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+	</header>
+
 
 {% block content %}{% endblock content %}
 
-	<!-- Footer -->
+
+<!-- Footer -->
 	<footer>
 		<div class="bg2 p-t-40 p-b-25">
 			<div class="container">
@@ -240,7 +1009,7 @@
 							</p>
 
 							<p class="f1-s-1 cl11 p-b-16">
-								Есть вопросы ? Звони нам  (+373) 96 716 6879
+								Any questions? Call us on (+1) 96 716 6879
 							</p>
 
 							<div class="p-t-15">
@@ -334,40 +1103,35 @@
 					<div class="col-sm-6 col-lg-4 p-b-20">
 						<div class="size-h-3 flex-s-c">
 							<h5 class="f1-m-7 cl0">
-								Category
+								Категории
 							</h5>
 						</div>
 
 						<ul class="m-t--12">
 							<li class="how-bor1 p-rl-5 p-tb-10">
 								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
-									Fashion (22)
+									Соревнования ({{count_competition}})
 								</a>
 							</li>
 
 							<li class="how-bor1 p-rl-5 p-tb-10">
 								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
-									Technology (29)
+									Международные соревнования ({{count_worldcomp}})
 								</a>
 							</li>
 
 							<li class="how-bor1 p-rl-5 p-tb-10">
 								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
-									Street Style (15)
+									События ({{count_event}})
 								</a>
 							</li>
 
 							<li class="how-bor1 p-rl-5 p-tb-10">
 								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
-									Life Style (28)
+									Тренировки ({{count_train}})
 								</a>
 							</li>
 
-							<li class="how-bor1 p-rl-5 p-tb-10">
-								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
-									DIY & Crafts (16)
-								</a>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -377,18 +1141,18 @@
 		<div class="bg11">
 			<div class="container size-h-4 flex-c-c p-tb-15">
 				<span class="f1-s-1 cl0 txt-center">
-						Fauri © 2023 <a href="{% url 'news' %}" class="f1-s-1 cl10 hov-link1">Evghenii </a>
-					</span>
+					Fauri © 2023 <a href="{% url 'news' %}" class="f1-s-1 cl10 hov-link1">Evghenii </a>
+				</span>
 			</div>
 		</div>
 	</footer>
 
-<!-- Back to top -->
-<div class="btn-back-to-top" id="myBtn">
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
 		<span class="symbol-btn-back-to-top">
 			<span class="fas fa-angle-up"></span>
 		</span>
-</div>
+	</div>
 
 
 <!--===============================================================================================-->

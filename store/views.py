@@ -7,23 +7,20 @@ import datetime
 import calendar
 from django.utils.safestring import mark_safe
 from .utils import MainCalendar
-from .models import Event
-from .models import Pdfs
+from .models import Event, Pdfs
 from django.utils import timezone
 
 
 # Создание видов
 
 def news(request):
-    all_events = Event.objects.order_by('-creation_day')
-    per_page = 4
-    paginator = Paginator(all_events, per_page)
-    page_number = request.GET.get('page')
-    page_obj = paginator.get_page(page_number)
+    newss = Event.objects.order_by('-creation_day')[:6]
+    news_competition = Event.objects.filter(category='соревнования').order_by('-creation_day')[:3]
+    news_worldcomp = Event.objects.filter(category='международные соревнования').order_by('-creation_day')[:3]
+    news_event = Event.objects.filter(category='событие').order_by('-creation_day')[:3]
+    news_train = Event.objects.filter(category='тренировка').order_by('-creation_day')[:4]
 
-    newss = Event.objects.order_by('-creation_day')
-
-    return render(request, 'news.html', {'page_obj': page_obj, 'newss': newss})
+    return render(request, 'news.html', {'newss': newss, 'news_competition': news_competition, 'news_worldcomp': news_worldcomp, 'news_event': news_event, 'news_train': news_train})
 
 
 def single(request, id):
