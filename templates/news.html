@@ -6,7 +6,7 @@
 
 	<section class="bg0">
 			<div class="row m-rl-0 justify-content-center">
-				{% with newss|slice:"-2:" as recent_news %}
+				{% with latest_events|slice:"-2:" as recent_news %}
 				<div class="col-md-4 p-rl-1 p-b-2">
 					<div class="bg-img1 size-a-11 how1 pos-relative" style="background-image: url({{recent_news.0.image.url}});">
 						<a href="{% url 'single' recent_news.0.id %}" class="dis-block how1-child1 trans-03"></a>
@@ -675,7 +675,7 @@
 			</div>
 
 			<div class="row p-t-35">
-				{% for news in newss %}
+				{% for news in latest_events %}
 				<div class="col-sm-6 col-md-4">
 					<!-- Item latest -->
 					<div class="m-b-45">

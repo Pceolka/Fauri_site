@@ -14,13 +14,8 @@ from django.utils import timezone
 # Создание видов
 
 def news(request):
-    newss = Event.objects.order_by('-creation_day')[:6]
-    news_competition = Event.objects.filter(category='соревнования').order_by('-creation_day')[:3]
-    news_worldcomp = Event.objects.filter(category='международные соревнования').order_by('-creation_day')[:3]
-    news_event = Event.objects.filter(category='событие').order_by('-creation_day')[:3]
-    news_train = Event.objects.filter(category='тренировка').order_by('-creation_day')[:4]
-
-    return render(request, 'news.html', {'newss': newss, 'news_competition': news_competition, 'news_worldcomp': news_worldcomp, 'news_event': news_event, 'news_train': news_train})
+    latest_events = Event.objects.order_by('-creation_day')[:6]
+    return render(request, 'news.html', {'latest_events': latest_events})
 
 
 def single(request, id):
