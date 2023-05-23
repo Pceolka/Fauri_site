@@ -1,5 +1,5 @@
 from django.core.paginator import Paginator
-from django.http import FileResponse
+from django.http import FileResponse, JsonResponse
 from django.shortcuts import get_object_or_404
 from datetime import datetime
 from django.shortcuts import render
@@ -47,5 +47,19 @@ def gallerey(request):
 
 # Calendar
 def calendars(request):
-
     return render(request, 'calendars.html')
+
+
+def get_event_info(request):
+    event_id = request.GET.get('event_id')
+    try:
+        event = Event.objects.get(id=event_id)
+        # Вам нужно возвратить необходимую информацию о событии
+        data = {
+            'image_url': event.image.url,
+            'header': event.header,
+            # Дополнительная информация о событии, которую вы хотите передать
+        }
+    except Event.DoesNotExist:
+        data = {}
+    return JsonResponse(data)

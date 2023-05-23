@@ -1,12 +1,10 @@
 from store.models import Trending
-from .models import Event, Pdfs
-from datetime import datetime
-from django.shortcuts import render
+from datetime import datetime, date
 import datetime
 import calendar
-from django.utils.safestring import mark_safe
+from .models import Event
 from .utils import MainCalendar
-from django.utils import timezone
+from django.utils.html import mark_safe
 
 def trending_texts(request):
     trending_text = Trending.objects.all()
@@ -31,6 +29,10 @@ def count_records(request):
 
 
 # Calendar
+
+
+
+
 def calendar_context(request):
     after_day = request.GET.get('day__gte', None)
 
@@ -63,9 +65,10 @@ def calendar_context(request):
     allevents = Event.objects.filter(day__isnull=False).filter(day__month=d.month).order_by('day')
     events = Event.objects.filter(day__isnull=False, day__month=d.month, day__gte=datetime.date.today()).order_by('day')
 
-    cal = MainCalendar()
+    cal = MainCalendar(events=allevents)
     html_calendar = cal.formatmonth(d.year, d.month, withyear=True)
     html_calendar = html_calendar.replace('<td ', '<td width="120" height="50"')
+
 
     return {
         'previous_month': previous_month_link,
@@ -76,4 +79,5 @@ def calendar_context(request):
         'events': events,
         'calendar': mark_safe(html_calendar)
     }
+
 

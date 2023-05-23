@@ -4,17 +4,12 @@
 
 <body class="animsition">
 
-
 <!-- Calendar -->
 <section class="bg0">
     <div class="container">
-
-
         <div class="calendar" style="border: 2px solid black;">
-
-            <div class="calendar__picture">
-                <img src="{{ events.img.url }}" alt="Calendar Image">
-                <h2>{{ events.header }}</h2>
+            <div class="calendar__picture" id="calendar-image">
+                <h2 id="calendar-header">{{ events.header }}</h2>
             </div>
 
             <div class="calendar__date">
@@ -28,96 +23,57 @@
             </div>
             {{ calendar|safe }}
 
-            <script>
-        function updateCalendar(eventId) {
-            // Получаем информацию о событии с помощью AJAX-запроса
-            // и обновляем верхнюю часть календаря
+        </div>
+    </div>
+</section>
 
-            // Пример AJAX-запроса с использованием jQuery:
-            $.ajax({
-                url: '/get-event-info/',
-                data: {event_id: eventId},
-                dataType: 'json',
-                success: function (data) {
-                    $('#calendar-image').attr('src', data.image_url);
-                    $('#calendar-header').text(data.header);
-                }
-            });
-        }
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    function updateCalendar(eventId) {
+        // Получаем информацию о событии с помощью AJAX-запроса
+        // и обновляем верхнюю часть календаря
+        $.ajax({
+            url: '/get-event-info/',
+            data: {event_id: eventId},
+            dataType: 'json',
+            success: function (data) {
+                $('#calendar-image').css('background-image', 'url("' + data.image_url + '")');
+                $('#calendar-header').text(data.header);
+            }
+        });
+    }
 
-        // Обработчик события клика на числа календаря
+    function getClosestEventId() {
+        var currentDate = new Date();
+        var closestEventId = null;
+        var closestEventDateDiff = Infinity;
+
+        {% for event in events %}
+            var eventDate = new Date("{{ event.date }}");
+            var dateDiff = Math.abs(eventDate - currentDate);
+
+            if (dateDiff < closestEventDateDiff) {
+                closestEventDateDiff = dateDiff;
+                closestEventId = "{{ event.id }}";
+            }
+        {% endfor %}
+
+        return closestEventId;
+    }
+
+    function bindEventHandlers() {
         $('.calendar__number--current').click(function () {
             var eventId = $(this).data('id');
             updateCalendar(eventId);
         });
 
-            </script>
+        var closestEventId = getClosestEventId();
+        updateCalendar(closestEventId);
+    }
 
-
-        </div>
-
-
-        <!-- <div class="row m-rl--1">
-             <div class="calendar spacefree">
-                 <div class="col leftCol">
-                     <div class="content">
-                         <h1 class="date"><a href={{ previous_month }}>&#9664;</a> {{month}} <a href={{ next_month }}>&#9658;</a>
-                         </h1>
-                         <div class="notes">
-
-                             <table>
-                                 <p>Предстоящие события</p>
-                                 {% for event in events %}
-                                 <tr>
-                                     <ul class="noteList">
-                                         <td>
-                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header
-                                                 }}</a></li>
-                                         </td>
-                                         <td>
-                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{
-                                                 event.day|date:"d M" }}</a></li>
-                                         </td>
-                                     </ul>
-                                 </tr>
-                                 {% endfor %}
-                             </table>
-                             <table>
-                                 <p>Вcе события этого месяца</p>
-
-                                 {% for event in allevents %}
-                                 <tr>
-                                     <ul class="noteList">
-                                         <td>
-                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header
-                                                 }}</a></li>
-                                         </td>
-                                         <td>
-                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{
-                                                 event.day|date:"d M" }}</a></li>
-                                         </td>
-                                     </ul>
-                                 </tr>
-                                 {% endfor %}
-                             </table>
-                         </div>
-                     </div>
-                 </div>
-
-                 <div class="col rightCol">
-                     <div class="content">
-                         <h2 class="year">{{year}}</h2>
-                         <div>{{ calendar|safe }}</div>
-                     </div>
-                 </div>
-             </div>
-         </div>
-         -->
-    </div>
-</section>
-
+    bindEventHandlers();
+</script>
 
 </body>
 
 {% endblock content %}
-
