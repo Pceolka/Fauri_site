@@ -61,10 +61,6 @@
                     <div class="left-topbar">
                         <a href="#" class="left-topbar-item"></a>
 
-                        <a href="{% url 'about' %}" class="left-topbar-item">
-                            О нас
-                        </a>
-
                         <a href="{% url 'contact' %}" class="left-topbar-item">
                             Контакты
                         </a>
@@ -116,9 +112,6 @@
         <div class="menu-mobile">
             <ul class="topbar-mobile">
                 <li class="left-topbar">
-                    <a href="{% url 'about' %}" class="left-topbar-item">
-                        О нас
-                    </a>
 
                     <a href="{% url 'contact' %}" class="left-topbar-item">
                         Контакты
@@ -165,7 +158,9 @@
                 <li>
                     <a href="{% url 'calendars' %}">Календарь</a>
                 </li>
-
+                <li>
+                    <a href="{% url 'about' %}">О нас</a>
+                </li>
             </ul>
         </div>
 
@@ -361,10 +356,10 @@
                                         </div>
                                     </div>
 
-                                     <!--  четвертая строчка "тренировки"-->
+                                    <!--  четвертая строчка "тренировки"-->
                                     <div class="tab-pane" id="news-4" role="tabpanel">
                                         <div class="row">
-                                           {% for news in news_train %}
+                                            {% for news in news_train %}
                                             <div class="col-3">
                                                 <!-- Item post -->
                                                 <div>
@@ -416,7 +411,9 @@
                         <li class="mega-menu-item">
                             <a href="{% url 'calendars' %}">Календарь</a>
                         </li>
-
+                        <li class="mega-menu-item">
+                            <a href="{% url 'about' %}"> О нас</a>
+                        </li>
                     </ul>
                 </nav>
             </div>

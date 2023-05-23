@@ -163,10 +163,10 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 [ Header Desktop ]*/
 
-/*==================================================================
+/*==================================================================#111;
 [ Top-bar ]*/
 .topbar {
-  background-color: #111;
+  background-color: #011E41;
 }
 
 .content-topbar {
@@ -645,6 +645,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
   -webkit-transition: transform 0.3s;
   -o-transition: transform 0.3s;
   -moz-transition: transform 0.3s;
+
 }
 
 .fix-menu-desktop .show-main-nav {
@@ -662,7 +663,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .fix-menu-desktop .menu-desktop .logo-stick {
