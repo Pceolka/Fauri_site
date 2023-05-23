@@ -5,69 +5,117 @@
 <body class="animsition">
 
 
-
 <!-- Calendar -->
 <section class="bg0">
     <div class="container">
 
 
-        <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-        <div class="elfsight-app-2ecd6944-ab7f-4bad-8626-62a818dac394"></div>
+        <div class="calendar" style="border: 2px solid black;">
 
-
-        <div class="row m-rl--1">
-            <div class="calendar spacefree">
-                <div class="col leftCol">
-                    <div class="content">
-                        <h1 class="date"><a href={{ previous_month }}>&#9664;</a> {{month}} <a href={{ next_month }}>&#9658;</a>
-                        </h1>
-                        <div class="notes">
-
-                            <table>
-                                <p>Предстоящие события</p>
-                                {% for event in events %}
-                                <tr>
-                                    <ul class="noteList">
-                                        <td>
-                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li>
-                                        </td>
-                                        <td>
-                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li>
-                                        </td>
-                                    </ul>
-                                </tr>
-                                {% endfor %}
-                            </table>
-                            <table>
-                                <p>Вcе события этого месяца</p>
-
-                                {% for event in allevents %}
-                                <tr>
-                                    <ul class="noteList">
-                                        <td>
-                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header }}</a></li>
-                                        </td>
-                                        <td>
-                                            <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.day|date:"d M" }}</a></li>
-                                        </td>
-                                    </ul>
-                                </tr>
-                                {% endfor %}
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col rightCol">
-                    <div class="content">
-                        <h2 class="year">{{year}}</h2>
-                        <div>{{ calendar|safe }}</div>
-                    </div>
-                </div>
+            <div class="calendar__picture">
+                <img src="{{ events.img.url }}" alt="Calendar Image">
+                <h2>{{ events.header }}</h2>
             </div>
+
+            <div class="calendar__date">
+                <div class="calendar__day">Пн</div>
+                <div class="calendar__day">Вт</div>
+                <div class="calendar__day">Ср</div>
+                <div class="calendar__day">Чт</div>
+                <div class="calendar__day">Пн</div>
+                <div class="calendar__day">Сб</div>
+                <div class="calendar__day">Вс</div>
+            </div>
+            {{ calendar|safe }}
+
+            <script>
+        function updateCalendar(eventId) {
+            // Получаем информацию о событии с помощью AJAX-запроса
+            // и обновляем верхнюю часть календаря
+
+            // Пример AJAX-запроса с использованием jQuery:
+            $.ajax({
+                url: '/get-event-info/',
+                data: {event_id: eventId},
+                dataType: 'json',
+                success: function (data) {
+                    $('#calendar-image').attr('src', data.image_url);
+                    $('#calendar-header').text(data.header);
+                }
+            });
+        }
+
+        // Обработчик события клика на числа календаря
+        $('.calendar__number--current').click(function () {
+            var eventId = $(this).data('id');
+            updateCalendar(eventId);
+        });
+
+            </script>
+
+
         </div>
+
+
+        <!-- <div class="row m-rl--1">
+             <div class="calendar spacefree">
+                 <div class="col leftCol">
+                     <div class="content">
+                         <h1 class="date"><a href={{ previous_month }}>&#9664;</a> {{month}} <a href={{ next_month }}>&#9658;</a>
+                         </h1>
+                         <div class="notes">
+
+                             <table>
+                                 <p>Предстоящие события</p>
+                                 {% for event in events %}
+                                 <tr>
+                                     <ul class="noteList">
+                                         <td>
+                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header
+                                                 }}</a></li>
+                                         </td>
+                                         <td>
+                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{
+                                                 event.day|date:"d M" }}</a></li>
+                                         </td>
+                                     </ul>
+                                 </tr>
+                                 {% endfor %}
+                             </table>
+                             <table>
+                                 <p>Вcе события этого месяца</p>
+
+                                 {% for event in allevents %}
+                                 <tr>
+                                     <ul class="noteList">
+                                         <td>
+                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{ event.header
+                                                 }}</a></li>
+                                         </td>
+                                         <td>
+                                             <li class="otstup"><a href="{% url 'single' event.id %}">{{
+                                                 event.day|date:"d M" }}</a></li>
+                                         </td>
+                                     </ul>
+                                 </tr>
+                                 {% endfor %}
+                             </table>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="col rightCol">
+                     <div class="content">
+                         <h2 class="year">{{year}}</h2>
+                         <div>{{ calendar|safe }}</div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+         -->
     </div>
 </section>
+
 
 </body>
 

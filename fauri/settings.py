@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'store.context_processors.trending_texts',
                 'store.context_processors.count_records',
+                'store.context_processors.calendar_context',
             ],
         },
     },

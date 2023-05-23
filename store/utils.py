@@ -18,21 +18,21 @@ class MainCalendar(HTMLCalendar):
         current_day = datetime.datetime.now().day
 
         if day == 0:
-            return '<td class="noday">&nbsp;</td>'  # day outside month
+            return '<div class="calendar__number">&nbsp;</div>'  # day outside month
         else:
             if events_from_day:
-                return '<td class="%s %s">%d%s</td>' % (self.cssclasses[weekday], 'event', day, events_html)
+                return '<div class="calendar__number calendar__number--current %s %s">%d%s</div>' % (self.cssclasses[weekday], 'event', day, events_html)
             elif day == current_day:
-                return '<td class="%s %s">%d%s</td>' % (self.cssclasses[weekday], 'today', day, events_html)
+                return '<div class="calendar__number %s %s">%d%s</div>' % (self.cssclasses[weekday], 'today', day, events_html)
             else:
-                return '<td class="%s">%d%s</td>' % (self.cssclasses[weekday], day, events_html)
+                return '<div class="calendar__number %s">%d%s</div>' % (self.cssclasses[weekday], day, events_html)
 
     def formatweek(self, theweek, events):
         """
         Return a complete week as a table row.
         """
         s = ''.join(self.formatday(d, wd, events) for (d, wd) in theweek)
-        return '<tr>%s</tr>' % s
+        return '<div class="calendar__date">%s</div>' % s
 
     def formatmonth(self, theyear, themonth, withyear=True):
         """
@@ -43,14 +43,12 @@ class MainCalendar(HTMLCalendar):
 
         v = []
         a = v.append
-        a('<table border="0" cellpadding="0" cellspacing="0" class="weekday">')
-        a('\n')
-        a(self.formatweekheader())
+        a('<div class="calendar">')
         a('\n')
         for week in self.monthdays2calendar(theyear, themonth):
             a(self.formatweek(week, events))
             a('\n')
-        a('</table>')
+        a('</div>')
         a('\n')
         return ''.join(v)
 
