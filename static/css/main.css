@@ -1515,12 +1515,12 @@ a.breadcrumb-item:hover {
 
 
 /*==================================================================
-   BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND 
+   BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND BACKGROUND #222
 ==================================================================*/
 .bg-none {background-color: transparent;}
 .bg0 {background-color: #fff;}
 .bg1 {background-color: #111;}
-.bg2 {background-color: #222;}
+.bg2 {background-color: #011E41;}
 .bg3 {background-color: #333;}
 .bg4 {background-color: #444;}
 .bg5 {background-color: #555;}
@@ -1529,7 +1529,7 @@ a.breadcrumb-item:hover {
 .bg8 {background-color: #888;}
 .bg9 {background-color: #999;}
 .bg10 {background-color: #2ED9C3;}
-.bg11 {background-color: #151515;}
+.bg11 {background-color: #011328;}
 
 
 /*---------------------------------------------*/
