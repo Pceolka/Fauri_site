@@ -6,7 +6,7 @@
   height: 100%;
   background-color: #fff;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 2px;
   overflow: hidden;
 
 }
@@ -16,13 +16,22 @@
   height: 200px;
   padding: 20px;
   color: #fff;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+.calendar__picture__page {
+  position: relative;
+  height: 500px;
+  padding: 70px;
+  color: #fff;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .calendar__picture::before {
   content: "";
@@ -69,7 +78,14 @@
 }
 
 .calendar__number--current, .calendar__number:hover {
-  background-color: #009688;
+  background-color: #2ED9C3;
+  color: #fff !important;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.calendar__number--selected, .calendar__number:hover {
+  background-color: #FF671D;
   color: #fff !important;
   font-weight: 700;
   cursor: pointer;
