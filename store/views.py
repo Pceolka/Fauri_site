@@ -50,15 +50,24 @@ def calendars(request):
     return render(request, 'calendars.html')
 
 
+def get_closest_event():
+    current_date = datetime.date.today()
+    closest_event = Event.objects.filter(day__gte=current_date).order_by('day').first()
+    return closest_event
+
+
+from django.urls import reverse
+
 def get_event_info(request):
     event_id = request.GET.get('event_id')
     try:
         event = Event.objects.get(id=event_id)
-        # Вам нужно возвратить необходимую информацию о событии
         data = {
             'image_url': event.image.url,
             'header': event.header,
-            # Дополнительная информация о событии, которую вы хотите передать
+            'event_id': event.id,  # Идентификатор события
+            'date': event.day.strftime("%d.%m.%Y"),  # Преобразуем дату в строку в формате "дд.мм.гггг"
+            'time': event.start_time.strftime("%H:%M") if event.start_time else None,  # Преобразуем время в строку в формате "чч:мм" или None, если время отсутствует
         }
     except Event.DoesNotExist:
         data = {}

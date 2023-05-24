@@ -31,6 +31,13 @@ def count_records(request):
 # Calendar
 
 
+def get_closest_event_id():
+    current_date = datetime.date.today()
+    closest_event = Event.objects.filter(day__gte=current_date).order_by('day').first()
+    if closest_event:
+        return closest_event.id
+    else:
+        return None
 
 
 def calendar_context(request):
@@ -69,8 +76,16 @@ def calendar_context(request):
     html_calendar = cal.formatmonth(d.year, d.month, withyear=True)
     html_calendar = html_calendar.replace('<td ', '<td width="120" height="50"')
 
+    events_list = []
+    for event in events:
+        event_data = {
+            'id': event.id,
+            'date': event.day.strftime("%Y-%m-%d"),
+        }
+        events_list.append(event_data)
 
     return {
+        'events_list': events_list,
         'previous_month': previous_month_link,
         'next_month': next_month_link,
         'year': year,

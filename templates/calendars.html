@@ -7,10 +7,19 @@
 <!-- Calendar -->
 <section class="bg0">
     <div class="container">
+
         <div class="calendar" style="border: 2px solid black;">
             <div class="calendar__picture" id="calendar-image">
-                <h2 id="calendar-header">{{ events.header }}</h2>
+                <div class="calendar__top">
+                    <div class="calendar__date" id="calendar-date"></div>
+                    <div class="calendar__time" id="calendar-time"></div>
+                </div>
+
+                <div class="calendar__header" id="calendar-header" style="position: relative; z-index: 1;">
+                    <a id="event-link" href="/news/{{ event_id }}/" style="pointer-events: auto;">{{ header }}</a>
+                </div>
             </div>
+
 
             <div class="calendar__date">
                 <div class="calendar__day">Пн</div>
@@ -24,55 +33,10 @@
             {{ calendar|safe }}
 
         </div>
+
     </div>
 </section>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-    function updateCalendar(eventId) {
-        // Получаем информацию о событии с помощью AJAX-запроса
-        // и обновляем верхнюю часть календаря
-        $.ajax({
-            url: '/get-event-info/',
-            data: {event_id: eventId},
-            dataType: 'json',
-            success: function (data) {
-                $('#calendar-image').css('background-image', 'url("' + data.image_url + '")');
-                $('#calendar-header').text(data.header);
-            }
-        });
-    }
-
-    function getClosestEventId() {
-        var currentDate = new Date();
-        var closestEventId = null;
-        var closestEventDateDiff = Infinity;
-
-        {% for event in events %}
-            var eventDate = new Date("{{ event.date }}");
-            var dateDiff = Math.abs(eventDate - currentDate);
-
-            if (dateDiff < closestEventDateDiff) {
-                closestEventDateDiff = dateDiff;
-                closestEventId = "{{ event.id }}";
-            }
-        {% endfor %}
-
-        return closestEventId;
-    }
-
-    function bindEventHandlers() {
-        $('.calendar__number--current').click(function () {
-            var eventId = $(this).data('id');
-            updateCalendar(eventId);
-        });
-
-        var closestEventId = getClosestEventId();
-        updateCalendar(closestEventId);
-    }
-
-    bindEventHandlers();
-</script>
 
 </body>
 

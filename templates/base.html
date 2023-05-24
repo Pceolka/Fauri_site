@@ -590,7 +590,64 @@
 		</span>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+function updateCalendar(eventId) {
+    // Получаем информацию о событии с помощью AJAX-запроса
+    // и обновляем верхнюю часть календаря
+    $.ajax({
+        url: '/get-event-info/',
+        data: {event_id: eventId},
+        dataType: 'json',
+        success: function (data) {
+            $('#calendar-image').css('background-image', 'url("' + data.image_url + '")');
+            $('#calendar-header').html('<a href="/news/' + data.event_id + '/">' + data.header + '</a>');
+            $('#calendar-date').text(data.date);
+            $('#calendar-time').text(data.time);
+        }
+    });
+}
 
+function getClosestEventId() {
+    var currentDate = new Date();
+    var closestEventId = null;
+    var closestEventDateDiff = Infinity;
+
+    var events = {{ events_list|safe }};; // Получаем список событий из контекста
+
+    for (var i = 0; i < events.length; i++) {
+        var event = events[i];
+        var eventDate = new Date(event.date);
+        var dateDiff = Math.abs(eventDate - currentDate);
+
+        if (dateDiff < closestEventDateDiff) {
+            closestEventDateDiff = dateDiff;
+            closestEventId = event.id;
+        }
+    }
+
+    return closestEventId;
+}
+
+function bindEventHandlers() {
+    // Обработчик события клика на числа календаря
+    $('.calendar__number--current').click(function () {
+        var eventId = $(this).data('id');
+        updateCalendar(eventId);
+    });
+
+    // Получение информации о ближайшем событии при загрузке страницы
+    var closestEventId = getClosestEventId();
+    if (closestEventId !== null) {
+        updateCalendar(closestEventId);
+    }
+}
+
+// Вызываем функцию привязки обработчиков событий
+bindEventHandlers();
+
+
+</script>
 <!--===============================================================================================-->
 <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->
@@ -600,6 +657,7 @@
 <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 <!--===============================================================================================-->
 <script src="{% static 'js/main.js' %}"></script>
+
 </body>
 
 </html>
