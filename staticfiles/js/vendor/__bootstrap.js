@@ -92,7 +92,7 @@ var Util = function ($) {
     return false;
   }
 
-  function transitionEndEmulator(duration) {
+  function transitionEndEmuMontserratr(duration) {
     var _this = this;
 
     var called = false;
@@ -113,7 +113,7 @@ var Util = function ($) {
   function setTransitionEndSupport() {
     transition = transitionEndTest();
 
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
+    $.fn.emulateTransitionEnd = transitionEndEmuMontserratr;
 
     if (Util.supportsTransitionEnd()) {
       $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();

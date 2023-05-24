@@ -42,30 +42,30 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*------------------------------------------------------------------
 [ 1 ]*/
 @font-face {
-  font-family: Roboto-Regular;
-  src: url('../fonts/Roboto/Roboto-Regular.ttf'); 
+  font-family: Montserrat-Regular;
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
 @font-face {
-  font-family: Roboto-Medium;
-  src: url('../fonts/Roboto/Roboto-Medium.ttf'); 
+  font-family: Montserrat-Medium;
+  src: url('../fonts/Montserrat/Montserrat-Medium.ttf'); 
 }
 
 @font-face {
-  font-family: Roboto-Bold;
-  src: url('../fonts/Roboto/Roboto-Bold.ttf'); 
+  font-family: Montserrat-Bold;
+  src: url('../fonts/Montserrat/Montserrat-Bold.ttf'); 
 }
 
 @font-face {
-  font-family: Roboto-Black;
-  src: url('../fonts/Roboto/Roboto-Black.ttf'); 
+  font-family: Montserrat-Black;
+  src: url('../fonts/Montserrat/Montserrat-Black.ttf'); 
 }
 
 /*------------------------------------------------------------------
 [ 2 ]*/
 @font-face {
-  font-family: Lato-Regular;
-  src: url('../fonts/Lato/Lato-Regular.ttf'); 
+  font-family: Montserrat-Regular;
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf'); 
 }
 
 
@@ -195,7 +195,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .left-topbar-item {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 12px;
   color: #ccc;
   line-height: 1.8;
@@ -396,7 +396,7 @@ a.left-topbar-item:hover {
 }
 
 .main-menu > li > a {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 16px;
   line-height: 1.5;
   color: #222;
@@ -515,7 +515,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 }
 
 .sub-menu a {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 14px;
   line-height: 1.7857;
   color: #222;
@@ -614,7 +614,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 
 /*---------------------------------------------*/
 .sub-mega-menu .nav-pills .nav-link {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 14px;
   line-height: 1.8;
   color: #222;
@@ -753,7 +753,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 }
 
 .main-menu-m > li > a {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 16px;
   color: #fff;
   line-height: 2.8;
@@ -816,7 +816,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 }
 
 .sub-menu-m a {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 15px;
   color: #2ED9C3;
   line-height: 2.5;
@@ -884,7 +884,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 }
 
 .tab01 .nav-link {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 14px;
   color: #555;
   line-height: 1.7;
@@ -1086,7 +1086,7 @@ a.breadcrumb-item:hover {
 /*//////////////////////////////////////////////////////////////////
 [ Pagination ]*/
 .pagi-item {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 13px;
   line-height: 1.5;
   color: #808080;
@@ -1150,73 +1150,73 @@ a.breadcrumb-item:hover {
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
 .f1-s-1 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 14px;
   line-height: 1.7;
 }
 
 .f1-s-2 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 14px;
   line-height: 1.2;
 }
 
 .f1-s-3 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 12px;
   line-height: 1.7;
 }
 
 .f1-s-4 {
-  font-family: Roboto-Bold;
+  font-family: Montserrat-Bold;
   font-size: 12px;
   line-height: 1.7;
 }
 
 .f1-s-5 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 15px;
   line-height: 1.333333;
 }
 
 .f1-s-6 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 12px;
   line-height: 1.7;
 }
 
 .f1-s-7 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 15px;
   line-height: 1.466667;
 }
 
 .f1-s-8 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .f1-s-9 {
-  font-family: Roboto-Black;
+  font-family: Montserrat-Black;
   font-size: 12px;
   line-height: 1.5;
 }
 
 .f1-s-10 {
-  font-family: Roboto-Bold;
+  font-family: Montserrat-Bold;
   font-size: 13px;
   line-height: 1.3;
 }
 
 .f1-s-11 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 14px;
   line-height: 1.8;
 }
 
 .f1-s-12 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 15px;
   line-height: 1.8;
   padding-right: 20px;
@@ -1224,14 +1224,14 @@ a.breadcrumb-item:hover {
 }
 
 .f1-s-13 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 13px;
   line-height: 1.7;
 }
 
 /*---------------------------------------------*/
 .f2-s-1 {
-  font-family: Lato-Regular;
+  font-family: Montserrat-Regular;
   font-size: 14px;
   line-height: 1.7;
 }
@@ -1240,43 +1240,43 @@ a.breadcrumb-item:hover {
 /*//////////////////////////////////////////////////////////////////
 [ M-Text 16 - 25 ]*/
 .f1-m-1 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 16px;
   line-height: 1.5;
 }
 
 .f1-m-2 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 18px;
   line-height: 1.333333;
 }
 
 .f1-m-3 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 20px;
   line-height: 1.25;
 }
 
 .f1-m-4 {
-  font-family: Roboto-Bold;
+  font-family: Montserrat-Bold;
   font-size: 16px;
   line-height: 1.5;
 }
 
 .f1-m-5 {
-  font-family: Roboto-Bold;
+  font-family: Montserrat-Bold;
   font-size: 24px;
   line-height: 1.3;
 }
 
 .f1-m-6 {
-  font-family: Roboto-Regular;
+  font-family: Montserrat-Regular;
   font-size: 18px;
   line-height: 1.333333;
 }
 
 .f1-m-7 {
-  font-family: Roboto-Bold;
+  font-family: Montserrat-Bold;
   font-size: 20px;
   line-height: 1.3;
 }
@@ -1285,31 +1285,31 @@ a.breadcrumb-item:hover {
 /*//////////////////////////////////////////////////////////////////
 [ L-Text >= 26 ]*/
 .f1-l-1 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 30px;
   line-height: 1.2;
 }
 
 .f1-l-2 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 22px;
   line-height: 1.272727;
 }
 
 .f1-l-3 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 30px;
   line-height: 1.3;
 }
 
 .f1-l-4 {
-  font-family: Roboto-Bold;
+  font-family: Montserrat-Bold;
   font-size: 22px;
   line-height: 1.545454;
 }
 
 .f1-l-5 {
-  font-family: Roboto-Medium;
+  font-family: Montserrat-Medium;
   font-size: 36px;
   line-height: 1.333333;
 }

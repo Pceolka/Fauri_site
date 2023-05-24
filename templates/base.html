@@ -632,6 +632,12 @@ function getClosestEventId() {
 function bindEventHandlers() {
     // Обработчик события клика на числа календаря
     $('.calendar__number--current').click(function () {
+        // Удаляем класс .calendar__number--selected у предыдущего выбранного элемента
+        $('.calendar__number--current').removeClass('calendar__number--selected');
+
+        // Добавляем класс .calendar__number--selected к выбранной дате
+        $(this).addClass('calendar__number--selected');
+
         var eventId = $(this).data('id');
         updateCalendar(eventId);
     });

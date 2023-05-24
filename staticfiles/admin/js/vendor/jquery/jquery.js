@@ -506,7 +506,7 @@ jQuery.each( "Boolean Number String Function Array Date RegExp Object Error Symb
 
 function isArrayLike( obj ) {
 
-	// Support: real iOS 8.2 only (not reproducible in simulator)
+	// Support: real iOS 8.2 only (not reproducible in simuMontserratr)
 	// `in` check used to prevent JIT error (gh-2145)
 	// hasOwn isn't used here due to false negatives
 	// regarding Nodelist length in IE
@@ -9191,11 +9191,11 @@ function inspectPrefiltersOrTransports( structure, options, originalOptions, jqX
 // Fixes trac-9887
 function ajaxExtend( target, src ) {
 	var key, deep,
-		flatOptions = jQuery.ajaxSettings.flatOptions || {};
+		fMontserratptions = jQuery.ajaxSettings.fMontserratptions || {};
 
 	for ( key in src ) {
 		if ( src[ key ] !== undefined ) {
-			( flatOptions[ key ] ? target : ( deep || ( deep = {} ) ) )[ key ] = src[ key ];
+			( fMontserratptions[ key ] ? target : ( deep || ( deep = {} ) ) )[ key ] = src[ key ];
 		}
 	}
 	if ( deep ) {
@@ -9434,7 +9434,7 @@ jQuery.extend( {
 		// you can add your own custom options here if
 		// and when you create one that shouldn't be
 		// deep extended (see ajaxExtend)
-		flatOptions: {
+		fMontserratptions: {
 			url: true,
 			context: true
 		}
@@ -10953,7 +10953,7 @@ jQuery.noConflict = function( deep ) {
 
 // Expose jQuery and $ identifiers, even in AMD
 // (trac-7102#comment:10, https://github.com/jquery/jquery/pull/557)
-// and CommonJS for browser emulators (trac-13566)
+// and CommonJS for browser emuMontserratrs (trac-13566)
 if ( typeof noGlobal === "undefined" ) {
 	window.jQuery = window.$ = jQuery;
 }
