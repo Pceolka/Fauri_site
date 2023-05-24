@@ -43,12 +43,16 @@
   background-position: center;
   background-size: cover;
 }
-.calendar__picture h2 {
-  margin: 0;
+.calendar a {
+  font-size: 30px;
+  color: #2ED9C3;
+  text-shadow: 1px 1px 1px #000000;
 }
-.calendar__picture h3 {
+.calendar_font {
   margin: 0;
   font-weight: 500;
+  color: #FF671D;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 .calendar__date {
