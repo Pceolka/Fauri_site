@@ -12,10 +12,13 @@
                  style="background-image: url({{recent_news.0.image.url}});">
                 <a href="{% url 'single' recent_news.0.id %}" class="dis-block how1-child1 trans-03"></a>
 
+
                 <div class="flex-col-e-s s-full p-rl-25 p-tb-18">
-                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
-                        {{recent_news.0.category}}
+                    <a href="{% url 'news_by_category' category=recent_news.0.category %}"
+                       class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                        {{ recent_news.0.category }}
                     </a>
+
 
                     <h3 class="how1-child2 m-t-14 m-b-10">
                         <a href="{% url 'single' recent_news.0.id %}" class="f1-l-1 cl0 hov-cl10 trans-03 respon1">
@@ -32,7 +35,7 @@
                 <a href="{% url 'single' recent_news.1.id %}" class="dis-block how1-child1 trans-03"></a>
 
                 <div class="flex-col-e-s s-full p-rl-25 p-tb-18">
-                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                    <a href="{% url 'news_by_category' category=recent_news.1.category %}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                         {{recent_news.1.category}}
                     </a>
 
@@ -51,7 +54,7 @@
                 <a href="{% url 'single' recent_news.2.id %}" class="dis-block how1-child1 trans-03"></a>
 
                 <div class="flex-col-e-s s-full p-rl-25 p-tb-18">
-                    <a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+                    <a href="{% url 'news_by_category' category=recent_news.2.category %}" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
                         {{recent_news.2.category}}
                     </a>
 
@@ -108,7 +111,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_competition.0.creation_day }}
+													{{ news_competition.0.creation_day|date:"d M" }}
 												</span>
 
 											</span>
@@ -142,7 +145,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_competition.1.creation_day }}
+													{{ news_competition.1.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -172,7 +175,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_competition.1.creation_day }}
+													{{ news_competition.1.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -215,7 +218,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_worldcomp.0.creation_day }}
+													{{ news_worldcomp.0.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -247,7 +250,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_worldcomp.1.creation_day }}
+													{{ news_worldcomp.1.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -277,7 +280,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_worldcomp.2.creation_day }}
+													{{ news_worldcomp.2.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -320,7 +323,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_event.0.creation_day }}
+													{{ news_event.0.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -352,7 +355,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_event.1.creation_day }}
+													{{ news_event.1.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -382,7 +385,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_event.2.creation_day }}
+													{{ news_event.2.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -426,7 +429,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_train.0.creation_day }}
+													{{ news_train.0.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -457,7 +460,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_train.1.creation_day }}
+													{{ news_train.1.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -490,7 +493,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_train.2.creation_day }}
+													{{ news_train.2.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -521,7 +524,7 @@
 												</span>
 
 												<span class="f1-s-3">
-													{{ news_train.3.creation_day }}
+													{{ news_train.3.creation_day|date:"d M" }}
 												</span>
 											</span>
                                     </div>
@@ -595,33 +598,39 @@
 
 
                     <!--Calendar  -->
-                    <div class="flex-c-s p-t-8 p-b-65">
+                    <div class="p-b-55">
+                        <div class="how2 how2-cl4 flex-s-c m-b-30">
+                            <h3 class="f1-m-2 cl3 tab01-title">
+                                Календарь
+                            </h3>
+                        </div>
 
-        <div class="calendar f1-m-1" style="border:1px solid #00000066;">
-            <div class="calendar__picture" id="calendar-image">
-                <div class="calendar__top">
-                    <div class="calendar__date calendar_font" id="calendar-date"></div>
-                    <div class="calendar__time calendar_font" id="calendar-time"></div>
-                </div>
+                        <div class="calendar f1-m-1" style="border:1px solid #00000066;">
+                            <div class="calendar__picture" id="calendar-image">
+                                <div class="calendar__top">
+                                    <div class="calendar__date calendar_font" id="calendar-date"></div>
+                                    <div class="calendar__time calendar_font" id="calendar-time"></div>
+                                </div>
 
-                <div class="calendar__header" id="calendar-header" style="text-align: center;">
-                    <a id="event-link" href="/news/{{ event_id }}/" style="pointer-events: auto;">{{ header }}</a>
-                </div>
-            </div>
+                                <div class="calendar__header" id="calendar-header" style="text-align: center;">
+                                    <a id="event-link" href="/news/{{ event_id }}/" style="pointer-events: auto;">{{
+                                        header }}</a>
+                                </div>
+                            </div>
 
 
-            <div class="calendar__date">
-                <div class="calendar__day">Пн</div>
-                <div class="calendar__day">Вт</div>
-                <div class="calendar__day">Ср</div>
-                <div class="calendar__day">Чт</div>
-                <div class="calendar__day">Пн</div>
-                <div class="calendar__day">Сб</div>
-                <div class="calendar__day">Вс</div>
-            </div>
-            {{ calendar|safe }}
+                            <div class="calendar__date">
+                                <div class="calendar__day">Пн</div>
+                                <div class="calendar__day">Вт</div>
+                                <div class="calendar__day">Ср</div>
+                                <div class="calendar__day">Чт</div>
+                                <div class="calendar__day">Пн</div>
+                                <div class="calendar__day">Сб</div>
+                                <div class="calendar__day">Вс</div>
+                            </div>
+                            {{ calendar|safe }}
 
-        </div>
+                        </div>
 
                     </div>
 
@@ -676,22 +685,22 @@
                         </div>
 
                         <div class="flex-wr-s-s m-rl--5">
-                            <a href="#"
+                            <a href="{% url 'news_by_category' category='соревнования' %}"
                                class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 Соревнования
                             </a>
 
-                            <a href="#"
+                            <a href="{% url 'news_by_category' category='события' %}"
                                class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 События
                             </a>
 
-                            <a href="#"
+                            <a href="{% url 'news_by_category' category='международные соревнования' %}"
                                class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 Международные соревнования
                             </a>
 
-                            <a href="#"
+                            <a href="{% url 'news_by_category' category='тренировки' %}"
                                class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 Тренировки
                             </a>
