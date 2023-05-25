@@ -13,7 +13,6 @@
 .calendar__picture {
   position: relative;
   height: 200px;
-
   color: #fff;
   box-sizing: border-box;
   background-repeat: no-repeat;
@@ -26,7 +25,7 @@
 }
 .calendar__picture__page {
   position: relative;
-  height: 500px;
+  height: 300px;
   padding: 70px;
   color: #fff;
   box-sizing: border-box;
