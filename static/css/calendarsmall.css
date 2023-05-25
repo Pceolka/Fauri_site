@@ -13,14 +13,17 @@
 .calendar__picture {
   position: relative;
   height: 200px;
-  padding: 20px;
+
   color: #fff;
   box-sizing: border-box;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
 
+}
+.calendar__header {
+ position: relative; z-index: 1;
+}
 .calendar__picture__page {
   position: relative;
   height: 500px;
@@ -45,22 +48,29 @@
 }
 .calendar a {
   font-size: 30px;
-  color: #2ED9C3;
+  color: #fff;
   text-shadow: 1px 1px 1px #000000;
 }
 .calendar_font {
   margin: 0;
   font-weight: 500;
-  color: #FF671D;
   text-shadow: 1px 1px 1px #000000;
 }
 
 .calendar__date {
-  padding: 20px;
+  padding: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
   grid-gap: 10px;
   box-sizing: border-box;
+}
+.calendar__time {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+  grid-gap: 10px;
+  box-sizing: border-box;
+  justify-content: end;
 }
 
 .calendar__day {
@@ -92,4 +102,12 @@
   color: #fff !important;
   font-weight: 700;
   cursor: pointer;
+}
+.calendar__top {
+    display: flex;
+    align-items: center;
+}
+
+.calendar__time {
+    margin-left: 100px;
 }
