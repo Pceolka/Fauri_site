@@ -85,6 +85,7 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     'https://faurisite-production.up.railway.app',
+    'https://fauri.up.railway.app/',
     'https://faurisait-production.up.railway.app'
 ]
 
