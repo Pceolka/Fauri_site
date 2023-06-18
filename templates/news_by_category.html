@@ -1,101 +1,183 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-</head>
-
 <body class="animsition">
-
 <!-- Breadcrumb -->
 <div class="container">
-    <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
-
+    <div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
     </div>
 </div>
 
-<!-- Content -->
-<section class="bg0 p-b-140 p-t-10">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8 p-b-30">
-                <div class="p-r-10 p-r-0-sr991">
-                    <!-- Blog Detail -->
-                    <div class="p-b-70">
-                        <a class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-                            {{news.category}}
-                        </a>
 
-                        <h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
-                            {{news.header}}
+<!-- Page heading -->
+<div class="container p-t-4 p-b-40">
+    <h2 class="f1-l-1 cl2">
+        {{ category_title }}
+    </h2>
+</div>
+
+<!-- Feature post -->
+<section class="bg0">
+    <div class="container">
+        <div class="row m-rl--1">
+            <div class="col-md-6 p-rl-1 p-b-2">
+                <div class="bg-img1 size-a-3 how1 pos-relative"
+                     style="background-image: url({{ news_list.0.image.url }});">
+                    <a href="{% url 'single' news_list.0.id %}" class="dis-block how1-child1 trans-03"></a>
+
+                    <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+
+                        <h3 class="how1-child2 m-t-14 m-b-10">
+                            <a href="{% url 'single' news_list.0.id %}"
+                               class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+                                {{news_list.0.header}}
+                            </a>
                         </h3>
 
-                        <div class="flex-wr-s-s p-b-40">
-								<span class="f1-s-3 cl8 m-r-15">
-									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										Пост создан: {{news.author}}
-									</a>
-
-									<span class="m-rl-3">-</span>
-
-									<span>
-										{{news.creation_day}}
-									</span>
+                        <span class="how1-child2">
+								<span class="f1-s-4 cl11">
+									{{news_list.0.author}}
 								</span>
 
-                        </div>
-
-                        <div class="wrap-pic-max-w p-b-30">
-                            <img src="{{news.image.url}}" alt="IMG">
-                        </div>
-
-                        <p class="f1-s-11 cl6 p-b-25">
-                            {{news.description|safe}}
-                        </p>
-
-
-                        <!-- Share -->
-                        <br>
-                        <div class="flex-s-s">
-								<span class="f1-s-12 cl5 p-t-1 m-r-15">
-									Поделись:
+								<span class="f1-s-3 cl11 m-rl-3">
+									-
 								</span>
 
-                            <div class="flex-wr-s-s size-w-0">
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-facebook-f m-r-7"></i>
-                                    Facebook
-                                </a>
-
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-twitter m-r-7"></i>
-                                    Twitter
-                                </a>
-
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-google-plus-g m-r-7"></i>
-                                    Google+
-                                </a>
-
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-pinterest-p m-r-7"></i>
-                                    Pinterest
-                                </a>
-                            </div>
-                        </div>
+								<span class="f1-s-3 cl11">
+									{{news_list.0.creation_day|date:"d M" }}
+								</span>
+							</span>
                     </div>
                 </div>
             </div>
 
+            <div class="col-md-6 p-rl-1">
+                <!--{% comment %}
+                <div class="row m-rl--1">
+                    <div class="col-sm-6 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-14 how1 pos-relative"
+                             style="background-image: url({{ news_list.1.image.url }});">
+                            <a href="{% url 'single' news_list.1.id %}" class="dis-block how1-child1 trans-03"></a>
+
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{% url 'single' news_list.1.id %}"
+                                       class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        {{news_list.1.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-14 how1 pos-relative"
+                             style="background-image: url({{ news_list.2.image.url }});">
+                            <a href="{% url 'single' news_list.2.id %}" class="dis-block how1-child1 trans-03"></a>
+
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{% url 'single' news_list.2.id %}"
+                                       class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        {{news_list.2.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-14 how1 pos-relative"
+                             style="background-image: url({{ news_list.3.image.url }});">
+                            <a href="{% url 'single' news_list.3.id %}" class="dis-block how1-child1 trans-03"></a>
+
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{% url 'single' news_list.3.id %}"
+                                       class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                        {{news_list.3.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 p-rl-1 p-b-2">
+                        <div class="bg-img1 size-a-14 how1 pos-relative"
+                             style="background-image: url({{ news_list.4.image.url }});">
+                            <a href="{% url 'single' news_list.4.id %}" class="dis-block how1-child1 trans-03"></a>
+
+                            <div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+
+                                <h3 class="how1-child2 m-t-14">
+                                    <a href="{% url 'single' news_list.4.id %}"
+                                       class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+                                         {{news_list.4.header}}
+                                    </a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endcomment %}-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Post -->
+<section class="bg0 p-t-70 p-b-55">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8 p-b-80">
+                <div class="row">
+                    {% for news in news_list %}
+                    <div class="col-sm-6 p-r-25 p-r-15-sr991">
+                        <!-- Item latest -->
+                        <div class="m-b-45">
+                            <a href="{% url 'single' news.id %}" class="wrap-pic-w hov1 trans-03">
+                                <img src="{{ news.image.url }}" alt="IMG">
+                            </a>
+
+                            <div class="p-t-16">
+                                <h5 class="p-b-5">
+                                    <a href="{% url 'single' news.id %}" class="f1-m-3 cl2 hov-cl10 trans-03">
+                                        {{ news.header }}
+                                    </a>
+                                </h5>
+
+                                <span class="cl8">
+										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+											{{ news.author }}
+										</a>
+
+										<span class="f1-s-3 m-rl-3">
+											-
+										</span>
+
+										<span class="f1-s-3">
+											{{ news.creation_day|date:"d M" }}
+										</span>
+									</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex-wr-s-c m-rl--7 p-t-15">
+                    <a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">1</a>
+                    <a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">2</a>
+                </div>
+            </div>
             <!-- Sidebar -->
-            <div class="col-md-10 col-lg-4 p-b-30">
-                <div class="p-l-10 p-rl-0-sr991 p-t-70">
+            <div class="col-md-10 col-lg-4 p-b-80">
+                <div class="p-l-10 p-rl-0-sr991">
 
                     <!--Calendar  -->
                     <div class="p-b-55">
@@ -259,16 +341,15 @@
                             </a>
 
                         </div>
-
-
-                        </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </div>
 </section>
 
-
 </body>
+
 {% endblock content %}
