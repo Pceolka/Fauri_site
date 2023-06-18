@@ -9,33 +9,33 @@
 
 <body class="animsition">
 
-<!-- Breadcrumb -->
-<div class="container">
-    <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+	<!-- Breadcrumb -->
+	<div class="container">
+		<div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
 
-    </div>
-</div>
+		</div>
+	</div>
 
-<!-- Content -->
-<section class="bg0 p-b-140 p-t-10">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-10 col-lg-8 p-b-30">
-                <div class="p-r-10 p-r-0-sr991">
-                    <!-- Blog Detail -->
-                    <div class="p-b-70">
-                        <a class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-                            {{news.category}}
-                        </a>
+	<!-- Content -->
+	<section class="bg0 p-b-140 p-t-10">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-10 col-lg-8 p-b-30">
+					<div class="p-r-10 p-r-0-sr991">
+						<!-- Blog Detail -->
+						<div class="p-b-70">
+							<a href="#" class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
+								 {{news.category}}
+							</a>
 
-                        <h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
-                            {{news.header}}
-                        </h3>
+							<h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
+								 {{news.header}}
+							</h3>
 
-                        <div class="flex-wr-s-s p-b-40">
+							<div class="flex-wr-s-s p-b-40">
 								<span class="f1-s-3 cl8 m-r-15">
 									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										Пост создан: {{news.author}}
+										{{news.author}}
 									</a>
 
 									<span class="m-rl-3">-</span>
@@ -45,119 +45,153 @@
 									</span>
 								</span>
 
-                        </div>
+							</div>
 
-                        <div class="wrap-pic-max-w p-b-30">
-                            <img src="{{news.image.url}}" alt="IMG">
-                        </div>
+							<div class="wrap-pic-max-w p-b-30">
+								<img src="{{news.image.url}}" alt="IMG">
+							</div>
 
-                        <p class="f1-s-11 cl6 p-b-25">
-                            {{news.description|safe}}
-                        </p>
+							<p class="f1-s-11 cl6 p-b-25">
+                                 {{news.description|safe}}
+                            </p>
 
 
-                        <!-- Share -->
-                        <br>
-                        <div class="flex-s-s">
+							<!-- Share -->
+                            <br>
+							<div class="flex-s-s">
 								<span class="f1-s-12 cl5 p-t-1 m-r-15">
 									Поделись:
 								</span>
 
-                            <div class="flex-wr-s-s size-w-0">
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-facebook-f m-r-7"></i>
-                                    Facebook
-                                </a>
+								<div class="flex-wr-s-s size-w-0">
+									<a href="#" class="dis-block f1-s-13 cl0 bg-facebook borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-facebook-f m-r-7"></i>
+										Facebook
+									</a>
 
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-twitter m-r-7"></i>
-                                    Twitter
-                                </a>
+									<a href="#" class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-twitter m-r-7"></i>
+										Twitter
+									</a>
 
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-google-plus-g m-r-7"></i>
-                                    Google+
-                                </a>
+									<a href="#" class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-google-plus-g m-r-7"></i>
+										Google+
+									</a>
 
-                                <a href="#"
-                                   class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-                                    <i class="fab fa-pinterest-p m-r-7"></i>
-                                    Pinterest
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+									<a href="#" class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
+										<i class="fab fa-pinterest-p m-r-7"></i>
+										Pinterest
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-            <!-- Sidebar -->
-            <div class="col-md-10 col-lg-4 p-b-30">
-                <div class="p-l-10 p-rl-0-sr991 p-t-70">
+				<!-- Sidebar -->
+				<div class="col-md-10 col-lg-4 p-b-30">
+					<div class="p-l-10 p-rl-0-sr991 p-t-70">
 
-                    <!--Calendar  -->
-                    <div class="p-b-55">
-                        <div class="how2 how2-cl4 flex-s-c m-b-30">
-                            <h3 class="f1-m-2 cl3 tab01-title">
-                                Календарь
-                            </h3>
-                        </div>
+						<!-- Archive -->
+						<div class="p-b-37">
+							<div class="how2 how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									Archive
+								</h3>
+							</div>
 
-                        <div class="calendar f1-m-1" style="border:1px solid #00000066;">
-                            <div class="calendar__picture" id="calendar-image">
-                                <div class="calendar__top">
-                                    <div class="calendar__date calendar_font" id="calendar-date"></div>
-                                    <div class="calendar__time calendar_font" id="calendar-time"></div>
-                                </div>
+							<ul class="p-t-32">
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											July 2018
+										</span>
+									</a>
+								</li>
 
-                                <div class="calendar__header" id="calendar-header" style="text-align: center;">
-                                    <a id="event-link" href="/news/{{ event_id }}/" style="pointer-events: auto;">{{
-                                        header }}</a>
-                                </div>
-                            </div>
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											June 2018
+										</span>
+									</a>
+								</li>
 
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											May 2018
+										</span>
+									</a>
+								</li>
 
-                            <div class="calendar__date">
-                                <div class="calendar__day">Пн</div>
-                                <div class="calendar__day">Вт</div>
-                                <div class="calendar__day">Ср</div>
-                                <div class="calendar__day">Чт</div>
-                                <div class="calendar__day">Пн</div>
-                                <div class="calendar__day">Сб</div>
-                                <div class="calendar__day">Вс</div>
-                            </div>
-                            {{ calendar|safe }}
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											April  2018
+										</span>
+									</a>
+								</li>
 
-                        </div>
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											March 2018
+										</span>
+									</a>
+								</li>
 
-                    </div>
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											February 2018
+										</span>
+									</a>
+								</li>
 
-                    <!-- Popular Posts -->
-                    <div class="p-b-30">
-                        <div class="how2 how2-cl4 flex-s-c">
-                            <h3 class="f1-m-2 cl3 tab01-title">
-                                Последние новости
-                            </h3>
-                        </div>
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											January 2018
+										</span>
+									</a>
+								</li>
 
-                        <ul class="p-t-35">
-                            <li class="flex-wr-sb-s p-b-30">
-                                <a href="{% url 'single' news_all.0.id %}" class="size-w-10 wrap-pic-w hov1 trans-03">
-                                    <img src="{{ news_all.0.image.url }}" alt="IMG">
-                                </a>
+								<li class="p-rl-4 p-b-19">
+									<a href="#" class="flex-wr-sb-c f1-s-10 text-uppercase cl2 hov-cl10 trans-03">
+										<span>
+											December 2017
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
 
-                                <div class="size-w-11">
-                                    <h6 class="p-b-4">
-                                        <a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                            {{ news_all.0.header }}
-                                        </a>
-                                    </h6>
+						<!-- Popular Posts -->
+						<div class="p-b-30">
+							<div class="how2 how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									Популярные статьи
+								</h3>
+							</div>
 
-                                    <span class="cl8 txt-center p-b-24">
+							<ul class="p-t-35">
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/popular-post-04.jpg" alt="IMG">
+									</a>
+
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+												Donec metus orci, malesuada et lectus vitae
+											</a>
+										</h6>
+
+										<span class="cl8 txt-center p-b-24">
 											<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-												{{ news_all.0.author }}
+												Music
 											</a>
 
 											<span class="f1-s-3 m-rl-3">
@@ -165,27 +199,27 @@
 											</span>
 
 											<span class="f1-s-3">
-												{{ news_all.0.creation_day|date:"d M" }}
+												Feb 18
 											</span>
 										</span>
-                                </div>
-                            </li>
+									</div>
+								</li>
 
-                            <li class="flex-wr-sb-s p-b-30">
-                                <a href="{% url 'single' news_all.1.id %}" class="size-w-10 wrap-pic-w hov1 trans-03">
-                                    <img src="{{ news_all.1.image.url }}" alt="IMG">
-                                </a>
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/popular-post-05.jpg" alt="IMG">
+									</a>
 
-                                <div class="size-w-11">
-                                    <h6 class="p-b-4">
-                                        <a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                            {{ news_all.1.header }}
-                                        </a>
-                                    </h6>
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+												Donec metus orci, malesuada et lectus vitae
+											</a>
+										</h6>
 
-                                    <span class="cl8 txt-center p-b-24">
+										<span class="cl8 txt-center p-b-24">
 											<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-												{{ news_all.1.author }}
+												Game
 											</a>
 
 											<span class="f1-s-3 m-rl-3">
@@ -193,27 +227,27 @@
 											</span>
 
 											<span class="f1-s-3">
-												{{ news_all.1.creation_day|date:"d M" }}
+												Feb 16
 											</span>
 										</span>
-                                </div>
-                            </li>
+									</div>
+								</li>
 
-                            <li class="flex-wr-sb-s p-b-30">
-                                <a href="{% url 'single' news_all.2.id %}" class="size-w-10 wrap-pic-w hov1 trans-03">
-                                    <img src="{{ news_all.2.image.url }}" alt="IMG">
-                                </a>
+								<li class="flex-wr-sb-s p-b-30">
+									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="images/popular-post-06.jpg" alt="IMG">
+									</a>
 
-                                <div class="size-w-11">
-                                    <h6 class="p-b-4">
-                                        <a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-                                            {{ news_all.2.header }}
-                                        </a>
-                                    </h6>
+									<div class="size-w-11">
+										<h6 class="p-b-4">
+											<a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+												Donec metus orci, malesuada et lectus vitae
+											</a>
+										</h6>
 
-                                    <span class="cl8 txt-center p-b-24">
+										<span class="cl8 txt-center p-b-24">
 											<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-												{{ news_all.2.author }}
+												Celebrity
 											</a>
 
 											<span class="f1-s-3 m-rl-3">
@@ -221,53 +255,49 @@
 											</span>
 
 											<span class="f1-s-3">
-												{{ news_all.0.creation_day|date:"d M" }}
+												Feb 12
 											</span>
 										</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+									</div>
+								</li>
+							</ul>
+						</div>
 
-                    <!-- Tag -->
-                    <div>
-                        <div class="how2 how2-cl4 flex-s-c m-b-30">
-                            <h3 class="f1-m-2 cl3 tab01-title">
-                                Tags
-                            </h3>
-                        </div>
+						<!-- Tag -->
+						<div>
+							<div class="how2 how2-cl4 flex-s-c m-b-30">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									Tags
+								</h3>
+							</div>
 
-                        <div class="flex-wr-s-s m-rl--5">
-                            <a href="{% url 'news_by_category' category='соревнования' %}"
-                               class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Соревнования
-                            </a>
+							<div class="flex-wr-s-s m-rl--5">
+								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+									Соревнования
+								</a>
+								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+									Событие
+								</a>
 
-                            <a href="{% url 'news_by_category' category='события' %}"
-                               class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                События
-                            </a>
+								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+									Международные соревнования
+								</a>
 
-                            <a href="{% url 'news_by_category' category='международные соревнования' %}"
-                               class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Международные соревнования
-                            </a>
-
-                            <a href="{% url 'news_by_category' category='тренировки' %}"
-                               class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-                                Тренировки
-                            </a>
-
-                        </div>
+								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+									Тренировка
+								</a>
 
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
 
 
 </body>

@@ -32,24 +32,6 @@ def about(request):
     return render(request, "about.html")
 
 
-def news_by_category(request, category):
-    # Получаем список новостей для указанной категории
-    news_list = Event.objects.filter(category=category).order_by('-creation_day')
-
-    category_title = category
-
-    # Получаем список всех категорий
-    category_list = Event.objects.values_list('category', flat=True).distinct()
-
-    context = {
-        'category_list': category_list,
-        'category_title': category_title,
-        'news_list': news_list
-    }
-
-    return render(request, 'news_by_category.html', context)
-
-
 def contact(request):
     return render(request, "contact.html")
 
