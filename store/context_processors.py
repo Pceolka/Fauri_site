@@ -5,6 +5,8 @@ import calendar
 from .models import Event
 from .utils import MainCalendar
 from django.utils.html import mark_safe
+from django.db.models import Q
+
 
 def trending_texts(request):
     trending_text = Trending.objects.all()

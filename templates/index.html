@@ -1,0 +1,291 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="ru">
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="{% static 'css2/vendor/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css2/vendor/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'css2/vendor/slick.css' %}" rel="stylesheet" />
+    <link href="{% static 'css2/vendor/slick-theme.css' %}" rel="stylesheet" />
+    <link href="{% static 'css2/vendor/odometer-theme-default.css' %}" rel="stylesheet" />
+    <link href="{% static 'css2/main.css' %}" rel="stylesheet" />
+</head>
+<body>
+
+
+<section class="our-history"></section>
+
+
+    <div class="home-slider">
+        <div class="home-slider--wrapper">
+            <div>
+                <div class="home-slider--wrapper__inner" style="background-image: url({{'/static/assets/img/slider.jpg'}});">
+                    <div class="container">
+                        <h3>Orienteering</h3>
+                        <h1>WELCOME TO Fauri</h1>
+                        <span class="dot-dash">.</span>
+                        <p> The orienteering team that embraces the passion for adventure and sport.
+We bring together people who are passionate about orienteering and strive to reach new heights in this exciting sport.</p>
+                        <div class="slider-buttons">
+                            <a href="#" class="button">Get Started Now</a>
+                            <a href="#" class="button button-w">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="home-slider--wrapper__inner" style="background-image: url({{'/static/assets/img/slider.jpg'}});">
+                    <div class="container">
+                        <h3>Orienteare sportiva</h3>
+                        <h1>Buna la Fauri</h1>
+                        <span class="dot-dash">.</span>
+                        <p>Echipa de orientare care îmbrățișează pasiunea pentru aventură și sport.
+Unim oamenii pasionați de orientare și ne străduim să atingem noi înălțimi în acest sport captivant.
+</p>
+                        <div class="slider-buttons">
+                            <a href="#" class="button">Incepe acum</a>
+                            <a href="#" class="button button-w">stii mai mult </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="home-slider--wrapper__inner" style="background-image: url({{'/static/assets/img/slider.jpg'}});">
+                    <div class="container">
+                        <h3>Ориентирование </h3>
+                        <h1>Приветствуем в Fauri</h1>
+                        <span class="dot-dash">.</span>
+                        <p>Команда ориентирования, воплощающая страсть к приключениям и спорту.
+Мы объединяем людей, влюбленных в ориентирование, и стремимся к достижению новых высот в этом увлекательном виде спорта.
+</p>
+                        <div class="slider-buttons">
+                            <a href="#" class="button">Начать сейчас</a>
+                            <a href="#" class="button button-w">Узнать больше</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-slider--nav">
+            <div class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+            <div class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+        </div>
+        <div class="home-slider--anchor">
+            <span><i class="fa fa-anchor" aria-hidden="true"></i></span>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <section class="four-elements">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="four-elements--image"><i class="fa fa-eye" aria-hidden="true"></i></div>
+                        <h3>Международные соревнования</h3>
+                        <p>Наша команда профессионалов проводит соревнования высокого уровня.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="four-elements--image"><i class="fa fa-heart" aria-hidden="true"></i></div>
+                        <h3>Дружелюбная команда</h3>
+                        <p>В команде всегда приятная и дружеская атмосфера.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="four-elements--image"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                        <h3>Креативная команда</h3>
+                        <p>Мы всегда пробуем что то новое, и не боимся экспериментировать </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="four-elements--image"><i class="fa fa-comments-o" aria-hidden="true"></i></div>
+                        <h3>Обучение для детей</h3>
+                        <p>У нас большой выбор тренеров для ваших детей, что является бесплатным,так же обучаем и взрослых.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="our-history">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-sm-12 col-xs-12">
+                        <img src="{% static 'assets/img/Monitor.png' %}" alt="" />
+                    </div>
+                    <div class="col-md-7 col-sm-12 col-xs-12">
+                        <h2>Наша история</h2>
+                        <p>Добро пожаловать в клуб спортивного ориентирования Fauri, где страсть к приключениям и постоянное совершенствование навыков встречаются с невероятными достижениями. Мы предлагаем уникальный опыт ориентирования на природе, сочетая физическую активность, интеллектуальные вызовы и командную работу.
+</p>
+                        <p> Наш клуб посвящен расширению границ спортивного ориентирования и продвижению этой увлекательной дисциплины в нашей стране. Присоединяйтесь к нам и откройте для себя захватывающий мир ориентирования!</p>
+                        <a href="#" class="button">Присоединиться к нам</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="case-study">
+            <div class="container">
+                <h2>Примеры</h2>
+                <p>Примеры нашей деятельности</p>
+                <span class="dot-dash dark">.</span>
+            </div>
+            <div class="container">
+                <div class="case-study--sliders">
+                    <div class="case-study--left">
+                        <div class="case-study--left__textslider">
+                            <div>
+                                <div class="case-study--left__textslider__image"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                                <h4>Accumulate creative ideas</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip sum has been the industry's standard dummy text ever since the 1500s, when an unk- nown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <a href="#" class="button small">Read More</a>
+                            </div>
+                            <div>
+                                <div class="case-study--left__textslider__image"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                                <h4>Accumulate creative ideas</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip sum has been the industry's standard dummy text ever since the 1500s, when an unk- nown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <a href="#" class="button small">Read More</a>
+                            </div>
+                            <div>
+                                <div class="case-study--left__textslider__image"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                                <h4>Accumulate creative ideas</h4>
+                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ip sum has been the industry's standard dummy text ever since the 1500s, when an unk- nown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <a href="#" class="button small">Read More</a>
+                            </div>
+                        </div>
+                        <div class="case-study--left__dots"></div>
+                    </div>
+                    <div class="case-study--right">
+                        <div class="case-study--right__imageslider">
+                            <div>
+                                <img src="{% static 'assets/img/case.jpg' %}" alt="" />
+                            </div>
+                            <div>
+                                <img src="{% static 'assets/img/case.jpg' %}" alt="" />
+                            </div>
+                            <div>
+                                <img src="{% static 'assets/img/case.jpg' %}" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="statistics" style="background-image: url({{'/static/assets/img/slider.jpg'}});">
+            <div class="container" >
+                <div class="statistics--item">
+                    <div class="statistics--item__image"><i class="fa fa-heart-o"></i></div>
+                    <h3 class="odometer first">0</h3>
+                    <h5>участников </h5>
+                </div>
+                <div class="statistics--item">
+                    <div class="statistics--item__image"><i class="fa fa-tag"></i></div>
+                    <h3 class="odometer second">0</h3>
+                    <h5>проведеннных евентов</h5>
+                </div>
+                <div class="statistics--item">
+                    <div class="statistics--item__image"><i class="fa fa-thumbs-o-up"></i></div>
+                    <h3 class="odometer third">0</h3>
+                    <h5>победителей </h5>
+                </div>
+                <div class="statistics--item">
+                    <div class="statistics--item__image"><i class="fa fa-star-o"></i></div>
+                    <h3 class="odometer fourth">0</h3>
+                    <h5>участий на мировой арене</h5>
+                </div>
+                <div class="statistics--item">
+                    <div class="statistics--item__image"><i class="fa fa-paperclip"></i></div>
+                    <h3 class="odometer fifth">0</h3>
+                    <h5>побед команды</h5>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <h2>Наши спонсоры</h2>
+                <p>Ни малейшей идеи что тут написать но тут можно что то написать </p>
+                <span class="dot-dash dark">.</span>
+                <div class="partners--container">
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                    <div class="partners--item">
+                        <div class="partners--item__image">
+                            <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="get-started">
+            <div class="container">
+                <h2>Начни сейчас. Это бесплатно!</h2>
+                <p>Это тяжело только на первый взгляд</p>
+                <a href="contact.html" class="button">Начать</a>
+            </div>
+        </section>
+    </div>
+
+
+    <script type="text/javascript">
+        window.odometerOptions = {
+            format: '(,ddd)',
+        };
+    </script>
+    <script src="{% static 'js2/vendor/jquery-3.1.0.min.js' %}"></script>
+    <script src="{% static 'js2/vendor/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js2/vendor/tether.js' %}"></script>
+    <script src="{% static 'js2/vendor/bootstrap.js' %}"></script>
+    <script src="{% static 'js2/vendor/slick.js' %}"></script>
+    <script src="{% static 'js2/vendor/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js2/vendor/odometer.min.js' %}"></script>
+    <script src="{% static 'js2/main.js' %}"></script>
+</body>
+</html>
+
+{% endblock content %}

@@ -1,7 +1,7 @@
 from django.core.paginator import Paginator
 from django.http import FileResponse, JsonResponse
 from django.shortcuts import get_object_or_404
-from datetime import datetime
+from datetime import date
 from django.shortcuts import render
 import datetime
 import calendar
@@ -30,6 +30,10 @@ def pdf_detail(request, pdf_id):
 
 def about(request):
     return render(request, "about.html")
+
+
+def index(request):
+    return render(request, "index.html")
 
 
 def news_by_category(request, category):
@@ -65,7 +69,9 @@ def gallerey(request):
 
 # Calendar
 def calendars(request):
-    return render(request, 'calendars.html')
+    today = date.today()
+    news_all_all = Event.objects.filter(day__gte=today).exclude(category__contains='пусто').order_by('day')
+    return render(request, 'calendars.html', {'news_all_all': news_all_all})
 
 
 def get_closest_event():
@@ -73,8 +79,6 @@ def get_closest_event():
     closest_event = Event.objects.filter(day__gte=current_date).order_by('day').first()
     return closest_event
 
-
-from django.urls import reverse
 
 def get_event_info(request):
     event_id = request.GET.get('event_id')
@@ -85,7 +89,8 @@ def get_event_info(request):
             'header': event.header,
             'event_id': event.id,  # Идентификатор события
             'date': event.day.strftime("%d.%m.%Y"),  # Преобразуем дату в строку в формате "дд.мм.гггг"
-            'time': event.start_time.strftime("%H:%M") if event.start_time else None,  # Преобразуем время в строку в формате "чч:мм" или None, если время отсутствует
+            'time': event.start_time.strftime("%H:%M") if event.start_time else None,
+            # Преобразуем время в строку в формате "чч:мм" или None, если время отсутствует
         }
     except Event.DoesNotExist:
         data = {}
