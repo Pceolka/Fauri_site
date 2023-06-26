@@ -1133,8 +1133,8 @@ a.breadcrumb-item:hover {
 .cl9 {color: #999;}
 .cl10 {color: #2ED9C3;}
 .cl11 {color: #ccc;}
-.cl12 {color: #e71d69;}
-.cl13 {color: #15a752;}
+.cl12 {color: #FF4713;}
+.cl13 {color: #00B451;}
 .cl14 {color: #e3724a;}
 .cl15 {color: #b2b2b2;}
 .cl16 {color: #e5e5e5;}
@@ -1686,11 +1686,11 @@ a.breadcrumb-item:hover {
 }
 
 .how2-cl1::before {
-  background-color: #e71d69;
+  background-color: #FF4713;
 }
 
 .how2-cl2::before {
-  background-color: #15a752;
+  background-color: #00B451;
 }
 
 .how2-cl3::before {

@@ -42,10 +42,10 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   display: inline-block;
   min-width: 225px;
   padding: 20px 0;
-  border: 2px solid #3c88e7;
+  border: 2px solid #00b2e3;
   text-align: center;
   font: 600 14px/1 "Open Sans";
-  background: #3c88e7;
+  background: #00b2e3;
   color: #ffffff;
   margin: 0 24px 0 0;
   border-radius: 4px;
@@ -62,15 +62,15 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     min-width: 145px; }
   .button:hover {
     background: transparent;
-    color: #3c88e7;
-    border-color: #3c88e7; }
+    color: #00b2e3;
+    border-color: #00b2e3; }
 
 .dot-dash {
   position: relative;
   text-align: center;
   font-size: 55px;
   line-height: 0;
-  color: #3c88e7;
+  color: #00b2e3;
   margin: 20px 0 40px;
   display: block; }
   .dot-dash:before, .dot-dash:after {
@@ -117,16 +117,16 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         font-size: 20px;
-        color: #3c88e7; }
+        color: #00b2e3; }
     .four-elements .col-md-3:hover .four-elements--image {
-      border-color: #3c88e7;
+      border-color: #00b2e3;
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg); }
     .four-elements .col-md-3:hover i {
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg); }
     .four-elements .col-md-3:hover h3 {
-      color: #3c88e7; }
+      color: #00b2e3; }
     .four-elements .col-md-3 h3 {
       font: 600 18px "Open Sans";
       position: relative;
@@ -153,7 +153,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     padding-left: 75px; }
     .our-history .col-md-7 h2 {
       font: 600 36px/1 "Source Sans Pro";
-      border-left: 5px solid #3c88e7;
+      border-left: 5px solid #00b2e3;
       margin: 0 0 40px;
       text-transform: uppercase;
       color: #6a6a6a;
@@ -170,7 +170,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   overflow: hidden; }
   .our-services h2 {
     font: 600 36px/1 "Source Sans Pro";
-    border-right: 5px solid #3c88e7;
+    border-right: 5px solid #00b2e3;
     margin: 0 0 70px;
     text-transform: uppercase;
     padding-right: 25px;
@@ -185,7 +185,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       margin-bottom: 0; }
     .our-services--element h4 {
       font: 600 18px/1 "Open Sans";
-      color: #3c88e7;
+      color: #00b2e3;
       margin: 0 0 15px;
       text-transform: uppercase; }
     .our-services--element p {
@@ -210,7 +210,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       height: 60px;
       width: 60px;
       background: #ffffff;
-      color: #3c88e7;
+      color: #00b2e3;
       border-radius: 50px;
       font-size: 22px; }
   .our-services--slider {
@@ -247,7 +247,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           .our-services--dots .slick-dots li button:before {
             display: none; }
         .our-services--dots .slick-dots li.slick-active button {
-          background: #3c88e7;
+          background: #00b2e3;
           height: 3px; }
 
 .recent-works {
@@ -271,7 +271,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       margin: 0 20px;
       cursor: pointer; }
       .recent-works--nav ul li.active {
-        color: #3c88e7; }
+        color: #00b2e3; }
       .recent-works--nav ul li:after {
         content: "/";
         position: absolute;
@@ -362,7 +362,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       .case-study--left__textslider__image {
         height: 85px;
         width: 85px;
-        background: #3c88e7;
+        background: #00b2e3;
         color: #ffffff;
         display: -webkit-box;
         display: -webkit-flex;
@@ -413,7 +413,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           .case-study--left__dots ul li button:before {
             display: none; }
         .case-study--left__dots ul li.slick-active button {
-          background: #3c88e7; }
+          background: #00b2e3; }
   .case-study--right {
     position: absolute;
     right: 0;
@@ -553,15 +553,15 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           background: none;
           color: #999999; }
     .our-pricing--package.starred h3 {
-      background: #3c88e7; }
+      background: #00b2e3; }
     .our-pricing--package.starred .our-pricing--package__data span b {
-      color: #3c88e7; }
+      color: #00b2e3; }
     .our-pricing--package.starred .our-pricing--package__data .button {
-      background: #3c88e7;
-      border-color: #3c88e7; }
+      background: #00b2e3;
+      border-color: #00b2e3; }
       .our-pricing--package.starred .our-pricing--package__data .button:hover {
         background: none;
-        color: #3c88e7; }
+        color: #00b2e3; }
 
 .our-team {
   padding: 140px 0;
@@ -602,7 +602,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     text-align: center;
     margin-top: 50px; }
     .our-team--item__image {
-      border: 4px solid #3c88e7;
+      border: 4px solid #00b2e3;
       border-radius: 150px;
       background: rgba(60, 136, 231, 0.5);
       width: 130px;
@@ -615,7 +615,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         content: "";
         width: 1px;
         height: 50px;
-        background: #3c88e7;
+        background: #00b2e3;
         position: absolute;
         z-index: 0;
         left: 50%;
@@ -696,7 +696,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease; }
     .partners--item:hover .partners--item__image {
-      background: #3c88e7; }
+      background: #00b2e3; }
       .partners--item:hover .partners--item__image img {
         -webkit-filter: none;
         filter: none; }
@@ -746,7 +746,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         height: 100%; }
     .our-blog--item__text {
       width: 50%;
-      background: #3c88e7;
+      background: #00b2e3;
       padding: 35px;
       color: #ffffff;
       text-align: left;
@@ -755,7 +755,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         content: "";
         width: 40px;
         height: 40px;
-        background: #3c88e7;
+        background: #00b2e3;
         position: absolute;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -822,7 +822,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     .keep-touch--white h4 {
       font: 700 24px/1 "Source Sans Pro";
       margin: 0 0 30px;
-      color: #3c88e7; }
+      color: #00b2e3; }
     .keep-touch--white p {
       font: 400 18px "Open Sans";
       margin: 0 0 70px; }
@@ -938,7 +938,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         color: #ffffff;
         border: 7px solid #e5e5e5;
         border-radius: 100%;
-        background-color: #3c88e7; }
+        background-color: #00b2e3; }
         .our-history-about .timeline > li .timeline-image h4 {
           font-size: 10px;
           line-height: 14px;
@@ -1060,7 +1060,7 @@ article {
       .single-portfolio--slider__dots ul li button:before {
         display: none; }
     .single-portfolio--slider__dots ul li.slick-active button {
-      background: #3c88e7; }
+      background: #00b2e3; }
 
 @media screen and (max-width: 768px) {
   .our-history .col-md-5 {
@@ -1198,7 +1198,7 @@ header {
       color: #ffffff;
       text-transform: uppercase; }
       header .menu li a.active, header .menu li a:hover {
-        color: #3c88e7; }
+        color: #00b2e3; }
       header .menu li a.active {
         font-weight: 600; }
   header .mobile-menu {
@@ -1255,7 +1255,7 @@ footer {
         font-size: 20px;
         color: #999999; }
         footer ul li a:hover {
-          color: #3c88e7; }
+          color: #00b2e3; }
   footer p {
     font: 700 14px/1 "Open Sans";
     color: #999999;
@@ -1354,7 +1354,7 @@ Slider
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
-      color: #3c88e7;
+      color: #00b2e3;
       background: #f4f5f9;
       height: 60px;
       width: 60px;
@@ -1419,7 +1419,7 @@ Slider
         right: 50px;
         left: auto; }
       .home-slider--nav div:hover {
-        background: #3c88e7;
+        background: #00b2e3;
         color: #ffffff; }
 
 @media screen and (max-width: 991px) {
