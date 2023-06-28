@@ -1,6 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
+{% block content %}
 
-<html lang="ru">
 <head>
     <title></title>
     <meta charset="utf-8"/>
@@ -10,29 +11,9 @@
     <link href="{% static 'css2/vendor/font-awesome.css' %}" rel="stylesheet"/>
     <link href="{% static 'css2/vendor/slick.css' %}" rel="stylesheet"/>
     <link href="{% static 'css2/vendor/slick-theme.css' %}" rel="stylesheet"/>
-    <link href="{% static 'css2/vendor/odometer-theme-default.css' %}" rel="stylesheet"/>
     <link href="{% static 'css2/main.css' %}" rel="stylesheet"/>
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <div class="logo">
-            <a href="#"><img src="{% static 'assets/img/logo2.png' %}" alt=""/></a>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="{% url 'news' %}">Новости</a></li>
-                <li><a href="{% url 'gallerey' %}">Галерея </a></li>
-                <li><a href="{% url 'archive' %}">Архив</a></li>
-                <li><a href="{% url 'calendars' %}">Календарь</a></li>
-                <li><a href="{% url 'about' %}"> О нас</a></li>
-                <li><a href="{% url 'contact' %}">Контакты</a></li>
-            </ul>
-        </div>
-        <div class="mobile-menu"><i class="fa fa-bars"></i></div>
-    </div>
-</header>
 
 <div class="home-slider">
     <div class="home-slider--wrapper">
@@ -348,43 +329,14 @@
         </div>
     </section>
 </div>
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-sm-12">
-                <ul>
-                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                    <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                    <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                    <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
-                </ul>
-            </div>
-            <div class="col-md-6 col-sm-12">
-                <p>Evghenii</p>
-            </div>
-        </div>
-    </div>
-</footer>
 
-
-<script type="text/javascript">
-        window.odometerOptions = {
-            format: '(,ddd)',
-        };
-
-
-</script>
 <script src="{% static 'js2/vendor/jquery-3.1.0.min.js' %}"></script>
 <script src="{% static 'js2/vendor/jquery.easing.min.js' %}"></script>
 <script src="{% static 'js2/vendor/tether.js' %}"></script>
 <script src="{% static 'js2/vendor/bootstrap.js' %}"></script>
 <script src="{% static 'js2/vendor/slick.js' %}"></script>
 <script src="{% static 'js2/vendor/isotope.pkgd.min.js' %}"></script>
-<script src="{% static 'js2/vendor/odometer.min.js' %}"></script>
 <script src="{% static 'js2/main.js' %}"></script>
 </body>
-</html>
+
+{% endblock content %}
