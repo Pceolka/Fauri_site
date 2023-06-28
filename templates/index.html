@@ -175,7 +175,7 @@
                             <a href="#" class="button small">еще</a>
                         </div>
                         <div>
-                            <div class="case-study--left__textslider__image"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                            <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/treni.png' %}" alt=""/></div>
                             <h4>Тренировки</h4>
                             <p>Мы проводим регулярные тренировки, где каждый может улучшить свои навыки ориентирования,
                                 повысить физическую форму и укрепить командный дух.
@@ -191,7 +191,7 @@
                             <a href="#" class="button small">еще</a>
                         </div>
                         <div>
-                            <div class="case-study--left__textslider__image"><i class="fa fa-lightbulb-o" aria-hidden="true"></i></div>
+                            <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/prazdni.png' %}" alt=""/></div>
                             <h4>Праздники</h4>
                             <p>Мы организуем различные праздники, посвященные спортивному ориентированию, где участники
                                 могут насладиться замечательной атмосферой соревнований и дружеского общения.
@@ -210,13 +210,13 @@
                 <div class="case-study--right">
                     <div class="case-study--right__imageslider">
                         <div>
-                            <img src="{% static 'assets/img/case.jpg' %}" alt=""/>
+                            <img src="{% static 'assets/img/sorevisl.jpg' %}" alt=""/>
                         </div>
                         <div>
-                            <img src="{% static 'assets/img/case.jpg' %}" alt=""/>
+                            <img src="{% static 'assets/img/trenisl.jpg' %}" alt=""/>
                         </div>
                         <div>
-                            <img src="{% static 'assets/img/case.jpg' %}" alt=""/>
+                            <img src="{% static 'assets/img/prazdnisl.jpg' %}" alt=""/>
                         </div>
                     </div>
                 </div>
@@ -224,35 +224,61 @@
         </div>
     </section>
 
-    <section class="statistics" style="background-image: url({{'/static/assets/img/slider.jpg'}});">
-        <div class="container">
-            <div class="statistics--item">
-                <div class="statistics--item__image"><i class="fa fa-heart-o"></i></div>
-                <h3 class="odometer first">0</h3>
-                <h5>участников </h5>
+
+<section class="our-team" style=" background-image: url({{'/static/assets/img/team.png'}});">
+            <div class="container">
+                <h2>Наша команда</h2>
+                <p>Главные профессионалы нашей команды</p>
+                <span class="dot-dash dark">.</span>
+                <div class="our-team--container">
+                    <div class="our-team--item">
+                        <div class="our-team--item__image">
+                            <img src="{% static 'assets/img/user.png' %}" alt="" />
+                        </div>
+                        <div class="our-team--item__info">
+                            <h3>Мистер КП</h3>
+                            <h5>КП</h5>
+                        </div>
+                    </div>
+                    <div class="our-team--item">
+                        <div class="our-team--item__image">
+                            <img src="{% static 'assets/img/user1.png' %}" alt="" />
+                        </div>
+                        <div class="our-team--item__info">
+                            <h3>Шакал</h3>
+                            <h5>Работает за еду</h5>
+                        </div>
+                    </div>
+                    <div class="our-team--item">
+                        <div class="our-team--item__image">
+                            <img src="{% static 'assets/img/user3.png' %}" alt="" />
+                        </div>
+                        <div class="our-team--item__info">
+                            <h3>Кот Шакала</h3>
+                            <h5>Успокаивает шакала</h5>
+                        </div>
+                    </div>
+                    <div class="our-team--item">
+                        <div class="our-team--item__image">
+                            <img src="{% static 'assets/img/user2.png' %}" alt="" />
+                        </div>
+                        <div class="our-team--item__info">
+                            <h3>Сири</h3>
+                            <h5>Та же кошка</h5>
+                        </div>
+                    </div>
+                    <div class="our-team--item">
+                        <div class="our-team--item__image">
+                            <img src="{% static 'assets/img/user4.png' %}" alt="" />
+                        </div>
+                        <div class="our-team--item__info">
+                            <h3>Дмитрий Арабаджи</h3>
+                            <h5>Гений, филантроп, миллиардер  (Не Араб)</h5>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="statistics--item">
-                <div class="statistics--item__image"><i class="fa fa-tag"></i></div>
-                <h3 class="odometer second">0</h3>
-                <h5>проведеннных евентов</h5>
-            </div>
-            <div class="statistics--item">
-                <div class="statistics--item__image"><i class="fa fa-thumbs-o-up"></i></div>
-                <h3 class="odometer third">0</h3>
-                <h5>победителей </h5>
-            </div>
-            <div class="statistics--item">
-                <div class="statistics--item__image"><i class="fa fa-star-o"></i></div>
-                <h3 class="odometer fourth">0</h3>
-                <h5>участий на мировой арене</h5>
-            </div>
-            <div class="statistics--item">
-                <div class="statistics--item__image"><i class="fa fa-paperclip"></i></div>
-                <h3 class="odometer fifth">0</h3>
-                <h5>побед команды</h5>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <section class="partners">
         <div class="container">

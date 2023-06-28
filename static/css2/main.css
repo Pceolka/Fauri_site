@@ -362,7 +362,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       .case-study--left__textslider__image {
         height: 85px;
         width: 85px;
-        background: #00b2e3;
+
         color: #ffffff;
         display: -webkit-box;
         display: -webkit-flex;
@@ -566,7 +566,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
 .our-team {
   padding: 140px 0;
   text-align: center;
-  background-image: url({{"../assets/img/team.png"}});
+  background-image: url({{'/static/assets/img/team.png'}});
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
