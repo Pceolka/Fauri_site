@@ -61,32 +61,25 @@
     </div>
 
     <div class="container">
+        <div class="flex-wr-sb-s m-b-30">
+            {% for news in news_all_all %}
+            <div class="size-w-2">
+                <h5 class="p-b-5">
+                    <a href="{% url 'single' news.id %}"
+                       class="f1-s-5 cl3 hov-cl10 trans-03">
+                        {{ news.header }}
+                    </a>
+                </h5>
 
-        <div class="tab-pane show active" id="news-0" role="tabpanel">
-            <div class="row">
-                {% for news in news_all_all %}
-                <div class="col-3">
-                    <!-- Item post -->
-                    <div>
-                        <div class="p-t-10">
-                            <h5 class="p-b-5">
-                                <a href="{% url 'single' news.id %}"
-                                   class="f1-s-5 cl3 hov-cl10 trans-03">
-                                    {{ news.header }}
-                                </a>
-                            </h5>
-
-                            <span class="cl8">
-                                <span class="f1-s-3">
-								{{ news.day|date:"d M" }}
-								</span>
-							</span>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+                <span class="cl8">
+                    <span class="f1-s-3">
+                        {{ news.day|date:"d M" }}
+                    </span>
+                </span>
             </div>
+            {% endfor %}
         </div>
+
     </div>
 
 

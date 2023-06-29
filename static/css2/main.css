@@ -1,20 +1,20 @@
 /*--------------------------------------------------
-Website by Websolute
---------------------------------------------------*/
-/*--------------------------------------------------
 Base
 --------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:300,400,600,700|Source+Sans+Pro:300,400,600,700&display=swap");
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('../fonts/Montserrat/Montserrat-Regular.ttf');
+}
 body {
-  font-family: "Open Sans";
+  font-family: Montserrat-Regular;
   font-weight: 400;
   color: #999999; }
 
 b, strong {
-  font-family: "Open Sans"; }
+  font-family: Montserrat-Regular; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans"; }
+  font-family: Montserrat-Regular; }
 
 a {
   -webkit-transition: all 0.3s ease;
@@ -42,10 +42,10 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   display: inline-block;
   min-width: 225px;
   padding: 20px 0;
-  border: 2px solid #00b2e3;
+  border: 2px solid #2ED9C3;
   text-align: center;
-  font: 600 14px/1 "Open Sans";
-  background: #00b2e3;
+  font: 600 14px/1 Montserrat-Regular;
+  background: #2ED9C3;
   color: #ffffff;
   margin: 0 24px 0 0;
   border-radius: 4px;
@@ -62,15 +62,15 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     min-width: 145px; }
   .button:hover {
     background: transparent;
-    color: #00b2e3;
-    border-color: #00b2e3; }
+    color: #2ED9C3;
+    border-color: #2ED9C3; }
 
 .dot-dash {
   position: relative;
   text-align: center;
   font-size: 55px;
   line-height: 0;
-  color: #00b2e3;
+  color: #2ED9C3;
   margin: 20px 0 40px;
   display: block; }
   .dot-dash:before, .dot-dash:after {
@@ -117,18 +117,18 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
         font-size: 20px;
-        color: #00b2e3; }
+        color: #2ED9C3; }
     .four-elements .col-md-3:hover .four-elements--image {
-      border-color: #00b2e3;
+      border-color: #2ED9C3;
       -webkit-transform: rotate(45deg);
       transform: rotate(45deg); }
     .four-elements .col-md-3:hover i {
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg); }
     .four-elements .col-md-3:hover h3 {
-      color: #00b2e3; }
+      color: #2ED9C3; }
     .four-elements .col-md-3 h3 {
-      font: 600 18px "Open Sans";
+      font: 600 18px Montserrat-Regular;
       position: relative;
       text-transform: uppercase;
       color: #6a6a6a;
@@ -144,7 +144,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         left: 40%;
         bottom: -15px; }
     .four-elements .col-md-3 p {
-      font: 400 12px/20px "Source Sans Pro";
+      font: 400 12px/20px Montserrat-Regular;
       letter-spacing: 1px; }
 
 .our-history {
@@ -152,14 +152,14 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   .our-history .col-md-7 {
     padding-left: 75px; }
     .our-history .col-md-7 h2 {
-      font: 600 36px/1 "Source Sans Pro";
-      border-left: 5px solid #00b2e3;
+      font: 600 36px/1 Montserrat-Regular;
+      border-left: 5px solid #2ED9C3;
       margin: 0 0 40px;
       text-transform: uppercase;
       color: #6a6a6a;
       padding-left: 25px; }
     .our-history .col-md-7 p {
-      font: 400 14px/25px "Source Sans Pro";
+      font: 400 14px/25px Montserrat-Regular;
       margin-bottom: 40px; }
 
 .our-services {
@@ -169,8 +169,8 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   position: relative;
   overflow: hidden; }
   .our-services h2 {
-    font: 600 36px/1 "Source Sans Pro";
-    border-right: 5px solid #00b2e3;
+    font: 600 36px/1 Montserrat-Regular;
+    border-right: 5px solid #2ED9C3;
     margin: 0 0 70px;
     text-transform: uppercase;
     padding-right: 25px;
@@ -184,12 +184,12 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     .our-services--element:last-child {
       margin-bottom: 0; }
     .our-services--element h4 {
-      font: 600 18px/1 "Open Sans";
-      color: #00b2e3;
+      font: 600 18px/1 Montserrat-Regular;
+      color: #2ED9C3;
       margin: 0 0 15px;
       text-transform: uppercase; }
     .our-services--element p {
-      font: 400 14px/25px "Source Sans Pro";
+      font: 400 14px/25px Montserrat-Regular;
       margin-bottom: 0; }
     .our-services--element__image {
       position: absolute;
@@ -210,7 +210,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       height: 60px;
       width: 60px;
       background: #ffffff;
-      color: #00b2e3;
+      color: #2ED9C3;
       border-radius: 50px;
       font-size: 22px; }
   .our-services--slider {
@@ -247,31 +247,31 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           .our-services--dots .slick-dots li button:before {
             display: none; }
         .our-services--dots .slick-dots li.slick-active button {
-          background: #00b2e3;
+          background: #2ED9C3;
           height: 3px; }
 
 .recent-works {
   padding: 140px 0 0;
   text-align: center; }
   .recent-works h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .recent-works p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .recent-works--nav {
     margin-bottom: 40px; }
     .recent-works--nav ul li {
       display: inline-block;
-      font: 600 14px "Open Sans";
+      font: 600 14px Montserrat-Regular;
       position: relative;
       text-transform: uppercase;
       margin: 0 20px;
       cursor: pointer; }
       .recent-works--nav ul li.active {
-        color: #00b2e3; }
+        color: #2ED9C3; }
       .recent-works--nav ul li:after {
         content: "/";
         position: absolute;
@@ -312,7 +312,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         transition: all 0.3s ease;
         opacity: 0; }
         .recent-works--items__item a .inner-item h4 {
-          font: 600 24px "Source Sans Pro";
+          font: 600 24px Montserrat-Regular;
           margin: 0 0 10px;
           width: 100%;
           text-transform: uppercase;
@@ -325,7 +325,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
             position: absolute;
             top: -25px; }
         .recent-works--items__item a .inner-item p {
-          font: 400 14px "Open Sans";
+          font: 400 14px Montserrat-Regular;
           width: 100%; }
     .recent-works--items__item:hover .inner-item {
       opacity: 1; }
@@ -335,12 +335,12 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   text-align: center;
   background: #f4f5f9; }
   .case-study h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .case-study p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .case-study--sliders {
     position: relative;
@@ -384,7 +384,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg); }
       .case-study--left__textslider h4 {
-        font: 500 18px "Open Sans";
+        font: 500 18px Montserrat-Regular;
         position: relative;
         text-transform: uppercase;
         color: #6a6a6a;
@@ -413,7 +413,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           .case-study--left__dots ul li button:before {
             display: none; }
         .case-study--left__dots ul li.slick-active button {
-          background: #00b2e3; }
+          background: #2ED9C3; }
   .case-study--right {
     position: absolute;
     right: 0;
@@ -473,28 +473,28 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       margin: 0 auto 45px auto;
       font-size: 30px; }
     .statistics--item h3 {
-      font: 600 30px "Source Sans Pro";
+      font: 600 30px Montserrat-Regular;
       margin: 0 0 15px;
       letter-spacing: 2px; }
     .statistics--item h5 {
-      font: 400 18px "Source Sans Pro"; }
+      font: 400 18px Montserrat-Regular; }
 
 .our-pricing {
   padding: 140px 0;
   text-align: center; }
   .our-pricing h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .our-pricing p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .our-pricing--package {
     margin-top: 20px; }
     .our-pricing--package h3 {
       height: 200px;
-      font: 600 24px "Open Sans";
+      font: 600 24px Montserrat-Regular;
       text-transform: uppercase;
       color: #ffffff;
       background: #999999;
@@ -530,17 +530,17 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         -webkit-flex-wrap: wrap;
         -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-        font: 700 13px "Source Sans Pro";
+        font: 700 13px Montserrat-Regular;
         padding-bottom: 45px; }
         .our-pricing--package__data span b {
           width: 100%;
-          font: 700 40px "Source Sans Pro";
+          font: 700 40px Montserrat-Regular;
           position: absolute;
           top: 40px; }
       .our-pricing--package__data ul {
         margin-bottom: 50px; }
         .our-pricing--package__data ul li {
-          font: 400 14px "Open Sans";
+          font: 400 14px Montserrat-Regular;
           color: #999999;
           margin-bottom: 25px; }
           .our-pricing--package__data ul li:last-child {
@@ -553,15 +553,15 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           background: none;
           color: #999999; }
     .our-pricing--package.starred h3 {
-      background: #00b2e3; }
+      background: #2ED9C3; }
     .our-pricing--package.starred .our-pricing--package__data span b {
-      color: #00b2e3; }
+      color: #2ED9C3; }
     .our-pricing--package.starred .our-pricing--package__data .button {
-      background: #00b2e3;
-      border-color: #00b2e3; }
+      background: #2ED9C3;
+      border-color: #2ED9C3; }
       .our-pricing--package.starred .our-pricing--package__data .button:hover {
         background: none;
-        color: #00b2e3; }
+        color: #2ED9C3; }
 
 .our-team {
   padding: 140px 0;
@@ -587,11 +587,11 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     position: relative;
     z-index: 1; }
   .our-team h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase; }
   .our-team p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .our-team--item {
     position: relative;
@@ -602,7 +602,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     text-align: center;
     margin-top: 50px; }
     .our-team--item__image {
-      border: 4px solid #00b2e3;
+      border: 4px solid #2ED9C3;
       border-radius: 150px;
       background: rgba(60, 136, 231, 0.5);
       width: 130px;
@@ -615,7 +615,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         content: "";
         width: 1px;
         height: 50px;
-        background: #00b2e3;
+        background: #2ED9C3;
         position: absolute;
         z-index: 0;
         left: 50%;
@@ -629,11 +629,11 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     .our-team--item__info {
       margin-top: 30px; }
       .our-team--item__info h3 {
-        font: 600 24px "Source Sans Pro";
+        font: 600 24px Montserrat-Regular;
         margin: 0 0 15px;
         letter-spacing: 2px; }
       .our-team--item__info h5 {
-        font: 400 14px "Source Sans Pro"; }
+        font: 400 14px Montserrat-Regular; }
     .our-team--item:hover .our-team--item__image {
       -webkit-transform: scale(1.1);
       transform: scale(1.1); }
@@ -647,12 +647,12 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   overflow: hidden;
   background: #f4f5f9; }
   .partners h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .partners p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .partners--container {
     margin-top: 30px;
@@ -696,7 +696,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease; }
     .partners--item:hover .partners--item__image {
-      background: #00b2e3; }
+      background: #2ED9C3; }
       .partners--item:hover .partners--item__image img {
         -webkit-filter: none;
         filter: none; }
@@ -707,12 +707,12 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   position: relative;
   overflow: hidden; }
   .our-blog h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .our-blog p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .our-blog--container {
     float: left;
@@ -746,7 +746,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         height: 100%; }
     .our-blog--item__text {
       width: 50%;
-      background: #00b2e3;
+      background: #2ED9C3;
       padding: 35px;
       color: #ffffff;
       text-align: left;
@@ -755,7 +755,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         content: "";
         width: 40px;
         height: 40px;
-        background: #00b2e3;
+        background: #2ED9C3;
         position: absolute;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg);
@@ -766,9 +766,9 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         right: -20px; }
       .our-blog--item__text span {
         display: block;
-        font: 400 14px "Open Sans"; }
+        font: 400 14px Montserrat-Regular; }
       .our-blog--item__text h3 {
-        font: 700 24px/1 "Source Sans Pro";
+        font: 700 24px/1 Montserrat-Regular;
         margin: 25px 0 65px;
         text-transform: uppercase;
         position: relative; }
@@ -781,11 +781,11 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
           bottom: -20px;
           left: 0; }
       .our-blog--item__text p {
-        font: 400 16px/30px "Open Sans"; }
+        font: 400 16px/30px Montserrat-Regular; }
       .our-blog--item__text a {
         display: inline-block;
         color: #ffffff;
-        font: 600 18px "Open Sans";
+        font: 600 18px Montserrat-Regular;
         font-style: italic;
         margin-top: 55px; }
         .our-blog--item__text a i {
@@ -804,12 +804,12 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   overflow: hidden;
   background: #f4f5f9; }
   .keep-touch h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .keep-touch p {
-    font: 400 14px/25px "Source Sans Pro";
+    font: 400 14px/25px Montserrat-Regular;
     margin-bottom: 0; }
   .keep-touch--white {
     background: #ffffff;
@@ -820,11 +820,11 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     height: 100%;
     border-radius: 4px; }
     .keep-touch--white h4 {
-      font: 700 24px/1 "Source Sans Pro";
+      font: 700 24px/1 Montserrat-Regular;
       margin: 0 0 30px;
-      color: #00b2e3; }
+      color: #2ED9C3; }
     .keep-touch--white p {
-      font: 400 18px "Open Sans";
+      font: 400 18px Montserrat-Regular;
       margin: 0 0 70px; }
       .keep-touch--white p:last-child {
         margin-bottom: 0; }
@@ -836,7 +836,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       border: 0;
       border-bottom: 1px solid #e5e5e5;
       margin-bottom: 15px;
-      font: 700 14px "Open Sans";
+      font: 700 14px Montserrat-Regular;
       outline: none;
       height: 50px;
       color: #999999; }
@@ -869,11 +869,11 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     position: relative;
     z-index: 1; }
   .get-started h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase; }
   .get-started p {
-    font: 400 18px/25px "Source Sans Pro";
+    font: 400 18px/25px Montserrat-Regular;
     margin-bottom: 70px; }
 
 .our-history-about {
@@ -882,12 +882,12 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   position: relative;
   overflow: hidden; }
   .our-history-about h2 {
-    font: 600 36px/1 "Source Sans Pro";
+    font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
     text-transform: uppercase;
     color: #6a6a6a; }
   .our-history-about p {
-    font: 400 18px/25px "Source Sans Pro";
+    font: 400 18px/25px Montserrat-Regular;
     margin-bottom: 70px; }
   .our-history-about .timeline {
     position: relative;
@@ -938,7 +938,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
         color: #ffffff;
         border: 7px solid #e5e5e5;
         border-radius: 100%;
-        background-color: #00b2e3; }
+        background-color: #2ED9C3; }
         .our-history-about .timeline > li .timeline-image h4 {
           font-size: 10px;
           line-height: 14px;
@@ -1030,13 +1030,13 @@ article {
     margin-bottom: 25px; }
 
 .single-portfolio h2 {
-  font: 600 36px/1 "Source Sans Pro";
+  font: 600 36px/1 Montserrat-Regular;
   margin: 0 0 20px;
   text-transform: uppercase;
   color: #6a6a6a; }
 
 .single-portfolio p {
-  font: 400 18px/25px "Source Sans Pro";
+  font: 400 18px/25px Montserrat-Regular;
   margin-bottom: 70px; }
 
 .single-portfolio ul {
@@ -1060,7 +1060,7 @@ article {
       .single-portfolio--slider__dots ul li button:before {
         display: none; }
     .single-portfolio--slider__dots ul li.slick-active button {
-      background: #00b2e3; }
+      background: #2ED9C3; }
 
 @media screen and (max-width: 768px) {
   .our-history .col-md-5 {
@@ -1196,15 +1196,15 @@ Slider
       color: #fff;
       text-align: center; }
       .home-slider--wrapper__inner .container h3 {
-        font: 400 24px/1 "Source Sans Pro";
+        font: 400 24px/1 Montserrat-Regular;
         margin: 0 0 50px;
         text-transform: capitalize; }
       .home-slider--wrapper__inner .container h1 {
-        font: 600 72px/1 "Open Sans";
+        font: 600 72px/1 Montserrat-Regular;
         margin: 0 0;
         text-transform: uppercase; }
       .home-slider--wrapper__inner .container p {
-        font: 400 14px/24px "Open Sans";
+        font: 400 14px/24px Montserrat-Regular;
         margin: 0 auto 70px auto;
         max-width: 600px;
         color: #cbc6c0; }
@@ -1236,7 +1236,7 @@ Slider
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
-      color: #00b2e3;
+      color: #2ED9C3;
       background: #f4f5f9;
       height: 60px;
       width: 60px;
@@ -1301,7 +1301,7 @@ Slider
         right: 50px;
         left: auto; }
       .home-slider--nav div:hover {
-        background: #00b2e3;
+        background: #2ED9C3;
         color: #ffffff; }
 
 @media screen and (max-width: 991px) {
@@ -1351,11 +1351,11 @@ Slider
     position: relative;
     z-index: 1; }
     .intro-page .container h1 {
-      font: 600 72px/1 "Open Sans";
+      font: 600 72px/1 Montserrat-Regular;
       text-transform: uppercase;
       margin: 0 0 20px; }
     .intro-page .container p {
-      font: 400 24px/1 "Source Sans Pro"; }
+      font: 400 24px/1 Montserrat-Regular; }
 
 @media screen and (max-width: 575px) {
   .intro-page .container h1 {
