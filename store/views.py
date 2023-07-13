@@ -39,8 +39,13 @@ def index(request):
 def news_by_category(request, category):
     # Получаем список новостей для указанной категории
     news_list = Event.objects.filter(category=category).order_by('-creation_day')
+    per_page = 6
 
     category_title = category
+
+    paginator = Paginator(news_list, per_page)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
     # Получаем список всех категорий
     category_list = Event.objects.values_list('category', flat=True).distinct()
@@ -48,7 +53,8 @@ def news_by_category(request, category):
     context = {
         'category_list': category_list,
         'category_title': category_title,
-        'news_list': news_list
+        'news_list': news_list,
+        'page_obj': page_obj,
     }
 
     return render(request, 'news_by_category.html', context)

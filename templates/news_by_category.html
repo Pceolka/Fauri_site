@@ -52,7 +52,6 @@
             </div>
 
             <div class="col-md-6 p-rl-1">
-                <!--{% comment %}
                 <div class="row m-rl--1">
                     <div class="col-sm-6 p-rl-1 p-b-2">
                         <div class="bg-img1 size-a-14 how1 pos-relative"
@@ -122,7 +121,7 @@
                         </div>
                     </div>
                 </div>
-                {% endcomment %}-->
+
             </div>
         </div>
     </div>
@@ -134,7 +133,7 @@
         <div class="row justify-content-center">
             <div class="col-md-10 col-lg-8 p-b-80">
                 <div class="row">
-                    {% for news in news_list %}
+                    {% for news in page_obj %}
                     <div class="col-sm-6 p-r-25 p-r-15-sr991">
                         <!-- Item latest -->
                         <div class="m-b-45">
@@ -169,11 +168,20 @@
 
                 </div>
 
-                <!-- Pagination -->
-                <div class="flex-wr-s-c m-rl--7 p-t-15">
-                    <a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">1</a>
-                    <a href="#" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">2</a>
-                </div>
+                                <!-- Pagination -->
+    <div class="d-flex justify-content-center">
+        {% for num in page_obj.paginator.page_range %}
+        {% if num == page_obj.number %}
+        <a class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+        <a href="?page={{ num }}" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">&nbsp;{{ num }}&nbsp;</a>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+
+
             </div>
             <!-- Sidebar -->
             <div class="col-md-10 col-lg-4 p-b-80">
@@ -303,7 +311,7 @@
 											</span>
 
 											<span class="f1-s-3">
-												{{ news_all.0.creation_day|date:"d M" }}
+												{{ news_all.2.creation_day|date:"d M" }}
 											</span>
 										</span>
                                 </div>
@@ -311,11 +319,11 @@
                         </ul>
                     </div>
 
-                    <!-- Tag -->
+                    <!-- Категории -->
                     <div>
                         <div class="how2 how2-cl4 flex-s-c m-b-30">
                             <h3 class="f1-m-2 cl3 tab01-title">
-                                Tags
+                                Категории
                             </h3>
                         </div>
 
@@ -325,7 +333,7 @@
                                 Соревнования
                             </a>
 
-                            <a href="{% url 'news_by_category' category='события' %}"
+                            <a href="{% url 'news_by_category' category='событие' %}"
                                class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 События
                             </a>
@@ -335,7 +343,7 @@
                                 Международные соревнования
                             </a>
 
-                            <a href="{% url 'news_by_category' category='тренировки' %}"
+                            <a href="{% url 'news_by_category' category='тренировка' %}"
                                class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
                                 Тренировки
                             </a>
