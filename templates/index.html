@@ -372,67 +372,154 @@
 <div class="home-slider">
     <div class="home-slider--wrapper">
         <div>
-            <div class="home-slider--wrapper__inner"
-                 style="background-image: url({{'/static/assets/img/slider.jpg'}});">
-                <div class="container">
-                    <h3>Orienteering</h3>
-                    <h1>WELCOME TO Fauri</h1>
-                    <span class="dot-dash">.</span>
-                    <p> The orienteering team that embraces the passion for adventure and sport.
-                        We bring together people who are passionate about orienteering and strive to reach new heights
-                        in this exciting sport.</p>
-                    <div class="slider-buttons">
-                        <a href="#" class="button">Get Started Now</a>
-                        <a href="#" class="button button-w">Learn More</a>
-                    </div>
-                </div>
+            <div class="home-slider--wrapper__inner">
+                <img src="{% static 'assets/img/slider.jpg' %}" alt=""/>
+
             </div>
         </div>
         <div>
-            <div class="home-slider--wrapper__inner"
-                 style="background-image: url({{'/static/assets/img/slider.jpg'}});">
-                <div class="container">
-                    <h3>Orienteare sportiva</h3>
-                    <h1>Buna la Fauri</h1>
-                    <span class="dot-dash">.</span>
-                    <p>Echipa de orientare care îmbrățișează pasiunea pentru aventură și sport.
-                        Unim oamenii pasionați de orientare și ne străduim să atingem noi înălțimi în acest sport
-                        captivant.
-                    </p>
-                    <div class="slider-buttons">
-                        <a href="#" class="button">Incepe acum</a>
-                        <a href="#" class="button button-w">stii mai mult </a>
-                    </div>
-                </div>
+            <div class="home-slider--wrapper__inner">
+                <img src="{% static 'assets/img/slider.jpg' %}" alt=""/>
             </div>
         </div>
         <div>
-            <div class="home-slider--wrapper__inner"
-                 style="background-image: url({{'/static/assets/img/slider.jpg'}});">
-                <div class="container">
-                    <h3>Ориентирование </h3>
-                    <h1>Приветствуем в Fauri</h1>
-                    <span class="dot-dash">.</span>
-                    <p>Команда ориентирования, воплощающая страсть к приключениям и спорту.
-                        Мы объединяем людей, влюбленных в ориентирование, и стремимся к достижению новых высот в этом
-                        увлекательном виде спорта.
-                    </p>
-                    <div class="slider-buttons">
-                        <a href="#" class="button">Начать сейчас</a>
-                        <a href="#" class="button button-w">Узнать больше</a>
-                    </div>
-                </div>
+            <div class="home-slider--wrapper__inner">
+                <img src="{% static 'assets/img/slider.jpg' %}" alt=""/>
             </div>
         </div>
     </div>
-    <div class="home-slider--nav">
-        <div class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
-        <div class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-    </div>
-    <div class="home-slider--anchor">
-        <span><img src="{% static 'assets/img/strelki.png' %}" alt=""/></span>
-    </div>
+
 </div>
+
+<section class="our-history">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-sm-12 col-xs-12">
+                <h2>Наша история</h2>
+                <p>Спортивный клуб FAURI - это некоммерческая организация, которая занимается развитием и популяризацией
+                    спортивного ориентирования. Мы регулярно проводим открытые тренировки и соревнования,
+                    а наши спортсмены участвуют в международных стартах!
+                </p>
+                <p> Спортивное ориентирование - это соревнования и тренировки на открытом воздухе
+
+                    это здоровый образ жизни
+
+                    это приключение на каждой дистанции
+
+                    это физическое и интеллектуальное развитие
+
+                    это любовь к природе</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="partners">
+    <div class="container">
+        <h2>Партнеры</h2>
+        <p>Ни малейшей идеи что тут написать но тут можно что то написать </p>
+        <span class="dot-dash dark">.</span>
+        <div class="partners--container">
+
+            <div class="partners--item">
+
+                <img src="{% static 'assets/img/OM_Logo.jpg' %}" alt="">
+
+            </div>
+            <div class="partners--item">
+
+                <img src="{% static 'assets/img/monster-energy-logo.png' %}" alt="">
+
+            </div>
+            <div class="partners--item">
+                <div class="partners--item__image">
+                    <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                </div>
+            </div>
+
+            <div class="partners--item">
+                <div class="partners--item__image">
+                    <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                </div>
+            </div>
+            <div class="partners--item">
+                <div class="partners--item__image">
+                    <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                </div>
+            </div>
+            <div class="partners--item">
+                <div class="partners--item__image">
+                    <img src="{% static 'assets/img/partner1.png' %}" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="case-study">
+    <div class="container">
+        <h2>Примеры</h2>
+        <p>Примеры нашей деятельности</p>
+        <span class="dot-dash dark">.</span>
+    </div>
+    <div class="container">
+        <div class="case-study--sliders">
+            <div class="case-study--left">
+                <div class="case-study--left__textslider">
+                    <div>
+                        <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/sorevi.png' %}"
+                                                                              alt=""/></div>
+                        <h4>Соревнования</h4>
+                        <p>Мы организуем и принимаем участие в захватывающих соревнованиях по спортивному
+                            ориентированию, где каждый участник испытывает свои навыки, выносливость и
+                            стратегическое мышление.
+                            Мы гордимся тем, что наши соревнования доступны для участия как опытным ориентировщикам,
+                            так и новичкам, которые хотят попробовать свои силы в этом увлекательном виде спорта.</p>
+                        <a href="#" class="button small">еще</a>
+                    </div>
+                    <div>
+                        <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/treni.png' %}"
+                                                                              alt=""/></div>
+                        <h4>Тренировки</h4>
+                        <p>Мы проводим регулярные тренировки, где каждый может улучшить свои навыки ориентирования,
+                            повысить физическую форму и укрепить командный дух.
+                            Наши тренировки включают различные элементы, начиная с технической подготовки и развития
+                            навыков картографии до физических упражнений и стратегического планирования.
+                        </p>
+                        <a href="#" class="button small">еще</a>
+                    </div>
+                    <div>
+                        <div class="case-study--left__textslider__image"><img
+                                src="{% static 'assets/img/prazdni.png' %}" alt=""/></div>
+                        <h4>Праздники</h4>
+                        <p>Мы организуем различные праздники, посвященные спортивному ориентированию, где участники
+                            могут насладиться замечательной атмосферой соревнований и дружеского общения.
+                            Наши праздники включают разнообразные мероприятия, начиная от спортивных состязаний и
+                            игр, до тематических вечеринок и награждений.
+                        </p>
+                        <a href="#" class="button small">еще</a>
+                    </div>
+                </div>
+                <div class="case-study--left__dots"></div>
+            </div>
+            <div class="case-study--right">
+                <div class="case-study--right__imageslider">
+                    <div>
+                        <img src="{% static 'assets/img/sorevisl.jpg' %}" alt=""/>
+                    </div>
+                    <div>
+                        <img src="{% static 'assets/img/trenisl.jpg' %}" alt=""/>
+                    </div>
+                    <div>
+                        <img src="{% static 'assets/img/prazdnisl.jpg' %}" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <div class="wrapper">
     <section class="four-elements">
@@ -463,6 +550,7 @@
         </div>
     </section>
 
+
     <section class="our-history">
         <div class="container">
             <div class="row">
@@ -480,192 +568,6 @@
                         дисциплины в нашей стране. Присоединяйтесь к нам и откройте для себя захватывающий мир
                         ориентирования!</p>
                     <a href="#" class="button">Присоединиться к нам</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="case-study">
-        <div class="container">
-            <h2>Примеры</h2>
-            <p>Примеры нашей деятельности</p>
-            <span class="dot-dash dark">.</span>
-        </div>
-        <div class="container">
-            <div class="case-study--sliders">
-                <div class="case-study--left">
-                    <div class="case-study--left__textslider">
-                        <div>
-                            <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/sorevi.png' %}" alt=""/></div>
-                            <h4>Соревнования</h4>
-                            <p>Мы организуем и принимаем участие в захватывающих соревнованиях по спортивному
-                                ориентированию, где каждый участник испытывает свои навыки, выносливость и
-                                стратегическое мышление.
-                                Мы гордимся тем, что наши соревнования доступны для участия как опытным ориентировщикам,
-                                так и новичкам, которые хотят попробовать свои силы в этом увлекательном виде спорта.
-                                Наша команда организаторов гарантирует высокий уровень организации соревнований, четкие
-                                трассы и увлекательные задания, чтобы участники получили незабываемый опыт.
-                                Участвуя в наших соревнованиях, вы сможете испытать адреналин соревнования, сорвать
-                                победу и насладиться дружеской атмосферой среди единомышленников.</p>
-                            <a href="#" class="button small">еще</a>
-                        </div>
-                        <div>
-                            <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/treni.png' %}" alt=""/></div>
-                            <h4>Тренировки</h4>
-                            <p>Мы проводим регулярные тренировки, где каждый может улучшить свои навыки ориентирования,
-                                повысить физическую форму и укрепить командный дух.
-                                Наши тренировки включают различные элементы, начиная с технической подготовки и развития
-                                навыков картографии до физических упражнений и стратегического планирования.
-                                Мы предлагаем тренировки как для начинающих, так и для опытных ориентировщиков.
-                                Наши тренеры - опытные профессионалы, готовые поделиться своими знаниями и опытом,
-                                помочь каждому участнику развиваться и достигать своих спортивных целей.
-                                Участвуя в тренировках нашей команды, вы получите не только физическую подготовку, но и
-                                узнаете ценность работы в команде, улучшите свою концентрацию и принятие решений на
-                                ходу.
-                            </p>
-                            <a href="#" class="button small">еще</a>
-                        </div>
-                        <div>
-                            <div class="case-study--left__textslider__image"><img src="{% static 'assets/img/prazdni.png' %}" alt=""/></div>
-                            <h4>Праздники</h4>
-                            <p>Мы организуем различные праздники, посвященные спортивному ориентированию, где участники
-                                могут насладиться замечательной атмосферой соревнований и дружеского общения.
-                                Наши праздники включают разнообразные мероприятия, начиная от спортивных состязаний и
-                                игр, до тематических вечеринок и награждений.
-                                Мы создаем особую атмосферу праздника, где каждый участник может встретиться с
-                                единомышленниками, поделиться опытом и создать новые дружеские связи.
-                                Празднуя вместе с нами, вы окунетесь в мир ориентирования, получите заряд положительных
-                                эмоций и запоминающиеся впечатления, которые останутся с вами на долгое время.
-                            </p>
-                            <a href="#" class="button small">еще</a>
-                        </div>
-                    </div>
-                    <div class="case-study--left__dots"></div>
-                </div>
-                <div class="case-study--right">
-                    <div class="case-study--right__imageslider">
-                        <div>
-                            <img src="{% static 'assets/img/sorevisl.jpg' %}" alt=""/>
-                        </div>
-                        <div>
-                            <img src="{% static 'assets/img/trenisl.jpg' %}" alt=""/>
-                        </div>
-                        <div>
-                            <img src="{% static 'assets/img/prazdnisl.jpg' %}" alt=""/>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-<section class="our-team" style=" background-image: url({{'/static/assets/img/team.png'}});">
-            <div class="container">
-                <h2>Наша команда</h2>
-                <p>Главные профессионалы нашей команды</p>
-                <span class="dot-dash dark">.</span>
-                <div class="our-team--container">
-                    <div class="our-team--item">
-                        <div class="our-team--item__image">
-                            <img src="{% static 'assets/img/user.png' %}" alt="" />
-                        </div>
-                        <div class="our-team--item__info">
-                            <h3>Мистер КП</h3>
-                            <h5>КП</h5>
-                        </div>
-                    </div>
-                    <div class="our-team--item">
-                        <div class="our-team--item__image">
-                            <img src="{% static 'assets/img/user1.png' %}" alt="" />
-                        </div>
-                        <div class="our-team--item__info">
-                            <h3>Шакал</h3>
-                            <h5>Работает за еду</h5>
-                        </div>
-                    </div>
-                    <div class="our-team--item">
-                        <div class="our-team--item__image">
-                            <img src="{% static 'assets/img/user3.png' %}" alt="" />
-                        </div>
-                        <div class="our-team--item__info">
-                            <h3>Кот Шакала</h3>
-                            <h5>Успокаивает шакала</h5>
-                        </div>
-                    </div>
-                    <div class="our-team--item">
-                        <div class="our-team--item__image">
-                            <img src="{% static 'assets/img/user2.png' %}" alt="" />
-                        </div>
-                        <div class="our-team--item__info">
-                            <h3>Сири</h3>
-                            <h5>Та же кошка</h5>
-                        </div>
-                    </div>
-                    <div class="our-team--item">
-                        <div class="our-team--item__image">
-                            <img src="{% static 'assets/img/user4.png' %}" alt="" />
-                        </div>
-                        <div class="our-team--item__info">
-                            <h3>Дмитрий Арабаджи</h3>
-                            <h5>Гений, филантроп, миллиардер  (Не Араб)</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    <section class="partners">
-        <div class="container">
-            <h2>Наши спонсоры</h2>
-            <p>Ни малейшей идеи что тут написать но тут можно что то написать </p>
-            <span class="dot-dash dark">.</span>
-            <div class="partners--container">
-                <div class="partners--item">
-
-                        <img src="{% static 'assets/img/red-bull-logo.png' %}" alt="">
-
-                </div>
-                <div class="partners--item">
-
-                        <img src="{% static 'assets/img/OM_Logo.jpg' %}" alt="">
-
-                </div>
-                <div class="partners--item">
-
-                        <img src="{% static 'assets/img/monster-energy-logo.png' %}" alt="">
-
-                </div>
-                <div class="partners--item">
-                    <div class="partners--item__image">
-                        <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="partners--item">
-                    <div class="partners--item__image">
-                        <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                    </div>
-                </div>
-
-                <div class="partners--item">
-                    <div class="partners--item__image">
-                        <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="partners--item">
-                    <div class="partners--item__image">
-                        <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="partners--item">
-                    <div class="partners--item__image">
-                        <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                    </div>
-                </div>
-                <div class="partners--item">
-                    <div class="partners--item__image">
-                        <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                    </div>
                 </div>
             </div>
         </div>
