@@ -11,7 +11,6 @@ urlpatterns = [
     path('news/<int:id>/', views.single, name='single'),
     path('calendars/', views.calendars, name='calendars'),
     path('gallerey/', views.gallerey, name='gallerey'),
-    path('archive/', views.archive, name='archive'),
     path('pdf_detail/<int:pdf_id>/', views.pdf_detail, name='pdf_detail'),
     path('get-event-info/', views.get_event_info, name='get_event_info'),
 ]

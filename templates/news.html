@@ -81,7 +81,9 @@
                     <div class="p-b-25">
                         <div class="how2 how2-cl1 flex-s-c">
                             <h3 class="f1-m-2 cl12 tab01-title">
-                                Соревнования
+                                <a href="{% url 'news_by_category' category='соревнования' %}" style="text-decoration: none; color: #FF4713;">
+                                Соревнования ({{count_competition}})
+                            </a>
                             </h3>
                         </div>
 
@@ -188,7 +190,9 @@
                     <div class="p-b-25">
                         <div class="how2 how2-cl2 flex-s-c">
                             <h3 class="f1-m-2 cl13 tab01-title">
-                                Международные соревнования
+                                                            <a href="{% url 'news_by_category' category='международные соревнования' %}" style="text-decoration: none; color: #00B451;">
+                                Международные соревнования ({{count_worldcomp}})
+                            </a>
                             </h3>
                         </div>
 
@@ -293,7 +297,9 @@
                     <div class="p-b-25">
                         <div class="how2 how2-cl3 flex-s-c">
                             <h3 class="f1-m-2 cl14 tab01-title">
-                                События
+                               <a href="{% url 'news_by_category' category='событие' %}" style="text-decoration: none; color: #e3724a;">
+                                     События ({{count_event}})
+                            </a>
                             </h3>
                         </div>
 
@@ -398,7 +404,9 @@
                     <div class="p-b-25 m-r--10 m-r-0-sr991">
                         <div class="how2 how2-cl5 flex-s-c m-r-10 m-r-0-sr991">
                             <h3 class="f1-m-2 cl17 tab01-title">
-                                Тренировки
+                                <a href="{% url 'news_by_category' category='тренировка' %}" style="text-decoration: none; color: #00b5e9;">
+                                      Тренировки ({{count_train}})
+                            </a>
                             </h3>
                         </div>
 

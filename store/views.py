@@ -64,11 +64,6 @@ def contact(request):
     return render(request, "contact.html")
 
 
-def archive(request):
-    pdfs = Pdfs.objects.all()
-    return render(request, 'archive.html', {'pdfs': pdfs})
-
-
 def gallerey(request):
     return render(request, "gallerey.html")
 
