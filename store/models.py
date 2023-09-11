@@ -14,15 +14,20 @@ class Trending(models.Model):
     class Meta:
         verbose_name = u'Срочное'
 
+
 class Pdfs(models.Model):
     id = models.AutoField(primary_key=True)
-    header = models.TextField(u'Заголовок', help_text=u'Обязательное поле', default="")
-    discription = models.TextField(u'Описание', default="")
     creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
-    pdfile = models.FileField(upload_to='static/pdf_files/')
+    bazeinfo = models.TextField(u'Первый столбик', help_text=u'время и место проведения', default="")
+
+    info_text = models.TextField(u'Второй столбик', default="", blank=True, null=True)
+    info_pdf = models.FileField(u'Второйстолб', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
+
+    rezul_text = models.TextField(u'Третий столбик', default="", blank=True, null=True)
+    rezul_pdf = models.FileField(u'Третийстлб', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     def __str__(self):
-        return f"{self.header} ({self.pdfile} - {self.creation_day})"
+        return f"{self.bazeinfo} ({self.rezul_text} - {self.creation_day})"
 
     class Meta:
         verbose_name = u'Архив PDF файлов'

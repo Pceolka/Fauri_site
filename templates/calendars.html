@@ -67,24 +67,40 @@
     </div>
 
     <div class="container">
-        <div class="flex-wr-sb-s m-b-30">
-            {% for news in news_all_all %}
-            <div class="size-w-2">
-                <h5 class="p-b-5">
-                    <a href="{% url 'single' news.id %}"
-                       class="f1-s-5 cl3 hov-cl10 trans-03">
-                        {{ news.header }}
-                    </a>
-                </h5>
-
-                <span class="cl8">
-                    <span class="f1-s-3">
-                        {{ news.day|date:"d M" }}
-                    </span>
-                </span>
-            </div>
+<table>
+        <thead>
+            <tr>
+                <th>Первый столбец</th>
+                <th>Второй столбец (текст)</th>
+                <th>Второй столбец (PDF)</th>
+                <th>Третий столбец (текст)</th>
+                <th>Третий столбец (PDF)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pdf in pdfs_list %}
+            <tr>
+                <td>{{ pdf.bazeinfo }}</td>
+                <td>{{ pdf.info_text }}</td>
+                <td>
+                    {% if pdf.info_pdf %}
+                        <a href="{{ pdf.info_pdf.url }}">{{ pdf.info_pdf.name }}</a>
+                    {% else %}
+                        Нет PDF файла
+                    {% endif %}
+                </td>
+                <td>{{ pdf.rezul_text }}</td>
+                <td>
+                    {% if pdf.rezul_pdf %}
+                        <a href="{{ pdf.rezul_pdf.url }}">{{ pdf.rezul_pdf.name }}</a>
+                    {% else %}
+                        Нет PDF файла
+                    {% endif %}
+                </td>
+            </tr>
             {% endfor %}
-        </div>
+        </tbody>
+    </table>
 
     </div>
 

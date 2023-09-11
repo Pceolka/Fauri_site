@@ -66,7 +66,7 @@ admin.site.register(Event, EventAdmin)
 
 
 class PDFAdmin(admin.ModelAdmin):
-    list_display = ['header', 'pdfile', 'creation_day']
+    list_display = ['bazeinfo', 'creation_day', 'info_text', 'info_pdf', 'rezul_text', 'rezul_pdf']
     ordering = ['-creation_day']
 
 

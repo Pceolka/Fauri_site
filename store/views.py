@@ -70,9 +70,10 @@ def gallerey(request):
 
 # Calendar
 def calendars(request):
+    pdfs_list = Pdfs.objects.all()
     today = date.today()
     news_all_all = Event.objects.filter(day__gte=today).exclude(category__contains='пусто').order_by('day')
-    return render(request, 'calendars.html', {'news_all_all': news_all_all})
+    return render(request, 'calendars.html', {'news_all_all': news_all_all, 'pdfs_list': pdfs_list})
 
 
 def get_closest_event():

@@ -148,7 +148,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       letter-spacing: 1px; }
 
 .our-history {
-  padding: 140px 0; }
+  padding: 70px 0; }
   .our-history .col-md-7 {
     padding-left: 75px; }
     .our-history .col-md-7 h2 {
@@ -641,7 +641,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       bottom: -20px; }
 
 .partners {
-  padding: 140px 0 110px;
+  padding: 70px 0 50px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1189,7 +1189,7 @@ Slider
       bottom: 0;
       z-index: 0; }
       .home-slider--wrapper__inner img {
-       width: 30%;
+       width: 100%;
         }
     .home-slider--wrapper__inner .container {
       position: relative;
