@@ -641,7 +641,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       bottom: -20px; }
 
 .partners {
-  padding: 70px 0 50px;
+  padding: 140px 0 110px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -657,14 +657,14 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   .partners--container {
     margin-top: 30px;
     float: left;
-    width: 120%;
+    width: 100%;
     display: block; }
   .partners--item {
     position: relative;
     z-index: 1;
     float: left;
     width: 17%;
-    margin: 0 5% 30px;
+    margin: 0 1.5% 30px;
     text-align: center;
     background: #ffffff; }
     .partners--item__image {
