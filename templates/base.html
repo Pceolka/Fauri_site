@@ -560,8 +560,10 @@ function updateCalendar(eventId) {
         data: {event_id: eventId},
         dataType: 'json',
         success: function (data) {
+            var headerText = data.header.length > 47 ? data.header.slice(0, 44) + '...' : data.header;
+
             $('#calendar-image').css('background-image', 'url("' + data.image_url + '")');
-            $('#calendar-header').html('<a href="/news/' + data.event_id + '/">' + data.header + '</a>');
+            $('#calendar-header').html('<a href="/news/' + data.event_id + '/">' + headerText + '</a>');
             $('#calendar-date').text(data.date);
         }
     });

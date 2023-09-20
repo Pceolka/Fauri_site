@@ -9,13 +9,6 @@
 
 <body class="animsition">
 
-<!-- Breadcrumb -->
-<div class="container">
-    <div class="headline bg0 flex-wr-sb-c p-rl-20 p-tb-8">
-
-    </div>
-</div>
-
 <!-- Content -->
 <section class="bg0 p-b-140 p-t-10">
     <div class="container">
@@ -24,10 +17,6 @@
                 <div class="p-r-10 p-r-0-sr991">
                     <!-- Blog Detail -->
                     <div class="p-b-70">
-                        <a class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-                            {{news.category}}
-                        </a>
-
                         <h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
                             {{news.header}}
                         </h3>
@@ -35,7 +24,7 @@
                         <div class="flex-wr-s-s p-b-40">
 								<span class="f1-s-3 cl8 m-r-15">
 									<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-										Пост создан: {{news.author}}
+										Создатель: {{news.author}}
 									</a>
 
 									<span class="m-rl-3">-</span>
@@ -43,13 +32,13 @@
 									<span>
 										{{news.creation_day}}
 									</span>
+
+                                    <span>
+										Категория - {{news.category}}
+									</span>
 								</span>
-
                         </div>
 
-                        <div class="wrap-pic-max-w p-b-30">
-                            <img src="{{news.image.url}}" alt="IMG">
-                        </div>
 
                         <p class="f1-s-11 cl6 p-b-25">
                             {{news.description|safe}}
