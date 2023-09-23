@@ -61,6 +61,7 @@ class Event(models.Model):
     start_time = models.TimeField(u'Время начала события', blank=True, null=True)
     end_time = models.TimeField(u'Время конца события ', blank=True, null=True)
     creation_day = models.DateField(u'Дата создания ', help_text=u'', default=datetime.date.today)
+    is_popular = models.BooleanField(u'Популярная ', default=False)
 
     def __str__(self):
         return f"{self.header} ({self.day} - {self.creation_day})"

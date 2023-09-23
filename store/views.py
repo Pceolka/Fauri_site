@@ -20,7 +20,8 @@ def news(request):
 
 def single(request, id):
     news = get_object_or_404(Event, id=id)
-    return render(request, 'single.html', {'news': news})
+    popular_event = Event.objects.order_by('-is_popular')[:6]
+    return render(request, 'single.html', {'news': news, "popular_event": popular_event})
 
 
 def pdf_detail(request, pdf_id):
