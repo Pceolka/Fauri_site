@@ -148,7 +148,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       letter-spacing: 1px; }
 
 .our-history {
-  padding: 70px 0; }
+  padding: 20px 0; }
   .our-history .col-md-7 {
     padding-left: 75px; }
     .our-history .col-md-7 h2 {
@@ -331,7 +331,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       opacity: 1; }
 
 .case-study {
-  padding: 140px 0;
+  padding: 20px 0;
   text-align: center;
   background: #f4f5f9; }
   .case-study h2 {
@@ -354,7 +354,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     position: relative;
     z-index: 1;
     background: #ffffff;
-    padding: 100px 60px;
+    padding: 10px 60px;
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); }
     .case-study--left__textslider {
@@ -422,7 +422,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     bottom: 0;
     z-index: 0; }
     .case-study--right__imageslider img {
-      height: 750px;
+      height: 500px;
       -o-object-position: center;
       object-position: center;
       -o-object-fit: cover;
