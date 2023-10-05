@@ -1074,10 +1074,7 @@ article {
     position: relative;
     z-index: 1; }
   .case-study--right {
-    position: relative;
-    width: 100%;
-    float: left;
-    z-index: 2; }
+    display: none; }
   .partners--item {
     width: 100%; }
   .recent-works--items__item {
@@ -1102,7 +1099,13 @@ article {
   .keep-touch--white {
     padding: 50px; } }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 690px) {
+  .get-started  {
+padding: 50px 0;
+    }
+}
+
+@media screen and (max-width: 250px) {
   .four-elements, .our-history, .our-services, .recent-works, .case-study, .statistics, .our-pricing, .our-team, .partners, .our-blog, .keep-touch, .get-started {
     padding: 80px 0; }
   .our-history .col-md-7 {
