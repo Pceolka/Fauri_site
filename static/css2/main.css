@@ -1079,7 +1079,7 @@ article {
     float: left;
     z-index: 2; }
   .partners--item {
-    width: 47%; }
+    width: 100%; }
   .recent-works--items__item {
     float: left;
     width: 50%;
@@ -1225,7 +1225,7 @@ Slider
   .home-slider--anchor span {
     top: -20px; } }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 250px) {
   .home-slider--wrapper__inner {
     padding-top: 40px; }
     .home-slider--wrapper__inner .container h3 {
@@ -1235,6 +1235,7 @@ Slider
       width: 100%; }
   .home-slider--anchor {
     display: none; }
+
 
 
 .intro-page {
