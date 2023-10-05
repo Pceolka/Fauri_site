@@ -57,31 +57,7 @@
                     </div>
                 </div>
 
-                <div class="flex-wr-e-c">
-                    <div class="left-topbar">
-                        <a href="#" class="left-topbar-item"></a>
 
-                        <a href="{% url 'contact' %}" class="left-topbar-item">
-                            Контакты
-                        </a>
-
-                        <a href="#" class="left-topbar-item"></a>
-                    </div>
-
-                    <div class="right-topbar p-l-18">
-                        <a href="#">
-                            <span class="fab fa-facebook-f"></span>
-                        </a>
-
-                        <a href="#">
-                            <span class="fab fa-youtube"></span>
-                        </a>
-
-                        <a href="#">
-                            <span class="fab fa-viber"></span>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -103,12 +79,6 @@
         <!-- Menu Mobile -->
         <div class="menu-mobile">
             <ul class="topbar-mobile">
-                <li class="left-topbar">
-
-                    <a href="{% url 'contact' %}" class="left-topbar-item">
-                        Контакты
-                    </a>
-                </li>
 
                 <li class="right-topbar">
                     <a href="#">
@@ -137,6 +107,9 @@
                 </li>
                 <li>
                     <a href="{% url 'about' %}">О нас</a>
+                </li>
+                                <li>
+                    <a href="{% url 'contact' %}">Контакты</a>
                 </li>
             </ul>
         </div>
@@ -382,6 +355,9 @@
                         <li class="mega-menu-item">
                             <a href="{% url 'about' %}"> О нас</a>
                         </li>
+                        <li class="mega-menu-item">
+                            <a href="{% url 'contact' %}"> Контакты</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -574,17 +550,32 @@ function getClosestEventId() {
     var closestEventId = null;
     var closestEventDateDiff = Infinity;
 
-    var events = {{ events_list|safe }};; // Получаем список событий из контекста
+    var events = {{ events_list|safe }}; // Получаем список событий из контекста
+    var currentMonth = currentDate.getMonth(); // Получаем текущий месяц (0-январь, 1-февраль и т.д.)
 
-    for (var i = 0; i < events.length; i++) {
-        var event = events[i];
+    // Проверяем, есть ли события в текущем месяце
+    var eventsInCurrentMonth = events.filter(function (event) {
         var eventDate = new Date(event.date);
-        var dateDiff = Math.abs(eventDate - currentDate);
+        return eventDate.getMonth() === currentMonth;
+    });
 
-        if (dateDiff < closestEventDateDiff) {
-            closestEventDateDiff = dateDiff;
-            closestEventId = event.id;
+    if (eventsInCurrentMonth.length > 0) {
+        // Если есть события в текущем месяце, выбираем ближайшее событие
+        for (var i = 0; i < eventsInCurrentMonth.length; i++) {
+            var event = eventsInCurrentMonth[i];
+            var eventDate = new Date(event.date);
+            var dateDiff = Math.abs(eventDate - currentDate);
+
+            if (dateDiff < closestEventDateDiff) {
+                closestEventDateDiff = dateDiff;
+                closestEventId = event.id;
+            }
         }
+    } else {
+        // Если событий в текущем месяце нет, выводим определенную картинку
+        $('#calendar-image').css('background-image', 'url("static/assets/img/no_event.png")');
+        $('#calendar-header').html('<a href="#">Нет событий в этом месяце</a>');
+        $('#calendar-date').text('');
     }
 
     return closestEventId;

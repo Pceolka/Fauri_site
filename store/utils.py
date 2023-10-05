@@ -15,15 +15,12 @@ class MainCalendar(HTMLCalendar):
         """
         events_from_day = self.events.filter(day__day=day)
         events_html = '<ul >''</ul>'
-        current_day = datetime.datetime.now().day
 
         if day == 0:
             return '<div class="calendar__number">&nbsp;</div>'  # day outside month
         else:
             if events_from_day:
                 return '<div class="calendar__number calendar__number--current %s %s" data-id="%d">%d%s</div>' % (self.cssclasses[weekday], 'event', events_from_day[0].id, day, events_html)
-            elif day == current_day:
-                return '<div class="calendar__number %s %s">%d%s</div>' % (self.cssclasses[weekday], 'today', day, events_html)
             else:
                 return '<div class="calendar__number %s">%d%s</div>' % (self.cssclasses[weekday], day, events_html)
 
