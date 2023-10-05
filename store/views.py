@@ -65,8 +65,8 @@ def contact(request):
     return render(request, "contact.html")
 
 
-def gallerey(request):
-    return render(request, "gallerey.html")
+def archive(request):
+    return render(request, "archive.html")
 
 
 # Calendar

@@ -658,7 +658,8 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     margin-top: 30px;
     float: left;
     width: 100%;
-    display: block; }
+    display: block;
+     }
   .partners--item {
     position: relative;
     z-index: 1;
@@ -1076,7 +1077,8 @@ article {
   .case-study--right {
     display: none; }
   .partners--item {
-    width: 100%; }
+    width: 100%;
+    }
   .recent-works--items__item {
     float: left;
     width: 50%;
