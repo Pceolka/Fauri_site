@@ -88,16 +88,48 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   .dot-dash.dark:before, .dot-dash.dark:after {
     background: #6a6a6a; }
 
+.four-elements .col-md-3 .four-elements--image--manrun {
+      height: 70px;
+      width: 70px;
+
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease;
+      margin: 0 auto 30px; }
+      .four-elements .col-md-3 .four-elements--image i {
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        font-size: 20px;
+        color: #2ED9C3; }
+    .four-elements .col-md-3:hover .four-elements--image--manrun {
+      border-color: #2ED9C3;
+      -webkit-transform: rotate(25deg);
+      transform: rotate(25deg); }
+
+
+
+
 .four-elements {
   text-align: center;
   padding: 100px 0;
-  border-bottom: 1px solid #e5e5e5; }
+   }
   .four-elements .col-md-3 {
     padding: 0 30px; }
     .four-elements .col-md-3 .four-elements--image {
       height: 70px;
       width: 70px;
-      border: 1px solid #e5e5e5;
+
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -148,7 +180,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
       letter-spacing: 1px; }
 
 .our-history {
-  padding: 20px 0; }
+  padding: 20px 0;}
   .our-history .col-md-7 {
     padding-left: 75px; }
     .our-history .col-md-7 h2 {
@@ -645,7 +677,7 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
   text-align: center;
   position: relative;
   overflow: hidden;
-  background: #f4f5f9; }
+  background: #ffffff; }
   .partners h2 {
     font: 600 36px/1 Montserrat-Regular;
     margin: 0 0 20px;
