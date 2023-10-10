@@ -17,14 +17,19 @@ class Trending(models.Model):
 
 class Pdfs(models.Model):
     id = models.AutoField(primary_key=True)
+
+    day = models.DateField(u'Дата проведения', blank=True, null=True)
+    bazeinfo = models.TextField(u'Название', default="")
+
+    info_text = models.TextField(u'Бюллетень', default="", blank=True, null=True)
+    info_pdf = models.FileField(u'Бюллетень', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
+
+    rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
+    rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
+
+    register = models.TextField(u'Регистрация', default="", help_text=u'Ссылка', blank=True, null=True)
+
     creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
-    bazeinfo = models.TextField(u'Первый столбик', help_text=u'время и место проведения', default="")
-
-    info_text = models.TextField(u'Второй столбик', default="", blank=True, null=True)
-    info_pdf = models.FileField(u'Второйстолб', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
-
-    rezul_text = models.TextField(u'Третий столбик', default="", blank=True, null=True)
-    rezul_pdf = models.FileField(u'Третийстлб', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     def __str__(self):
         return f"{self.bazeinfo} ({self.rezul_text} - {self.creation_day})"
