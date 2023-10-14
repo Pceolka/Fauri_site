@@ -13,7 +13,52 @@
 </div>
 
 <!-- Content -->
-<section class="bg0 p-b-140 p-t-10">
+<section class="bg0 p-b-110 p-t-10">
+
+<div class="container" style="overflow-x: auto;">
+
+  <table style='border-collapse: collapse;width: 100%;'>
+  <thead>
+    <tr style="background-color: #f2f2f2;">
+      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 20%;">Дата</th>
+      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 20%;">Название мероприятия</th>
+      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 20%;">Информация</th>
+      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 20%;">Результаты</th>
+      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 20%;">Регистрация</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for pdf in pdfs_list %}
+    <tr>
+      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">{{ pdf.day }}</td>
+      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">{{ pdf.bazeinfo }}</td>
+      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">
+        {% if pdf.info_pdf %}
+          <a href="{{ pdf.info_pdf.url }}" style="text-decoration: none;">{{ pdf.info_pdf.name }}</a>
+        {% else %}
+          {{ pdf.info_text }}
+        {% endif %}
+      </td>
+      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">
+        {% if pdf.rezul_pdf %}
+          <a href="{{ pdf.rezul_pdf.url }}" style="text-decoration: none;">{{ pdf.rezul_pdf.name }}</a>
+        {% else %}
+          {{ pdf.rezul_text }}
+        {% endif %}
+      </td>
+      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">
+        {% if pdf.register %}
+          <a href="{{ pdf.register.url }}" style="text-decoration: none;">{{ pdf.register.name }}</a>
+        {% else %}
+        {{ pdf.register_text }}
+        {% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+</div>
 
 </section>
 

@@ -66,7 +66,8 @@ def contact(request):
 
 
 def archive(request):
-    return render(request, "archive.html")
+    pdfs_list = Pdfs.objects.order_by('-creation_day')[:10]
+    return render(request, "archive.html", {'pdfs_list': pdfs_list})
 
 
 # Calendar

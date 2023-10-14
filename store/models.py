@@ -19,6 +19,8 @@ class Pdfs(models.Model):
     id = models.AutoField(primary_key=True)
 
     day = models.DateField(u'Дата проведения', blank=True, null=True)
+
+
     bazeinfo = models.TextField(u'Название', default="")
 
     info_text = models.TextField(u'Бюллетень', default="", blank=True, null=True)
@@ -27,7 +29,8 @@ class Pdfs(models.Model):
     rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
     rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
-    register = models.TextField(u'Регистрация', default="", help_text=u'Ссылка', blank=True, null=True)
+    register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True, null=True)
+    register_text = models.TextField(u'Регистрация', default="Закрыта", blank=True, null=True)
 
     creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
 

@@ -246,6 +246,14 @@ a.left-topbar-item:hover {
   color: #2ED9C3;
 }
 
+/*-----------------------------------------------
+[ Translate button ]
+.translate {
+    background: transparent;
+    border: none;
+    margin-left: 12px;
+}
+*/
 /*------------------------------------------------------------------
 [ Topbar mobile ]*/
 .topbar-mobile {
