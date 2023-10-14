@@ -6,7 +6,6 @@ from .models import Event
 from .utils import MainCalendar
 from django.utils.html import mark_safe
 from django.db.models import Q
-import locale
 
 
 def trending_texts(request):
@@ -44,7 +43,6 @@ def get_closest_event_id():
 
 
 def calendar_context(request):
-    locale.setlocale(locale.LC_TIME, 'ru_RU')
     after_day = request.GET.get('day__gte', None)
 
     if not after_day:
