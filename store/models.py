@@ -13,6 +13,7 @@ class Trending(models.Model):
 
     class Meta:
         verbose_name = u'Срочное'
+        verbose_name_plural = u'Срочное'
 
 
 class Pdfs(models.Model):
@@ -39,6 +40,7 @@ class Pdfs(models.Model):
 
     class Meta:
         verbose_name = u'Архив PDF файлов'
+        verbose_name_plural = u'Архив PDF файлов'
 
 
 # Новости

@@ -49,10 +49,6 @@
 								</span>
 								{% endfor %}
 							</span>
-                        <!--Language change logo
-                        <li class="header-item-lang-en"><button id="en" class="translate"><img src="{% static 'assets/img/england.png' %}" alt="ukflag" width="40px" height="25px"></button></li>
-                        <li class="header-item-lang-ru"><button id="ru" class="translate"><img src="{% static 'assets/img/russia.jpeg' %}" alt="ruflag" width="40px" height="25px"></button></li>
-                        -->
                     </div>
                 </div>
 
@@ -79,19 +75,14 @@
         <div class="menu-mobile">
             <ul class="topbar-mobile">
 
-                <li class="right-topbar">
-                    <a href="#">
-                        <span class="fab fa-facebook-f"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-viber"></span>
-                    </a>
-
-                    <a href="#">
-                        <span class="fab fa-youtube"></span>
-                    </a>
-                </li>
+                <span class="dis-inline-block cl16 slide100-txt pos-relative size-w-0" data-in="fadeInDown"
+                              data-out="fadeOutDown">
+								{% for text in trending_texts %}
+								<span class="dis-inline-block slide100-txt-item animated visible-false">
+									{{ text }}
+								</span>
+								{% endfor %}
+							</span>
             </ul>
 
             <ul class="main-menu-m">

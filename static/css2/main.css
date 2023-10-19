@@ -1141,7 +1141,7 @@ padding: 50px 0;
     }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 575px) {
   .four-elements, .our-history, .our-services, .recent-works, .case-study, .statistics, .our-pricing, .our-team, .partners, .our-blog, .keep-touch, .get-started {
     padding: 80px 0; }
   .our-history .col-md-7 {

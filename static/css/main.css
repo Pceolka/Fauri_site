@@ -257,7 +257,7 @@ a.left-topbar-item:hover {
 /*------------------------------------------------------------------
 [ Topbar mobile ]*/
 .topbar-mobile {
-  background-color: #222;
+  background-color: #011e41;
   padding: 8px 25px 5px 25px;
 }
 
@@ -760,7 +760,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 
 .main-menu-m > li > a {
   font-family: Montserrat-Regular;
-  font-size: 16px;
+  font-size: 20px;
   color: #fff;
   line-height: 2.8;
   padding: 9px 25px 9px 25px;
@@ -1238,7 +1238,7 @@ a.breadcrumb-item:hover {
 /*---------------------------------------------*/
 .f2-s-1 {
   font-family: Montserrat-Regular;
-  font-size: 14px;
+  font-size: 22px;
   line-height: 1.7;
 }
 
