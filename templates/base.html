@@ -36,12 +36,16 @@
 <header>
     <!-- Header desktop -->
     <div class="container-menu-desktop">
+
         <!-- Верхняя черная линия  -->
+        {% if trending_texts %}
+
+
         <div class="topbar">
             <div class="content-topbar h-100 p-rl-30">
                 <div class="align-self-stretch size-w-0 pos-relative m-r-30">
                     <div class="f2-s-1 flex-wr-s-c s-full ab-t-l p-b-2">
-                        <span class="dis-inline-block cl16 slide100-txt pos-relative size-w-0" data-in="fadeInDown"
+                        <span class="dis-inline-block cl16 slide100-txt pos-relative size-w-0 text-center" data-in="fadeInDown"
                               data-out="fadeOutDown">
 								{% for text in trending_texts %}
 								<span class="dis-inline-block slide100-txt-item animated visible-false">
@@ -55,7 +59,7 @@
 
             </div>
         </div>
-
+        {% endif %}
         <!-- Header Mobile -->
         <div class="wrap-header-mobile">
             <!-- Logo moblie -->

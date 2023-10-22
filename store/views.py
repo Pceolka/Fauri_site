@@ -17,6 +17,11 @@ def news(request):
     latest_events = Event.objects.order_by('-creation_day')[:6]
     return render(request, 'news.html', {'latest_events': latest_events})
 
+def trending(request):
+    trending_texts = Trending.objects.all()
+    context = {'trending_texts': trending_texts}
+    return render(request, 'base.html', context)
+
 
 def single(request, id):
     news = get_object_or_404(Event, id=id)
