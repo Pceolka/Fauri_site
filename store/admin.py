@@ -6,8 +6,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor.widgets import CKEditorWidget
 
-from .models import Pdfs, Trending
-from .models import Event
+from .models import Pdfs, Trending, Event
 from .utils import EventCalendar
 
 

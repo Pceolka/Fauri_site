@@ -21,7 +21,6 @@ class Pdfs(models.Model):
 
     day = models.DateField(u'Дата проведения', blank=True, null=True)
 
-
     bazeinfo = models.TextField(u'Название', default="")
 
     info_text = models.TextField(u'Бюллетень', default="", blank=True, null=True)

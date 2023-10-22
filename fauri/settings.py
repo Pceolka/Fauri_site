@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'calendar',
     'ckeditor',
+    'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
@@ -103,6 +105,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 600,
+        'width': 900,
+        'autoEmbed_maxWidth': 100,  # Максимальная ширина изображений
+    },
+}
+
+
 LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Europe/Moscow'
@@ -115,23 +127,18 @@ USE_TZ = True
 
 DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
 
-MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.10/howto/static-files/
-
-# The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
-
 DATA_UPLOAD_MAX_MEMORY_SIZE = 20 * 1024 * 1024  # 20MB в байтах
 
-# The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, 'ckeditor'),
-]
+STATIC_URL = '/static/'
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = [STATIC_DIR]
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
