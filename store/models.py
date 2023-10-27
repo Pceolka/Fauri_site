@@ -30,9 +30,13 @@ class Pdfs(models.Model):
     rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True, null=True)
-    register_text = models.TextField(u'Регистрация', default="Закрыта", blank=True, null=True)
+    register_text = models.TextField(u'Регистрация', default="", blank=True, null=True)
 
     creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
+
+    category_text = models.TextField(u'Категория', default="", blank=True, null=True)
+
+    organizers = models.TextField(u'Организаторы', default="", blank=True, null=True)
 
     def __str__(self):
         return f"{self.bazeinfo} ({self.rezul_text} - {self.creation_day})"

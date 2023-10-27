@@ -74,6 +74,8 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 [ Bootstrap ]*/
 .container {max-width: 1080px;}
 
+.container_table {max-width: 1300px;}
+
 
 /*//////////////////////////////////////////////////////////////////
 [ LOADDING ]*/

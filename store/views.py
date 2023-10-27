@@ -9,7 +9,8 @@ from django.utils.safestring import mark_safe
 from .utils import MainCalendar
 from .models import Event, Pdfs
 from django.utils import timezone
-
+from django.db.models.functions import ExtractYear
+from datetime import datetime
 
 # Создание видов
 
@@ -70,10 +71,64 @@ def contact(request):
     return render(request, "contact.html")
 
 
-def archive(request):
-    pdfs_list = Pdfs.objects.order_by('-creation_day')[:10]
-    return render(request, "archive.html", {'pdfs_list': pdfs_list})
+# def archive(request):
+#    pdfs_list = Pdfs.objects.order_by('-creation_day')[:10]
+ #   return render(request, "archive.html", {'pdfs_list': pdfs_list})
 
+
+
+
+
+def archive(request):
+    pdfs_list = Pdfs.objects.order_by('-day')
+
+    # Фильтрация по году
+    year = request.GET.get('year')
+    if year:
+        pdfs_list = pdfs_list.filter(day__year=int(year))
+
+    # Фильтрация по статусу регистрации
+    registration_status = request.GET.get('registration')
+    if registration_status:
+        if registration_status == 'open':
+            pdfs_list = pdfs_list.filter(register='Открыта')
+        elif registration_status == 'closed':
+            pdfs_list = pdfs_list.exclude(register='Открыта')
+
+    # Поиск по названию
+    search_query = request.GET.get('search')
+    if search_query:
+        pdfs_list = pdfs_list.filter(bazeinfo__icontains=search_query)
+
+    # Сортировка по категории
+    category = request.GET.get('category')
+    if category:
+        pdfs_list = pdfs_list.filter(category_text=category)
+
+    # Сортировка по организаторам
+    organizers = request.GET.get('organizers')
+
+    if organizers:
+        if organizers == 'Прочее':
+            pdfs_list = pdfs_list.exclude(organizers='Fauri')
+            pdfs_list = pdfs_list.exclude(organizers='Galata')
+            pdfs_list = pdfs_list.exclude(organizers='Tiras-Orient')
+            pdfs_list = pdfs_list.exclude(organizers='FOS RM')
+            pdfs_list = pdfs_list.exclude(organizers='IOF')
+            # Для того чтобы сортировка по строчке "Прочее" исключало остальных организаторов, добавьте их сюда
+        elif organizers:
+            pdfs_list = pdfs_list.filter(organizers=organizers)
+
+
+
+    # Сортировка по году и месяцу
+    month = request.GET.get('month')
+    if month:
+        pdfs_list = pdfs_list.filter(day__month=int(month))
+
+    pdfs_list = pdfs_list[:10]
+
+    return render(request, "archive.html", {'pdfs_list': pdfs_list})
 
 # Calendar
 def calendars(request):
