@@ -714,7 +714,7 @@ li.respon-sub-menu > .sub-menu .sub-menu {
 
 .logo-mobile img {
   max-width: calc(100% - 35px);
-  max-height: 60%;
+  max-height: 80%;
   position:absolute;
   top: 0; 
   left: 0; 

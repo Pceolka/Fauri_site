@@ -13,7 +13,7 @@ from .utils import EventCalendar
 # регистрация моделей
 
 class EventForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditorWidget(), label='Описание')
 
     class Meta:
         model = Event
@@ -71,4 +71,15 @@ class PDFAdmin(admin.ModelAdmin):
 
 admin.site.register(Pdfs, PDFAdmin)
 
-admin.site.register(Trending)
+class TrendingForm(forms.ModelForm):
+    text = forms.CharField(widget=CKEditorWidget(), label='Срочные новости')
+
+    class Meta:
+        model = Trending
+        fields = '__all__'
+
+class TrendingAdmin(admin.ModelAdmin):
+    form = TrendingForm  # Используйте TrendingForm для административной формы
+
+
+admin.site.register(Trending, TrendingAdmin)

@@ -49,7 +49,7 @@
                               data-out="fadeOutDown">
 								{% for text in trending_texts %}
 								<span class="dis-inline-block slide100-txt-item animated visible-false">
-									{{ text }}
+									{{ text|safe }}
 								</span>
 								{% endfor %}
 							</span>
@@ -84,7 +84,7 @@
                               data-out="fadeOutDown">
 								{% for text in trending_texts %}
 								<span class="dis-inline-block slide100-txt-item animated visible-false">
-									{{ text }}
+									{{ text|safe }}
 								</span>
 								{% endfor %}
 							</span>

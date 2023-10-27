@@ -6,7 +6,7 @@ from django.urls import reverse
 # Создание моделей
 class Trending(models.Model):
     id = models.AutoField(primary_key=True)
-    text = models.TextField(u'Заголовок', help_text=u'заголовок "Срочные новости"', default="")
+    text = models.TextField(default="")
 
     def __str__(self):
         return self.text
@@ -42,8 +42,8 @@ class Pdfs(models.Model):
         return f"{self.bazeinfo} ({self.rezul_text} - {self.creation_day})"
 
     class Meta:
-        verbose_name = u'Архив PDF файлов'
-        verbose_name_plural = u'Архив PDF файлов'
+        verbose_name = u'Архив'
+        verbose_name_plural = u'Архив'
 
 
 # Новости
@@ -52,9 +52,7 @@ class Event(models.Model):
     header = models.TextField(u'Заголовок', default="")
     author = models.CharField(u'Автор новости', help_text=u'', max_length=25, default='fauri')
     image = models.ImageField(u'Картинка', help_text=u'', upload_to='media/', default='/media/umolcanie.jpg')
-    description = models.TextField(u'Описание',
-                                   help_text=u'Для картинок-Дополнительно-Стили- max-width: 100%;height: auto;',
-                                   default="")
+    description = models.TextField(default="")
 
     CATEGORY_CHOICES = [
         ('событие', 'Событие'),
