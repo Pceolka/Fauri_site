@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<head>
+  <meta charset="UTF-8">
 
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
+
+</head>
 <body class="animsition">
 
 <!-- Page heading -->
@@ -14,79 +20,85 @@
 <section class="bg0 p-b-110 p-t-10">
 
   <!-- Добавляем форму для поиска и фильтрации -->
-<form method="GET" action="{% url 'archive' %}">
-  <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
-    <label for="search" style="margin-right: 10px;">Поиск по названию:</label>
-    <input type="text" name="search" id="search" placeholder="Поиск по названию" style="padding: 5px;">
-    <button type="submit" style="background-color: #f2f2f2; border: none; outline: none; cursor: pointer;">
-      🔍
-    </button>
-  </div>
-  <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
-    <label for="year" style="margin-right: 10px;">Год:</label>
-    <select name="year" id="year" style="padding: 5px;">
-      <option value="">Все года</option>
-      <option value="2023">2023</option>
-      <option value="2022">2022</option>
-      <!-- Добавь остальные года, если необходимо -->
-    </select>
-    <label for="category" style="margin-left: 10px; margin-right: 10px;">Категория:</label>
-    <select name="category" id="category" style="padding: 5px;">
-      <option value="">Все категории</option>
-      <option value="Соревнование">Соревнование</option>
-      <option value="Международные соревнования">Международные соревнования</option>
-      <option value="Тренировка">Тренировка</option>
-      <!-- Добавь остальные категории, если необходимо -->
-    </select>
-    <label for="month" style="margin-left: 10px; margin-right: 10px;">Месяц:</label>
-    <select name="month" id="month" style="padding: 5px;">
-      <option value="">Все месяцы</option>
-      <option value="1">Январь</option>
-      <option value="2">Февраль</option>
-      <option value="3">Март</option>
-      <option value="4">Апрель</option>
-      <option value="5">Май</option>
-      <option value="6">Июнь</option>
-      <option value="7">Июль</option>
-      <option value="8">Август</option>
-      <option value="9">Сентябрь</option>
-      <option value="10">Октябрь</option>
-      <option value="11">Ноябрь</option>
-      <option value="12">Декабрь</option>
-      <!-- Добавь остальные месяцы, если необходимо -->
-    </select>
-    <label for="organizers" style="margin-left: 10px; margin-right: 10px;">Организатор:</label>
-    <select name="organizers" id="organizers" style="padding: 5px;">
-      <option value="">Все организаторы</option>
-      <option value="Fauri">Fauri</option>
-      <option value="Galata">Galata</option>
-      <option value="Tiras-Orient">Tiras-Orient</option>
-      <option value="FOS RM">FOS RM</option>
-      <option value="IOF">IOF</option>
-      <option value="Прочее">Прочее</option>
-      <!-- Добавь остальных организаторов, если необходимо,
-      Для того чтобы сортировка по строчке "Прочее" исключало остальных организаторов, добавьте их в файлик views.py строчка 118
-      или с помощью поиска по слову "Прочее"-->
-    </select>
-  </div>
-  <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
-    <label for="registration" style="margin-right: 10px;">Статус регистрации:</label>
-    <select name="registration" id="registration" style="padding: 5px;">
-      <option value="">Все статусы регистрации</option>
-      <option value="open">Открыта</option>
-      <option value="closed">Закрыта</option>
-    </select>
-  </div>
-  <div style="display: flex; justify-content: center; margin-top: 10px;">
-    <button type="submit" style="padding: 5px 20px; background-color: #f2f2f2; border: 1px solid; outline: none; cursor: pointer;">
-      Применить
-    </button>
-  </div>
-</form>
+
+    <form method="GET" action="{% url 'archive' %}">
+      <div id="app">
+
+      <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px; ">
+        <v-text-field type="text" name="search" id="search" placeholder="Поиск по названию" style="padding: 5px;" v-model="search" append-icon="search" label="Поиск по названию:" single-line hide-details></v-text-field>
+
+
+      </div>
+      </div>
+
+      <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
+        <label for="year" style="margin-right: 10px;">Год:</label>
+        <select name="year" id="year" style="padding: 5px;">
+          <option value="">Все года</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <!-- Добавь остальные года, если необходимо -->
+        </select>
+        <label for="category" style="margin-left: 10px; margin-right: 10px;">Категория:</label>
+        <select name="category" id="category" style="padding: 5px;">
+          <option value="">Все категории</option>
+          <option value="Соревнование">Соревнование</option>
+          <option value="Международные соревнования">Международные соревнования</option>
+          <option value="Тренировка">Тренировка</option>
+          <!-- Добавь остальные категории, если необходимо -->
+        </select>
+        <label for="month" style="margin-left: 10px; margin-right: 10px;">Месяц:</label>
+        <select name="month" id="month" style="padding: 5px;">
+          <option value="">Все месяцы</option>
+          <option value="1">Январь</option>
+          <option value="2">Февраль</option>
+          <option value="3">Март</option>
+          <option value="4">Апрель</option>
+          <option value="5">Май</option>
+          <option value="6">Июнь</option>
+          <option value="7">Июль</option>
+          <option value="8">Август</option>
+          <option value="9">Сентябрь</option>
+          <option value="10">Октябрь</option>
+          <option value="11">Ноябрь</option>
+          <option value="12">Декабрь</option>
+          <!-- Добавь остальные месяцы, если необходимо -->
+        </select>
+        <label for="organizers" style="margin-left: 10px; margin-right: 10px;">Организатор:</label>
+        <select name="organizers" id="organizers" style="padding: 5px;">
+          <option value="">Все организаторы</option>
+          <option value="Fauri">Fauri</option>
+          <option value="Galata">Galata</option>
+          <option value="Tiras-Orient">Tiras-Orient</option>
+          <option value="FOS RM">FOS RM</option>
+          <option value="IOF">IOF</option>
+          <option value="Прочее">Прочее</option>
+          <!-- Добавь остальных организаторов, если необходимо,
+          Для того чтобы сортировка по строчке "Прочее" исключало остальных организаторов, добавьте их в файлик views.py строчка 118
+          или с помощью поиска по слову "Прочее"-->
+        </select>
+      </div>
+      <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
+        <label for="registration" style="margin-right: 10px;">Статус регистрации:</label>
+        <select name="registration" id="registration" style="padding: 5px;">
+          <option value="">Все статусы регистрации</option>
+          <option value="open">Открыта</option>
+          <option value="closed">Закрыта</option>
+        </select>
+      </div>
+      <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <button type="submit"
+                style="padding: 5px 20px; background-color: #f2f2f2; border: 1px solid; outline: none; cursor: pointer;">
+
+          <a>Применить</a>
+        </button>
+      </div>
+    </form>
+
 
 <div class="container" style="max-width: 1250px; overflow-x: auto;">
 
-  <table style='border-collapse: collapse;width: 100%;'>
+  <table style='border-collapse: collapse;width: 100%; font-size: 14px;'>
   <thead>
     <tr style="background-color: #f2f2f2;">
       <th style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; width: 15%;">Дата</th>
@@ -135,7 +147,9 @@
 
 </section>
 
-
+ <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js'></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 
 {% endblock content %}

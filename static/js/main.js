@@ -264,4 +264,22 @@
     } catch(er) {console.log(er);}
             
 
+
+new Vue({
+      el: '#app',
+      data: () => ({
+        pagination: {
+          sortBy: 'name'
+        },
+        selected: [],
+        search: '',
+        isMobile: false,
+
+
+      }),
+
+
+})
+
+
 })(jQuery);
