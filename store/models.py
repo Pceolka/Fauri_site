@@ -105,7 +105,7 @@ class Slider(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок или описание', default="")
     image = models.ImageField(u'Картинка', upload_to='partners_and_slider/')
-    urls_slide = models.TextField(u'Ссылка', default="")
+    # urls_slide = models.TextField(u'Ссылка', default="")
 
     def str(self):
         return self.header
