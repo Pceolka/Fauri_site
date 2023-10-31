@@ -52,7 +52,7 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок', default="")
     author = models.CharField(u'Автор новости', help_text=u'', max_length=25, default='fauri')
-    image = models.ImageField(u'Картинка', help_text=u'', upload_to='media/', default='media/umolcanie.jpg')
+    image = models.ImageField(u'Картинка', help_text=u'', upload_to='', default='umolcanie.jpg')
     description = models.TextField(default="")
 
     CATEGORY_CHOICES = [
