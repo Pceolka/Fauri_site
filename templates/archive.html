@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<head>
+  <meta charset="UTF-8">
+
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
+
+</head>
 <body class="animsition">
 
 
@@ -178,6 +185,10 @@
 </div>
 
 </section>
+
+ <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js'></script>
+<script src="{% static 'js/main.js' %}"></script>
 </body>
 
 {% endblock content %}
