@@ -29,7 +29,8 @@ class Pdfs(models.Model):
     rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
     rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
-    register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True, null=True)
+    register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True,
+                                null=True)
     register_text = models.TextField(u'Регистрация', default="", blank=True, null=True)
 
     creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
@@ -84,3 +85,16 @@ class Event(models.Model):
     def get_absolute_url(self):
         url = reverse('admin:%s_%s_change' % (self._meta.app_label, self._meta.model_name), args=[self.id])
         return u'<a href="%s">%s</a>' % (url, str(self.start_time))
+
+
+class Partners(models.Model):
+    id = models.AutoField(primary_key=True)
+    header = models.TextField(u'Заголовок или описание', default="")
+    image = models.ImageField(u'Картинка', upload_to='media/partnersimage', default='/media/umolcanie.jpg')
+
+    def __str__(self):
+        return self.header
+
+    class Meta:
+        verbose_name = u'Партнёр'
+        verbose_name_plural = u'Партнёры'

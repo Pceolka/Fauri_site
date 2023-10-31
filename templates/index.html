@@ -14,8 +14,6 @@
 <body class="animsition">
 
 
-
-
 <div class="home-slider">
     <div class="home-slider--wrapper">
         <div>
@@ -40,21 +38,21 @@
             <div class="partners--item"></div>
 
             <div class="partners--item">
-                <div class="partners--item__image">
-                    <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                </div>
+
+                    <img src="{{ partners_img.0.image.url }}" alt="IMG">
 
             </div>
 
             <div class="partners--item">
 
-                <img src="{% static 'assets/img/OM_Logo.jpg' %}" alt="">
+                    <img src="{{ partners_img.1.image.url }}" alt="IMG">
 
             </div>
+
             <div class="partners--item">
-                <div class="partners--item__image">
-                    <img src="{% static 'assets/img/partner1.png' %}" alt="">
-                </div>
+
+                    <img src="{{ partners_img.2.image.url }}" alt="IMG">
+
             </div>
 
         </div>
@@ -70,16 +68,13 @@
                     а наши спортсмены участвуют в международных стартах!
                 </p>
             </div>
-                                <div class="col-md-5">
-                        <img src="{% static 'assets/img/anime2.gif' %}"alt="Анимация"alt="Анимация" width="600" height="110">
-                    </div>
+            <div class="col-md-5">
+                <img src="{% static 'assets/img/anime2.gif' %}" alt="Анимация" alt="Анимация" width="600" height="110">
+            </div>
         </div>
     </div>
 
 </section>
-
-
-
 
 
 <section class="case-study">
@@ -142,7 +137,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="four-elements--image--manrun"><img src="{% static 'assets/img/begun.png' %}" alt=""/></div>
+                    <div class="four-elements--image--manrun"><img src="{% static 'assets/img/begun.png' %}" alt=""/>
+                    </div>
                     <h3>Международные соревнования</h3>
                     <p>Наша команда профессионалов проводит соревнования высокого уровня.</p>
                 </div>

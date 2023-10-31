@@ -4,19 +4,16 @@ from django.shortcuts import get_object_or_404
 from datetime import date
 from django.shortcuts import render
 import datetime
-import calendar
-from django.utils.safestring import mark_safe
-from .utils import MainCalendar
-from .models import Event, Pdfs
-from django.utils import timezone
-from django.db.models.functions import ExtractYear
+from .models import Event, Pdfs, Partners
 from datetime import datetime
+
 
 # Создание видов
 
 def news(request):
     latest_events = Event.objects.order_by('-creation_day')[:6]
     return render(request, 'news.html', {'latest_events': latest_events})
+
 
 def trending(request):
     trending_texts = Trending.objects.all()
@@ -40,7 +37,8 @@ def about(request):
 
 
 def index(request):
-    return render(request, "index.html")
+    partners_img = Partners.objects.all()
+    return render(request, "index.html", {'partners_img':partners_img})
 
 
 def news_by_category(request, category):
@@ -73,10 +71,7 @@ def contact(request):
 
 # def archive(request):
 #    pdfs_list = Pdfs.objects.order_by('-creation_day')[:10]
- #   return render(request, "archive.html", {'pdfs_list': pdfs_list})
-
-
-
+#   return render(request, "archive.html", {'pdfs_list': pdfs_list})
 
 
 def archive(request):
@@ -119,8 +114,6 @@ def archive(request):
         elif organizers:
             pdfs_list = pdfs_list.filter(organizers=organizers)
 
-
-
     # Сортировка по году и месяцу
     month = request.GET.get('month')
     if month:
@@ -129,6 +122,7 @@ def archive(request):
     pdfs_list = pdfs_list[:10]
 
     return render(request, "archive.html", {'pdfs_list': pdfs_list})
+
 
 # Calendar
 def calendars(request):

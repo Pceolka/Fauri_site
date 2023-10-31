@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor.widgets import CKEditorWidget
 
-from .models import Pdfs, Trending, Event
+from .models import Pdfs, Trending, Event, Partners
 from .utils import EventCalendar
 
 
@@ -69,8 +69,6 @@ class PDFAdmin(admin.ModelAdmin):
     ordering = ['-creation_day']
 
 
-admin.site.register(Pdfs, PDFAdmin)
-
 class TrendingForm(forms.ModelForm):
     text = forms.CharField(widget=CKEditorWidget(), label='Срочные новости')
 
@@ -78,8 +76,11 @@ class TrendingForm(forms.ModelForm):
         model = Trending
         fields = '__all__'
 
+
 class TrendingAdmin(admin.ModelAdmin):
     form = TrendingForm  # Используйте TrendingForm для административной формы
 
 
 admin.site.register(Trending, TrendingAdmin)
+admin.site.register(Pdfs, PDFAdmin)
+admin.site.register(Partners)
