@@ -19,9 +19,7 @@
         {% for slide in slider_img %}
         <div>
             <div class="home-slider--wrapper__inner">
-
                 <img src="{{ slide.image.url }}" alt="img">
-
             </div>
         </div>
         {% endfor %}
@@ -32,27 +30,13 @@
     <div class="container">
 
         <div class="partners--container">
-
-            <div class="partners--item"></div>
-
+            {% for partners_img in partners_img %}
             <div class="partners--item">
-
-                    <img src="{{ partners_img.0.image.url }}" alt="IMG">
-
+                <a href='{{partners_img.ssilka}}'>
+                    <img src="{{ partners_img.image.url }}" alt="IMG">
+                </a>
             </div>
-
-            <div class="partners--item">
-
-                    <img src="{{ partners_img.1.image.url }}" alt="IMG">
-
-            </div>
-
-            <div class="partners--item">
-
-                    <img src="{{ partners_img.2.image.url }}" alt="IMG">
-
-            </div>
-
+            {% endfor %}
         </div>
     </div>
 </section>

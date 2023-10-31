@@ -52,7 +52,7 @@ class Event(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок', default="")
     author = models.CharField(u'Автор новости', help_text=u'', max_length=25, default='fauri')
-    image = models.ImageField(u'Картинка', help_text=u'', upload_to='media/', default='/media/umolcanie.jpg')
+    image = models.ImageField(u'Картинка', help_text=u'', upload_to='media/', default='media/umolcanie.jpg')
     description = models.TextField(default="")
 
     CATEGORY_CHOICES = [
@@ -90,7 +90,8 @@ class Event(models.Model):
 class Partners(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок или описание', default="")
-    image = models.ImageField(u'Картинка', upload_to='partners_and_slider/', default='/media/umolcanie.jpg')
+    image = models.ImageField(u'Картинка', upload_to='partners_and_slider/')
+    ssilka = models.TextField(u'Заголовок или описание', default="")
 
     def __str__(self):
         return self.header
@@ -99,16 +100,16 @@ class Partners(models.Model):
         verbose_name = u'Партнёр'
         verbose_name_plural = u'Партнёры'
 
+
 class Slider(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок или описание', default="")
-    image = models.ImageField(u'Картинка', upload_to='partners_and_slider/', default='/media/umolcanie.jpg')
+    image = models.ImageField(u'Картинка', upload_to='partners_and_slider/')
     urls_slide = models.TextField(u'Ссылка', default="")
 
-    def __str__(self):
+    def str(self):
         return self.header
 
     class Meta:
         verbose_name = u'Слайдер'
         verbose_name_plural = u'Слайдер'
-

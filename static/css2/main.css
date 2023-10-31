@@ -697,14 +697,15 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     width: 100%;
     display: block;
      }
-  .partners--item {
-    position: relative;
-    z-index: 1;
-    float: left;
-    width: 17%;
-    margin: 0 1.5% 30px;
-    text-align: center;
-    background: #ffffff; }
+    .partners--item {
+      position: relative;
+      z-index: 1;
+      float: left;
+      width: 30%; /* Установите 30% ширины для каждого элемента, чтобы уместить по три элемента в ряду */
+      margin: 0 1%; /* Уменьшите внешний отступ между элементами */
+      text-align: center;
+      background: #ffffff;
+      padding: 10px;}
     .partners--item__image {
       -webkit-transition: all 0.3s ease;
       transition: all 0.3s ease;
@@ -1113,9 +1114,6 @@ article {
     z-index: 1; }
   .case-study--right {
     display: none; }
-  .partners--item {
-    width: 100%;
-    }
   .recent-works--items__item {
     float: left;
     width: 50%;
