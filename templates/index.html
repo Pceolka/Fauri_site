@@ -16,18 +16,16 @@
 
 <div class="home-slider">
     <div class="home-slider--wrapper">
+        {% for slide in slider_img %}
         <div>
             <div class="home-slider--wrapper__inner">
-                <img src="{% static 'assets/img/slider2.jpg' %}" alt=""/>
-            </div>
-        </div>
-        <div>
-            <div class="home-slider--wrapper__inner">
-                <img src="{% static 'assets/img/slider3.jpg' %}" alt=""/>
-            </div>
-        </div>
-    </div>
 
+                <img src="{{ slide.image.url }}" alt="img">
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 <section class="partners">

@@ -90,7 +90,7 @@ class Event(models.Model):
 class Partners(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок или описание', default="")
-    image = models.ImageField(u'Картинка', upload_to='media/partnersimage', default='/media/umolcanie.jpg')
+    image = models.ImageField(u'Картинка', upload_to='partners_and_slider/', default='/media/umolcanie.jpg')
 
     def __str__(self):
         return self.header
@@ -98,3 +98,17 @@ class Partners(models.Model):
     class Meta:
         verbose_name = u'Партнёр'
         verbose_name_plural = u'Партнёры'
+
+class Slider(models.Model):
+    id = models.AutoField(primary_key=True)
+    header = models.TextField(u'Заголовок или описание', default="")
+    image = models.ImageField(u'Картинка', upload_to='partners_and_slider/', default='/media/umolcanie.jpg')
+    urls_slide = models.TextField(u'Ссылка', default="")
+
+    def __str__(self):
+        return self.header
+
+    class Meta:
+        verbose_name = u'Слайдер'
+        verbose_name_plural = u'Слайдер'
+

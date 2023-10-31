@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor.widgets import CKEditorWidget
 
-from .models import Pdfs, Trending, Event, Partners
+from .models import Pdfs, Trending, Event, Partners, Slider
 from .utils import EventCalendar
 
 
@@ -84,3 +84,4 @@ class TrendingAdmin(admin.ModelAdmin):
 admin.site.register(Trending, TrendingAdmin)
 admin.site.register(Pdfs, PDFAdmin)
 admin.site.register(Partners)
+admin.site.register(Slider)

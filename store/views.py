@@ -4,7 +4,7 @@ from django.shortcuts import get_object_or_404
 from datetime import date
 from django.shortcuts import render
 import datetime
-from .models import Event, Pdfs, Partners
+from .models import Event, Pdfs, Partners, Slider
 from datetime import datetime
 
 
@@ -38,7 +38,8 @@ def about(request):
 
 def index(request):
     partners_img = Partners.objects.all()
-    return render(request, "index.html", {'partners_img':partners_img})
+    slider_img = Slider.objects.all()
+    return render(request, "index.html", {'partners_img':partners_img, 'slider_img': slider_img})
 
 
 def news_by_category(request, category):
