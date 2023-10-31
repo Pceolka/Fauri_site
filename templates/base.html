@@ -24,9 +24,10 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <!--===============================================================================================-->
-<link rel="stylesheet" type="text/css" href="{% static 'css/calendarsmall.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calendarsmall.css' %}">
     <!--===============================================================================================-->
-
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
 
 
     <title>Fauri</title>
@@ -40,18 +41,18 @@
 
         <!-- Верхняя черная линия  -->
         {% if trending_texts %}
-            <ul class="topbar-mobile text-center">
+        <ul class="topbar-mobile text-center">
 
                 <span class="dis-inline-block cl16 slide100-txt pos-relative size-w-0" data-in="fadeInDown"
-                              data-out="fadeOutDown">
+                      data-out="fadeOutDown">
 								{% for text in trending_texts %}
 								<span class="dis-inline-block slide100-txt-item animated visible-false">
 									{{ text|safe }}
 								</span>
 								{% endfor %}
 							</span>
-            </ul>
-            {% endif %}
+        </ul>
+        {% endif %}
         <!-- Header Mobile -->
         <div class="wrap-header-mobile">
             <!-- Logo moblie -->
@@ -91,7 +92,6 @@
                 </li>
 
 
-
             </ul>
         </div>
 
@@ -117,7 +117,8 @@
                                 <div class="nav flex-column nav-pills" role="tablist">
                                     <a class="nav-link active" data-toggle="pill" href="#news-0" role="tab">Всё</a>
                                     <a class="nav-link" data-toggle="pill" href="#news-1" role="tab">Соревнования</a>
-                                    <a class="nav-link" data-toggle="pill" href="#news-2" role="tab">Международные соревнования</a>
+                                    <a class="nav-link" data-toggle="pill" href="#news-2" role="tab">Международные
+                                        соревнования</a>
                                     <a class="nav-link" data-toggle="pill" href="#news-3" role="tab">События</a>
                                     <a class="nav-link" data-toggle="pill" href="#news-4" role="tab">Тренировки</a>
                                 </div>
@@ -589,6 +590,8 @@ function bindEventHandlers() {
 bindEventHandlers();
 
 
+
+
 </script>
 <!--===============================================================================================-->
 <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
@@ -598,6 +601,9 @@ bindEventHandlers();
 <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
 <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 <!--===============================================================================================-->
+<script src="{% static 'js/main.js' %}"></script>
+<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js'></script>
 <script src="{% static 'js/main.js' %}"></script>
 
 </body>
