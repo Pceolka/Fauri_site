@@ -282,4 +282,5 @@ new Vue({
 })
 
 
+
 })(jQuery);

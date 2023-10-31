@@ -21,34 +21,43 @@
 
   <!-- Добавляем форму для поиска и фильтрации -->
 
-    <form method="GET" action="{% url 'archive' %}">
-      <div id="app">
+  <form method="GET" action="{% url 'archive' %}">
+    <div id="app">
 
       <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px; ">
-        <v-text-field type="text" name="search" id="search" placeholder="Поиск по названию" style="padding: 5px;" v-model="search" append-icon="search" label="Поиск по названию:" single-line hide-details></v-text-field>
+        <v-text-field type="text" name="search" id="search" placeholder="Поиск по названию" style="padding: 5px;"
+                      v-model="search" append-icon="search" label="Поиск по названию:" single-line
+                      hide-details></v-text-field>
 
 
       </div>
-      </div>
+    </div>
 
-      <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
-        <label for="year" style="margin-right: 10px;">Год:</label>
-        <select name="year" id="year" style="padding: 5px;">
+    <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px; font-size: 18px; box-sizing: border-box;">
+
+      <div class="control filter">
+        <div class="control-icon">
+          <i class="material-icons">&#xE152;</i>
+        </div>
+        <div class="select-arrow">
+          <i class="material-icons">&#xE313;</i>
+        </div>
+        <select class="control-field filter-field form-control" name="year" id="year">
           <option value="">Все года</option>
           <option value="2023">2023</option>
           <option value="2022">2022</option>
           <!-- Добавь остальные года, если необходимо -->
         </select>
-        <label for="category" style="margin-left: 10px; margin-right: 10px;">Категория:</label>
-        <select name="category" id="category" style="padding: 5px;">
-          <option value="">Все категории</option>
-          <option value="Соревнование">Соревнование</option>
-          <option value="Международные соревнования">Международные соревнования</option>
-          <option value="Тренировка">Тренировка</option>
-          <!-- Добавь остальные категории, если необходимо -->
-        </select>
-        <label for="month" style="margin-left: 10px; margin-right: 10px;">Месяц:</label>
-        <select name="month" id="month" style="padding: 5px;">
+      </div>
+
+      <div class="control filter">
+        <div class="control-icon">
+          <i class="material-icons">&#xE152;</i>
+        </div>
+        <div class="select-arrow">
+          <i class="material-icons">&#xE313;</i>
+        </div>
+        <select class="control-field filter-field form-control" name="month" id="month">
           <option value="">Все месяцы</option>
           <option value="1">Январь</option>
           <option value="2">Февраль</option>
@@ -64,8 +73,16 @@
           <option value="12">Декабрь</option>
           <!-- Добавь остальные месяцы, если необходимо -->
         </select>
-        <label for="organizers" style="margin-left: 10px; margin-right: 10px;">Организатор:</label>
-        <select name="organizers" id="organizers" style="padding: 5px;">
+      </div>
+
+      <div class="control filter">
+        <div class="control-icon">
+          <i class="material-icons">&#xE152;</i>
+        </div>
+        <div class="select-arrow">
+          <i class="material-icons">&#xE313;</i>
+        </div>
+        <select class="control-field filter-field form-control" name="organizers" id="organizers">
           <option value="">Все организаторы</option>
           <option value="Fauri">Fauri</option>
           <option value="Galata">Galata</option>
@@ -78,19 +95,46 @@
           или с помощью поиска по слову "Прочее"-->
         </select>
       </div>
-      <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px;">
-        <label for="registration" style="margin-right: 10px;">Статус регистрации:</label>
-        <select name="registration" id="registration" style="padding: 5px;">
+
+      <div class="control filter">
+        <div class="control-icon">
+          <i class="material-icons">&#xE152;</i>
+        </div>
+        <div class="select-arrow">
+          <i class="material-icons">&#xE313;</i>
+        </div>
+        <select class="control-field filter-field form-control" name="category" id="category">
+          <option value="">Все категории</option>
+          <option value="Соревнование">Соревнование</option>
+          <option value="Международные соревнования">Международные соревнования</option>
+          <option value="Тренировка">Тренировка</option>
+          <!-- Добавь остальные категории, если необходимо -->
+        </select>
+      </div>
+
+
+      <div class="control filter">
+        <div class="control-icon">
+          <i class="material-icons">&#xE152;</i>
+        </div>
+        <div class="select-arrow">
+          <i class="material-icons">&#xE313;</i>
+        </div>
+        <select class="control-field filter-field form-control" name="registration" id="registration">
           <option value="">Все статусы регистрации</option>
           <option value="open">Открыта</option>
           <option value="closed">Закрыта</option>
         </select>
       </div>
-      <div style="display: flex; justify-content: center; margin-top: 10px;">
-        <button type="submit"
-                style="padding: 5px 20px; background-color: #f2f2f2; border: 1px solid; outline: none; cursor: pointer;">
+    </div>
 
-          <a>Применить</a>
+
+    <div style="display: flex; justify-content: center; margin-top: 10px;"class="frame" >
+        <button type="submit" class="custom-btn btn-1">Применить</button>
+
+
+
+          <a></a>
         </button>
       </div>
     </form>
