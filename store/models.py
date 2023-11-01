@@ -27,7 +27,7 @@ class Pdfs(models.Model):
     info_pdf = models.FileField(u'Бюллетень', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
-    rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
+    # rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True,
                                 null=True)
@@ -46,6 +46,13 @@ class Pdfs(models.Model):
         verbose_name = u'Архив'
         verbose_name_plural = u'Архив'
 
+# для добавления нескольких пдф-файлов
+class ResultFile(models.Model):
+    pdf = models.ForeignKey(Pdfs, on_delete=models.CASCADE, related_name='rezul_files')
+    file = models.FileField(u'Файл', upload_to='static/pdf_files/', help_text=u'файл')
+
+    def __str__(self):
+        return self.file.name
 
 # Новости
 class Event(models.Model):

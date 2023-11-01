@@ -87,9 +87,9 @@ def archive(request):
     registration_status = request.GET.get('registration')
     if registration_status:
         if registration_status == 'open':
-            pdfs_list = pdfs_list.filter(register='Открыта')
+            pdfs_list = pdfs_list.exclude(register__isnull=True)
         elif registration_status == 'closed':
-            pdfs_list = pdfs_list.exclude(register='Открыта')
+            pdfs_list = pdfs_list.exclude(register__isnull=False)
 
     # Поиск по названию
     search_query = request.GET.get('search')

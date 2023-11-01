@@ -180,15 +180,25 @@
         {% endif %}
       </td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">
-        {% if pdf.rezul_pdf %}
-          <a href="{{ pdf.rezul_pdf.url }}" style="text-decoration: none;">{{ pdf.rezul_pdf.name }}</a>
-        {% else %}
-          {{ pdf.rezul_text }}
+
+        {% for result_file in pdf.rezul_files.all %}
+        <a href="{{ result_file.file.url }}" style="text-decoration: none;">{{ result_file.file.name }}</a>
+        <br>
+        {% empty %}
+        {% if pdf.rezul_text %}
+        {{ pdf.rezul_text }}
         {% endif %}
+        {% endfor %}
+        <!-- прошлая версия на всякий случай  -->
+<!--        {% if pdf.rezul_pdf %}-->
+<!--          <a href="{{ pdf.rezul_pdf.url }}" style="text-decoration: none;">{{ pdf.rezul_pdf.name }}</a>-->
+<!--        {% else %}-->
+<!--          {{ pdf.rezul_text }}-->
+<!--        {% endif %}-->
       </td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; {% if pdf.register %} background-color: rgba(46, 217, 195, 0.5); {% else %} background-color: #F4D3D6; {% endif %}">
         {% if pdf.register %}
-          <a href="{{ pdf.register.url }}" style="text-decoration: none;">{{ pdf.register.name }}</a>
+          <a href="{{ pdf.register.url }}" style="text-decoration: none;">Открыта</a>
         {% else %}
         {{ pdf.register_text }}
         {% endif %}
