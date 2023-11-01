@@ -6,6 +6,7 @@ from django.shortcuts import render
 import datetime
 from .models import Event, Pdfs, Partners, Slider
 from datetime import datetime
+from django.db.models import Q
 
 
 # Создание видов
@@ -87,9 +88,9 @@ def archive(request):
     registration_status = request.GET.get('registration')
     if registration_status:
         if registration_status == 'open':
-            pdfs_list = pdfs_list.exclude(register__isnull=True)
+            pdfs_list = pdfs_list.exclude(Q(register__isnull=True) | Q(register=''))
         elif registration_status == 'closed':
-            pdfs_list = pdfs_list.exclude(register__isnull=False)
+            pdfs_list = pdfs_list.filter(Q(register__isnull=True) | Q(register=''))
 
     # Поиск по названию
     search_query = request.GET.get('search')

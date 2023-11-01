@@ -31,7 +31,7 @@ class Pdfs(models.Model):
 
     register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True,
                                 null=True)
-    register_text = models.TextField(u'Регистрация', default="", blank=True, null=True)
+    register_text = models.TextField(u'Регистрация', default="Закрыта", blank=True, null=True)
 
     creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
 
