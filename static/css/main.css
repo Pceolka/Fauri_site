@@ -2028,6 +2028,29 @@ select.form-control::-ms-expand {
    background: rgb(0,3,255);
 background: linear-gradient(0deg, rgba(50,220,190,1) 0%, rgba(46,230,179,1) 100%);
 }
+.btn-reset {
+width: 40px;
+  background: rgb(46,217,195);
+  background: linear-gradient(0deg, rgba(46,217,195,1) 0%, rgba(48,213,200,1) 100%);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-reset:hover {
+   background: rgb(0,3,255);
+background: linear-gradient(0deg, rgba(50,220,190,1) 0%, rgba(46,230,179,1) 100%);
+}
 
+@media screen and (max-width: 600px) {
 
+.filter-container {
+  flex-direction: column;
+  align-items: flex-start;
+  width 100%;
+}
 
+.filter-control {
+  width: 100%;
+}
+}

@@ -120,6 +120,10 @@ def archive(request):
     if month:
         pdfs_list = pdfs_list.filter(day__month=int(month))
 
+    if 'reset_filters' in request.GET:
+        # Обработка сброса фильтров
+        pdfs_list = Pdfs.objects.order_by('-day')
+
     pdfs_list = pdfs_list[:10]
 
     return render(request, "archive.html", {'pdfs_list': pdfs_list})

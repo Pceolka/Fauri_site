@@ -6,6 +6,17 @@
 
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.css'>
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <script>
+  function resetFilters() {
+    document.getElementById("year").value = "";
+    document.getElementById("registration").value = "";
+    document.getElementById("search").value = "";
+    document.getElementById("category").value = "";
+    document.getElementById("organizers").value = "";
+    document.getElementById("month").value = "";
+  }
+</script>
 
 </head>
 <body class="animsition">
@@ -15,7 +26,7 @@
 <section class="bg0 p-b-110 p-t-10">
 
   <!-- Добавляем форму для поиска и фильтрации -->
-
+<div class="container" style="max-width: 1250px; overflow-x: auto;">
   <form method="GET" action="{% url 'archive' %}">
     <div id="app">
 
@@ -28,9 +39,9 @@
       </div>
     </div>
 
-    <div style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px; font-size: 18px; box-sizing: border-box;">
+    <div class="filter-container" style="display: flex; align-items: center; background-color: #f2f2f2; padding: 10px; font-size: 18px; box-sizing: border-box;">
 
-      <div class="control filter">
+      <div class="control filter filter-control">
         <div class="control-icon">
           <i class="material-icons">&#xE152;</i>
         </div>
@@ -39,13 +50,14 @@
         </div>
         <select class="control-field filter-field form-control" name="year" id="year">
           <option value="">Все года</option>
-          <option value="2023">2023</option>
-          <option value="2022">2022</option>
+          <option value="2023" {% if request.GET.year == '2023' %}selected{% endif %}>2023</option>
+          <option value="2022" {% if request.GET.year == '2022' %}selected{% endif %}>2022</option>
           <!-- Добавь остальные года, если необходимо -->
         </select>
+
       </div>
 
-      <div class="control filter">
+      <div class="control filter filter-control">
         <div class="control-icon">
           <i class="material-icons">&#xE152;</i>
         </div>
@@ -54,23 +66,22 @@
         </div>
         <select class="control-field filter-field form-control" name="month" id="month">
           <option value="">Все месяцы</option>
-          <option value="1">Январь</option>
-          <option value="2">Февраль</option>
-          <option value="3">Март</option>
-          <option value="4">Апрель</option>
-          <option value="5">Май</option>
-          <option value="6">Июнь</option>
-          <option value="7">Июль</option>
-          <option value="8">Август</option>
-          <option value="9">Сентябрь</option>
-          <option value="10">Октябрь</option>
-          <option value="11">Ноябрь</option>
-          <option value="12">Декабрь</option>
-          <!-- Добавь остальные месяцы, если необходимо -->
+          <option value="1" {% if request.GET.month == '1' %}selected{% endif %}>Январь</option>
+          <option value="2" {% if request.GET.month == '2' %}selected{% endif %}>Февраль</option>
+          <option value="3" {% if request.GET.month == '3' %}selected{% endif %}>Март</option>
+          <option value="4" {% if request.GET.month == '4' %}selected{% endif %}>Апрель</option>
+          <option value="5" {% if request.GET.month == '5' %}selected{% endif %}>Май</option>
+          <option value="6" {% if request.GET.month == '6' %}selected{% endif %}>Июнь</option>
+          <option value="7" {% if request.GET.month == '7' %}selected{% endif %}>Июль</option>
+          <option value="8" {% if request.GET.month == '8' %}selected{% endif %}>Август</option>
+          <option value="9" {% if request.GET.month == '9' %}selected{% endif %}>Сентябрь</option>
+          <option value="10" {% if request.GET.month == '10' %}selected{% endif %}>Октябрь</option>
+          <option value="11" {% if request.GET.month == '11' %}selected{% endif %}>Ноябрь</option>
+          <option value="12" {% if request.GET.month == '12' %}selected{% endif %}>Декабрь</option>
         </select>
       </div>
 
-      <div class="control filter">
+      <div class="control filter filter-control">
         <div class="control-icon">
           <i class="material-icons">&#xE152;</i>
         </div>
@@ -79,19 +90,20 @@
         </div>
         <select class="control-field filter-field form-control" name="organizers" id="organizers">
           <option value="">Все организаторы</option>
-          <option value="Fauri">Fauri</option>
-          <option value="Galata">Galata</option>
-          <option value="Tiras-Orient">Tiras-Orient</option>
-          <option value="FOS RM">FOS RM</option>
-          <option value="IOF">IOF</option>
-          <option value="Прочее">Прочее</option>
+          <option value="Fauri" {% if request.GET.organizers == 'Fauri' %}selected{% endif %}>Fauri</option>
+          <option value="Galata" {% if request.GET.organizers == 'Galata' %}selected{% endif %}>Galata</option>
+          <option value="Tiras-Orient" {% if request.GET.organizers == 'Tiras-Orient' %}selected{% endif %}>Tiras-Orient</option>
+          <option value="FOS RM" {% if request.GET.organizers == 'FOS RM' %}selected{% endif %}>FOS RM</option>
+          <option value="IOF" {% if request.GET.organizers == 'IOF' %}selected{% endif %}>IOF</option>
+          <option value="Прочее" {% if request.GET.organizers == 'Прочее' %}selected{% endif %}>Прочее</option>
+
           <!-- Добавь остальных организаторов, если необходимо,
           Для того чтобы сортировка по строчке "Прочее" исключало остальных организаторов, добавьте их в файлик views.py строчка 118
           или с помощью поиска по слову "Прочее"-->
         </select>
       </div>
 
-      <div class="control filter">
+      <div class="control filter filter-control">
         <div class="control-icon">
           <i class="material-icons">&#xE152;</i>
         </div>
@@ -100,15 +112,16 @@
         </div>
         <select class="control-field filter-field form-control" name="category" id="category">
           <option value="">Все категории</option>
-          <option value="Соревнование">Соревнование</option>
-          <option value="Международные соревнования">Международные соревнования</option>
-          <option value="Тренировка">Тренировка</option>
+          <option value="Соревнование" {% if request.GET.category == 'Соревнование' %}selected{% endif %}>Соревнование</option>
+          <option value="Международные соревнования" {% if request.GET.category == 'Международные соревнования' %}selected{% endif %}>Международные соревнования</option>
+          <option value="Тренировка" {% if request.GET.category == 'Тренировка' %}selected{% endif %}>Тренировка</option>
+
           <!-- Добавь остальные категории, если необходимо -->
         </select>
       </div>
 
 
-      <div class="control filter">
+      <div class="control filter filter-control">
         <div class="control-icon">
           <i class="material-icons">&#xE152;</i>
         </div>
@@ -117,23 +130,26 @@
         </div>
         <select class="control-field filter-field form-control" name="registration" id="registration">
           <option value="">Все статусы регистрации</option>
-          <option value="open">Открыта</option>
-          <option value="closed">Закрыта</option>
+          <option value="open" {% if request.GET.registration == 'open' %}selected{% endif %}>Открыта</option>
+          <option value="closed" {% if request.GET.registration == 'closed' %}selected{% endif %}>Закрыта</option>
+
         </select>
       </div>
     </div>
 
-
-    <div style="display: flex; justify-content: center; margin-top: 10px;"class="frame" >
+    <div id="selected-filters">
+      <div style="display: flex; justify-content: center; margin-top: 10px;" class="frame">
+        <button type="submit" class="custom-btn btn-reset" onclick="resetFilters()" style="margin-right: 10px;">
+          <i class="material-icons">&#xe627;</i></button>
         <button type="submit" class="custom-btn btn-1">Применить</button>
-
-
-
-          <a></a>
+        <a></a>
         </button>
-      </div>
-    </form>
 
+      </div>
+      </div>
+
+  </form>
+</div>
 
 <div class="container" style="max-width: 1250px; overflow-x: auto;">
 
@@ -186,9 +202,10 @@
 
 </section>
 
- <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js'></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js'></script>
+
 </body>
 
 {% endblock content %}
