@@ -512,8 +512,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 function updateCalendar(eventId) {
-    // Получаем информацию о событии с помощью AJAX-запроса
-    // и обновляем верхнюю часть календаря
     $.ajax({
         url: '/get-event-info/',
         data: {event_id: eventId},
@@ -533,20 +531,13 @@ function getClosestEventId() {
     var closestEventId = null;
     var closestEventDateDiff = Infinity;
 
-    var events = {{ events_list|safe }}; // Получаем список событий из контекста
-    var currentMonth = currentDate.getMonth(); // Получаем текущий месяц (0-январь, 1-февраль и т.д.)
+    var events = {{ events_list|safe }};
 
-    // Проверяем, есть ли события в текущем месяце
-    var eventsInCurrentMonth = events.filter(function (event) {
+    for (var i = 0; i < events.length; i++) {
+        var event = events[i];
         var eventDate = new Date(event.date);
-        return eventDate.getMonth() === currentMonth;
-    });
 
-    if (eventsInCurrentMonth.length > 0) {
-        // Если есть события в текущем месяце, выбираем ближайшее событие
-        for (var i = 0; i < eventsInCurrentMonth.length; i++) {
-            var event = eventsInCurrentMonth[i];
-            var eventDate = new Date(event.date);
+        if (eventDate >= currentDate) {
             var dateDiff = Math.abs(eventDate - currentDate);
 
             if (dateDiff < closestEventDateDiff) {
@@ -554,42 +545,52 @@ function getClosestEventId() {
                 closestEventId = event.id;
             }
         }
-    } else {
-        // Если событий в текущем месяце нет, выводим определенную картинку
-        $('#calendar-image').css('background-image', 'url("/static/assets/img/no_event.png")');
-        $('#calendar-header').html('<a href="#">Нет событий в этом месяце</a>');
-        $('#calendar-date').text('');
+    }
+
+    if (closestEventId === null) {
+        // Если не найдено ближайших событий в текущем и будущих месяцах
+        // отладочный вывод
+        console.log('No upcoming events found.');
+
+        // Попробуем найти события в прошлых месяцах
+        for (var i = 0; i < events.length; i++) {
+            var event = events[i];
+            var eventDate = new Date(event.date);
+
+            if (eventDate < currentDate) {
+                var dateDiff = Math.abs(eventDate - currentDate);
+
+                if (dateDiff < closestEventDateDiff) {
+                    closestEventDateDiff = dateDiff;
+                    closestEventId = event.id;
+                }
+            }
+        }
     }
 
     return closestEventId;
 }
 
 function bindEventHandlers() {
-    // Обработчик события клика на числа календаря
     $('.calendar__number--current').click(function () {
-        // Удаляем класс .calendar__number--selected у предыдущего выбранного элемента
         $('.calendar__number--current').removeClass('calendar__number--selected');
-
-        // Добавляем класс .calendar__number--selected к выбранной дате
         $(this).addClass('calendar__number--selected');
 
         var eventId = $(this).data('id');
         updateCalendar(eventId);
     });
 
-    // Получение информации о ближайшем событии при загрузке страницы
     var closestEventId = getClosestEventId();
     if (closestEventId !== null) {
         updateCalendar(closestEventId);
     }
 }
 
-// Вызываем функцию привязки обработчиков событий
 bindEventHandlers();
-
-
-
+console.log(new Date());
+console.log({{ events_list|safe }});
 </script>
+
 <!--===============================================================================================-->
 <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->

@@ -79,7 +79,7 @@ def calendar_context(request):
     html_calendar = html_calendar.replace('<td ', '<td width="120" height="50"')
 
     events_list = []
-    for event in events:
+    for event in allevents:
         event_data = {
             'id': event.id,
             'date': event.day.strftime("%Y-%m-%d"),
