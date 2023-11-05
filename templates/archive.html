@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+
 <head>
   <meta charset="UTF-8">
 
@@ -153,7 +154,9 @@
 
 <div class="container" style="max-width: 1250px; overflow-x: auto;">
 
-  <table style='border-collapse: collapse;width: 100%; font-size: 14px;'>
+
+
+<table style='border-collapse: collapse;width: 100%; font-size: 14px;'>
   <thead>
     <tr style="background-color: #f2f2f2;">
       <th style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; width: 15%;">Дата</th>
@@ -166,35 +169,32 @@
     </tr>
   </thead>
   <tbody>
-    {% for pdf in pdfs_list %}
-    <tr>
+
+    {% for pdf in page_obj %}
+    <tr class="table-row">
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">{{ pdf.day }}</td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">{{ pdf.bazeinfo }}</td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">{{ pdf.organizers }}</td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">{{ pdf.category_text }}</td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">
-        {% if pdf.info_pdf %}
-          <a href="{{ pdf.info_pdf.url }}" style="text-decoration: none;">{{ pdf.info_pdf.name }}</a>
-        {% else %}
-          {{ pdf.info_text }}
+        {% for info_file in pdf.info_files.all %}
+        <a href="{{ info_file.file.url }}" style="text-decoration: none;">{{ info_file.text_info }}</a>
+        <br>
+        {% empty %}
+        {% if pdf.info_text %}
+        {{ pdf.info_text }}
         {% endif %}
+        {% endfor %}
       </td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">
-
         {% for result_file in pdf.rezul_files.all %}
-        <a href="{{ result_file.file.url }}" style="text-decoration: none;">{{ result_file.file.name }}</a>
+        <a href="{{ result_file.file.url }}" style="text-decoration: none;">{{ result_file.text_result }}</a>
         <br>
         {% empty %}
         {% if pdf.rezul_text %}
         {{ pdf.rezul_text }}
         {% endif %}
         {% endfor %}
-        <!-- прошлая версия на всякий случай  -->
-<!--        {% if pdf.rezul_pdf %}-->
-<!--          <a href="{{ pdf.rezul_pdf.url }}" style="text-decoration: none;">{{ pdf.rezul_pdf.name }}</a>-->
-<!--        {% else %}-->
-<!--          {{ pdf.rezul_text }}-->
-<!--        {% endif %}-->
       </td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; {% if pdf.register %} background-color: rgba(46, 217, 195, 0.5); {% else %} background-color: #F4D3D6; {% endif %}">
         {% if pdf.register %}
@@ -208,9 +208,31 @@
   </tbody>
 </table>
 
+<div id="pagination">
+  <ul>
+    {% if page_obj.has_previous %}
+      <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
+    {% endif %}
+
+    {% for num in page_obj.paginator.page_range %}
+      {% if num == page_obj.number %}
+        <li class="active"><span>{{ num }}</span></li>
+      {% else %}
+        <li><a href="?page={{ num }}">{{ num }}</a></li>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+      <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
+    {% endif %}
+  </ul>
+</div>
+
+
 </div>
 
 </section>
+
 
 <script src="{% static 'js/main.js' %}"></script>
 <script src='https://cdn.jsdelivr.net/npm/vue/dist/vue.js'></script>

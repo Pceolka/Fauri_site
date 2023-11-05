@@ -77,7 +77,17 @@ def contact(request):
 
 
 def archive(request):
-    pdfs_list = Pdfs.objects.order_by('-day')
+    pdfs_list = Pdfs.objects.all()
+
+    paginator = Paginator(pdfs_list, 10)  # Set the number of items per page
+
+    page_number = request.GET.get('page')  # Get the current page number from the request
+
+    page_obj = paginator.get_page(page_number)  # Get the Page object for the current page number
+
+    context = {
+        'page_obj': page_obj,
+    }
 
     # Фильтрация по году
     year = request.GET.get('year')
@@ -125,9 +135,9 @@ def archive(request):
         # Обработка сброса фильтров
         pdfs_list = Pdfs.objects.order_by('-day')
 
-    pdfs_list = pdfs_list[:10]
 
-    return render(request, "archive.html", {'pdfs_list': pdfs_list})
+
+    return render(request, "archive.html", context)
 
 
 # Calendar

@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.utils.safestring import mark_safe
 from ckeditor.widgets import CKEditorWidget
 
-from .models import Pdfs, Trending, Event, Partners, Slider, ResultFile
+from .models import Pdfs, Trending, Event, Partners, Slider, ResultFile, InfoFile
 from .utils import EventCalendar
 
 
@@ -16,6 +16,8 @@ from .utils import EventCalendar
 # для добавления нескольких пдф-файлов
 class ResultFileInline(admin.TabularInline):
     model = ResultFile
+class InfoFileInline(admin.TabularInline):
+    model = InfoFile
 
 
 
@@ -73,12 +75,14 @@ admin.site.register(Event, EventAdmin)
 
 
 class PDFAdmin(admin.ModelAdmin):
-    list_display = ['bazeinfo', 'creation_day', 'info_text', 'info_pdf', 'rezul_text' ]
+    list_display = ['bazeinfo', 'creation_day', 'info_text', 'rezul_text' ]
     # list_display = ['bazeinfo', 'creation_day', 'info_text', 'info_pdf', 'rezul_text', 'rezul_pdf' ]
     ordering = ['-creation_day']
+
     inlines = [
-        ResultFileInline,
+        InfoFileInline, ResultFileInline,
     ]
+
 
 
 class TrendingForm(forms.ModelForm):

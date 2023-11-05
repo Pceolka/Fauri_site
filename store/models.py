@@ -23,11 +23,6 @@ class Pdfs(models.Model):
 
     bazeinfo = models.TextField(u'Название', default="")
 
-    info_text = models.TextField(u'Бюллетень', default="", blank=True, null=True)
-    info_pdf = models.FileField(u'Бюллетень', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
-
-    rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
-    # rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True,
                                 null=True)
@@ -39,6 +34,13 @@ class Pdfs(models.Model):
 
     organizers = models.TextField(u'Организаторы', default="", blank=True, null=True)
 
+    info_text = models.TextField(u'Бюллетень', default="", blank=True, null=True)
+    # info_pdf = models.FileField(u'Бюллетень', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
+
+    rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
+
+    # rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
+
     def __str__(self):
         return f"{self.bazeinfo} ({self.rezul_text} - {self.creation_day})"
 
@@ -47,12 +49,22 @@ class Pdfs(models.Model):
         verbose_name_plural = u'Архив'
 
 # для добавления нескольких пдф-файлов
+
+class InfoFile(models.Model):
+    pdf = models.ForeignKey(Pdfs, on_delete=models.CASCADE, related_name='info_files')
+    file = models.FileField(u'Файл', upload_to='static/pdf_files/', help_text=u'файл')
+    text_info = models.TextField(u'Информация', default="Информация", blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.file.name} {self.text_info}"
 class ResultFile(models.Model):
     pdf = models.ForeignKey(Pdfs, on_delete=models.CASCADE, related_name='rezul_files')
     file = models.FileField(u'Файл', upload_to='static/pdf_files/', help_text=u'файл')
+    text_result = models.TextField(u'Результаты', default="Результаты", blank=True, null=True)
 
     def __str__(self):
-        return self.file.name
+        return f"{self.file.name} {self.text_result}"
+
 
 # Новости
 class Event(models.Model):
