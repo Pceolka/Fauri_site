@@ -9,6 +9,12 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <link rel="stylesheet" type="text/css" href="{% static 'css2/no-margin.css' %}">
+  <link href="{% static 'css2/vendor/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css2/vendor/font-awesome.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css2/vendor/slick.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css2/vendor/slick-theme.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css2/main.css' %}" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css2/no-margin.css' %}">
   <script>
   function resetFilters() {
     document.getElementById("year").value = "";
@@ -50,7 +56,7 @@
         <div class="select-arrow">
           <i class="material-icons">&#xE313;</i>
         </div>
-        <select class="control-field filter-field form-control" name="year" id="year">
+        <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="year" id="year">
           <option value="">Все года</option>
           <option value="2023" {% if request.GET.year == '2023' %}selected{% endif %}>2023</option>
           <option value="2022" {% if request.GET.year == '2022' %}selected{% endif %}>2022</option>
@@ -66,7 +72,7 @@
         <div class="select-arrow">
           <i class="material-icons">&#xE313;</i>
         </div>
-        <select class="control-field filter-field form-control" name="month" id="month">
+        <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="month" id="month">
           <option value="">Все месяцы</option>
           <option value="1" {% if request.GET.month == '1' %}selected{% endif %}>Январь</option>
           <option value="2" {% if request.GET.month == '2' %}selected{% endif %}>Февраль</option>
@@ -90,7 +96,7 @@
         <div class="select-arrow">
           <i class="material-icons">&#xE313;</i>
         </div>
-        <select class="control-field filter-field form-control" name="organizers" id="organizers">
+        <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="organizers" id="organizers">
           <option value="">Все организаторы</option>
           <option value="Fauri" {% if request.GET.organizers == 'Fauri' %}selected{% endif %}>Fauri</option>
           <option value="Galata" {% if request.GET.organizers == 'Galata' %}selected{% endif %}>Galata</option>
@@ -112,7 +118,7 @@
         <div class="select-arrow">
           <i class="material-icons">&#xE313;</i>
         </div>
-        <select class="control-field filter-field form-control" name="category" id="category">
+        <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="category" id="category">
           <option value="">Все категории</option>
           <option value="Соревнование" {% if request.GET.category == 'Соревнование' %}selected{% endif %}>Соревнование</option>
           <option value="Международные соревнования" {% if request.GET.category == 'Международные соревнования' %}selected{% endif %}>Международные соревнования</option>
@@ -130,7 +136,7 @@
         <div class="select-arrow">
           <i class="material-icons">&#xE313;</i>
         </div>
-        <select class="control-field filter-field form-control" name="registration" id="registration">
+        <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="registration" id="registration">
           <option value="">Все статусы регистрации</option>
           <option value="open" {% if request.GET.registration == 'open' %}selected{% endif %}>Открыта</option>
           <option value="closed" {% if request.GET.registration == 'closed' %}selected{% endif %}>Закрыта</option>
@@ -141,9 +147,9 @@
 
     <div id="selected-filters">
       <div style="display: flex; justify-content: center; margin-top: 10px;" class="frame">
-        <button type="submit" class="custom-btn btn-reset" onclick="resetFilters()" style="margin-right: 10px;">
+        <button type="submit" class="button small_reset" onclick="resetFilters()" style="margin-right: 10px;">
           <i class="material-icons">&#xe627;</i></button>
-        <button type="submit" class="custom-btn btn-1">Применить</button>
+        <button type="submit" class="button small">Применить</button>
         <a></a>
         </button>
 
@@ -211,21 +217,15 @@
 
 <div id="pagination">
   <ul>
-    {% if page_obj.has_previous %}
-      <li><a href="?page={{ page_obj.previous_page_number }}">Previous</a></li>
-    {% endif %}
-
+<div class="justify-content-center" style = "display: flex">
     {% for num in page_obj.paginator.page_range %}
       {% if num == page_obj.number %}
-        <li class="active"><span>{{ num }}</span></li>
+        <span class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">{{ num }}</span>
       {% else %}
-        <li><a href="?page={{ num }}">{{ num }}</a></li>
+       <a href="?page={{ num }}" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">{{ num }}</a>
       {% endif %}
     {% endfor %}
-
-    {% if page_obj.has_next %}
-      <li><a href="?page={{ page_obj.next_page_number }}">Next</a></li>
-    {% endif %}
+</div>
   </ul>
 </div>
 

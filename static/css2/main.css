@@ -37,7 +37,7 @@ ul, li {
 
 
 
-a, a:hover, button, button:hover, .btnborder, .btntop {
+a, a:hover, button, button:hover, .btnborder, .btntop{
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out; }
 
@@ -63,10 +63,17 @@ a, a:hover, button, button:hover, .btnborder, .btntop {
     padding: 14px 0;
     font-size: 12px;
     min-width: 145px; }
+  .button.small_reset {
+    padding: 14px 0;
+    font-size: 12px;
+    min-width: 40px;
+  }
+
   .button:hover {
     background: transparent;
     color: #2ED9C3;
     border-color: #2ED9C3; }
+
 
 
 
