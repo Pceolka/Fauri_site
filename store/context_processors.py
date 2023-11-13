@@ -1,4 +1,4 @@
-from store.models import Trending
+from store.models import Trending, Pdfs
 from datetime import datetime, date
 import datetime
 import calendar
@@ -86,6 +86,9 @@ def calendar_context(request):
         }
         events_list.append(event_data)
 
+    pdfs_list = Pdfs.objects.filter(day__isnull=False, day__month=d.month, day__year=d.year).order_by('day')
+
+
     return {
         'events_list': events_list,
         'previous_month': previous_month_link,
@@ -94,7 +97,8 @@ def calendar_context(request):
         'month': month,
         'allevents': allevents,
         'events': events,
-        'calendar': mark_safe(html_calendar)
+        'calendar': mark_safe(html_calendar),
+        'pdfs_list': pdfs_list
     }
 
 

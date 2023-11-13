@@ -143,11 +143,11 @@ def archive(request):
 
 # Calendar
 def calendars(request):
-    pdfs_list = Pdfs.objects.order_by('-creation_day')[:10]
+
     today = date.today()
     news_all_all = Event.objects.filter(day__gte=today).exclude(category__contains='пусто').order_by('day')
 
-    return render(request, 'calendars.html', {'news_all_all': news_all_all, 'pdfs_list': pdfs_list})
+    return render(request, 'calendars.html', {'news_all_all': news_all_all})
 
 
 def get_closest_event():
