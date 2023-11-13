@@ -51,13 +51,16 @@ class Pdfs(models.Model):
 # для добавления нескольких пдф-файлов
 
 class InfoFile(models.Model):
+    id = models.AutoField(primary_key=True)
     pdf = models.ForeignKey(Pdfs, on_delete=models.CASCADE, related_name='info_files')
     file = models.FileField(u'Файл', upload_to='static/pdf_files/', help_text=u'файл')
     text_info = models.TextField(u'Информация', default="Информация", blank=True, null=True)
 
     def __str__(self):
         return f"{self.file.name} {self.text_info}"
+
 class ResultFile(models.Model):
+    id = models.AutoField(primary_key=True)
     pdf = models.ForeignKey(Pdfs, on_delete=models.CASCADE, related_name='rezul_files')
     file = models.FileField(u'Файл', upload_to='static/pdf_files/', help_text=u'файл')
     text_result = models.TextField(u'Результаты', default="Результаты", blank=True, null=True)
