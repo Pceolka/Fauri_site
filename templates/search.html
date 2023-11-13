@@ -13,49 +13,50 @@
     <div class="container">
         <div class="how2 how2-cl4 flex-s-c">
             <h3 class="f1-m-2 cl3 tab01-title">
-                Результаты поиска для "{{ query }}"
+                Результаты поиска по запросу "{{ query }}"
             </h3>
-        </div>
-        {% if articles %}
-        <div class="row p-t-35">
-            <ul>
-                {% for article in articles %}
-                <div lass="col-sm-6 col-md-4">
-                    <li><a href="{% url 'single' article.id %}" class="wrap-pic-w hov1 trans-03">
-                        <img src="{{ article.image.url }}" alt="IMG"> </a></li>
 
-                    <div class="p-t-10">
+        </div>
+{% if articles %}
+        <div class="row p-t-35">
+           {% for article in articles %}
+            <div class="col-sm-6 col-md-4">
+                <!-- Item latest -->
+                <div class="m-b-45">
+                    <a href="{% url 'single' article.id %}" class="wrap-pic-w hov1 trans-03">
+                        <img src="{{ article.image.url }}" alt="IMG">
+                    </a>
+
+                    <div class="p-t-16">
                         <h5 class="p-b-5">
-                            <a href="{% url 'single' article.id %}"
-                               class="f1-s-5 cl3 hov-cl10 trans-03">
+                            <a href="{% url 'single' article.id %}" class="f1-m-3 cl2 hov-cl10 trans-03">
                                 {{ article.header }}
                             </a>
                         </h5>
 
                         <span class="cl8">
-												<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-													{{ article.author }}
-												</a>
+								<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+									{{ article.author }}
+								</a>
 
-												<span class="f1-s-3 m-rl-3">
-													-
-												</span>
+								<span class="f1-s-3 m-rl-3">
+									-
+								</span>
 
-												<span class="f1-s-3">
-													{{ article.creation_day|date:"d M" }}
-												</span>
-											</span>
+								<span class="f1-s-3">
+									{{ article.creation_day|date:"d M" }}
+								</span>
+							</span>
                     </div>
                 </div>
-                {% endfor %}
-            </ul>
-            {% else %}
-            <p>Нет статей, соответствующих вашему запросу.</p>
-            {% endif %}
+            </div>
+            {% endfor %}
         </div>
+         {% endif %}
+        <p>*Поиск работает как для заголовка так и для содержания</p>
     </div>
-</section>
 
+</section>
 
 
 
