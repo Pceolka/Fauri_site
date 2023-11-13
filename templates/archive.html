@@ -98,7 +98,7 @@
         </div>
         <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="organizers" id="organizers">
           <option value="">Все организаторы</option>
-          <option value="Fauri" {% if request.GET.organizers == 'Fauri' %}selected{% endif %}>Fauri</option>
+          <option value="FAURI" {% if request.GET.organizers == 'FAURI' %}selected{% endif %}>FAURI</option>
           <option value="Galata" {% if request.GET.organizers == 'Galata' %}selected{% endif %}>Galata</option>
           <option value="Tiras-Orient" {% if request.GET.organizers == 'Tiras-Orient' %}selected{% endif %}>Tiras-Orient</option>
           <option value="FOS RM" {% if request.GET.organizers == 'FOS RM' %}selected{% endif %}>FOS RM</option>
@@ -150,8 +150,6 @@
         <button type="submit" class="button small">Применить</button>
         <button type="submit" class="button small_reset" onclick="resetFilters()" style="margin-right: 10px; padding: 10px 11px;">
           <i class="material-icons">&#xe627;</i></button>
-
-
         </button>
 
       </div>
@@ -206,9 +204,9 @@
       </td>
       <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; {% if pdf.register %} background-color: rgba(46, 217, 195, 0.5); {% else %} background-color: #F4D3D6; {% endif %}">
         {% if pdf.register %}
-          <a href="{{ pdf.register.url }}" style="text-decoration: none;">Открыта</a>
+          <a href="{{ pdf.register }}" style="text-decoration: none;">Открыта</a>
         {% else %}
-        {{ pdf.register_text }}
+        <p> Закрыто </p>
         {% endif %}
       </td>
     </tr>
@@ -218,15 +216,15 @@
 
 <div id="pagination">
   <ul>
-<div class="justify-content-center" style = "display: flex">
-    {% for num in page_obj.paginator.page_range %}
-      {% if num == page_obj.number %}
-        <span class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">{{ num }}</span>
-      {% else %}
-       <a href="?page={{ num }}" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">{{ num }}</a>
-      {% endif %}
-    {% endfor %}
-</div>
+    <div class="justify-content-center" style="display: flex">
+      {% for num in page_obj.paginator.page_range %}
+        {% if num == page_obj.number %}
+          <span class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7 pagi-active">{{ num }}</span>
+        {% else %}
+          <a href="?page={{ num }}{% if request.GET.year %}&year={{ request.GET.year }}{% endif %}{% if request.GET.month %}&month={{ request.GET.month }}{% endif %}{% if request.GET.organizers %}&organizers={{ request.GET.organizers }}{% endif %}{% if request.GET.category %}&category={{ request.GET.category }}{% endif %}{% if request.GET.registration %}&registration={{ request.GET.registration }}{% endif %}{% if request.GET.search %}&search={{ request.GET.search }}{% endif %}" class="flex-c-c pagi-item hov-btn1 trans-03 m-all-7">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
   </ul>
 </div>
 

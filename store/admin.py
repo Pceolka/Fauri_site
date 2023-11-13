@@ -16,10 +16,12 @@ from .utils import EventCalendar
 # для добавления нескольких пдф-файлов
 class ResultFileInline(admin.TabularInline):
     model = ResultFile
+    extra = 0
+
+
 class InfoFileInline(admin.TabularInline):
     model = InfoFile
-
-
+    extra = 0
 
 
 class EventForm(forms.ModelForm):
@@ -73,11 +75,20 @@ class EventAdmin(admin.ModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 
+class PdfsAdminForm(forms.ModelForm):
+    class Meta:
+        model = Pdfs
+        fields = '__all__'  # Указываем, что форма должна включать все поля модели
+        widgets = {
+            'organizers': forms.TextInput(attrs={'size': 10}),
+            'info_text': forms.TextInput(attrs={'size': 80}),
+            'rezul_text': forms.TextInput(attrs={'size': 80}),
+        }
 
 class PDFAdmin(admin.ModelAdmin):
-    list_display = ['bazeinfo', 'creation_day', 'info_text', 'rezul_text' ]
-    # list_display = ['bazeinfo', 'creation_day', 'info_text', 'info_pdf', 'rezul_text', 'rezul_pdf' ]
-    ordering = ['-creation_day']
+    form = PdfsAdminForm
+    list_display = ['bazeinfo', 'day', 'organizers', 'register', 'info_text', 'rezul_text']
+    ordering = ['-day']
 
     inlines = [
         InfoFileInline, ResultFileInline,

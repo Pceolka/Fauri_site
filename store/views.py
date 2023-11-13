@@ -87,13 +87,8 @@ def search_articles(request):
     return render(request, "search.html", context)
 
 
-# def archive(request):
-#    pdfs_list = Pdfs.objects.order_by('-creation_day')[:10]
-#   return render(request, "archive.html", {'pdfs_list': pdfs_list})
-
-
 def archive(request):
-    pdfs_list = Pdfs.objects.all()
+    pdfs_list = Pdfs.objects.order_by('-day')
 
 
 
@@ -125,7 +120,7 @@ def archive(request):
 
     if organizers:
         if organizers == 'Прочее':
-            pdfs_list = pdfs_list.exclude(organizers='Fauri')
+            pdfs_list = pdfs_list.exclude(organizers='FAURI')
             pdfs_list = pdfs_list.exclude(organizers='Galata')
             pdfs_list = pdfs_list.exclude(organizers='Tiras-Orient')
             pdfs_list = pdfs_list.exclude(organizers='FOS RM')

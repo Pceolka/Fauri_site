@@ -18,35 +18,35 @@ class Trending(models.Model):
 
 class Pdfs(models.Model):
     id = models.AutoField(primary_key=True)
-
     day = models.DateField(u'Дата проведения', blank=True, null=True)
-
     bazeinfo = models.TextField(u'Название', default="")
-
-
-    register = models.FileField(u'Регистрация', upload_to='static/register_files/', help_text=u'Ссылка', blank=True,
-                                null=True)
-    register_text = models.TextField(u'Регистрация', default="Закрыта", blank=True, null=True)
-
-    creation_day = models.DateField(u'Дата создания ', help_text=u'Обязательное поле', default=datetime.date.today)
-
-    category_text = models.TextField(u'Категория', default="", blank=True, null=True)
-
+    CATEGORY_CHOICES = [
+        ('Событие', 'Событие'),
+        ('Тренировка', 'Тренировка'),
+        ('Международные соревнования', 'Международные соревнования'),
+        ('Соревнования', 'Соревнования'),
+        # Добавьте здесь все категории, которые вам нужны
+    ]
+    category_text = models.CharField(
+        u'Категория',
+        max_length=50,  # Увеличьте максимальную длину поля, если это необходимо
+        choices=CATEGORY_CHOICES,
+        default='событие',  # Установите категорию по умолчанию, если необходимо
+    )
     organizers = models.TextField(u'Организаторы', default="", blank=True, null=True)
-
+    register = models.TextField(u'Регистрация', help_text=u'Ссылка', blank=True, null=True)
     info_text = models.TextField(u'Бюллетень', default="", blank=True, null=True)
-    # info_pdf = models.FileField(u'Бюллетень', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
-
     rezul_text = models.TextField(u'Результаты', default="", blank=True, null=True)
 
-    # rezul_pdf = models.FileField(u'Результаты', upload_to='static/pdf_files/', help_text=u'файл', blank=True, null=True)
 
     def __str__(self):
-        return f"{self.bazeinfo} ({self.rezul_text} - {self.creation_day})"
+        return f"{self.bazeinfo}"
 
     class Meta:
         verbose_name = u'Архив'
         verbose_name_plural = u'Архив'
+
+
 
 # для добавления нескольких пдф-файлов
 
@@ -58,6 +58,10 @@ class InfoFile(models.Model):
 
     def __str__(self):
         return f"{self.file.name} {self.text_info}"
+    class Meta:
+        verbose_name = u'Бюллетень'
+        verbose_name_plural = u'Бюллетень'
+
 
 class ResultFile(models.Model):
     id = models.AutoField(primary_key=True)
@@ -67,13 +71,15 @@ class ResultFile(models.Model):
 
     def __str__(self):
         return f"{self.file.name} {self.text_result}"
-
+    class Meta:
+        verbose_name = u'Результаты'
+        verbose_name_plural = u'Результаты'
 
 # Новости
 class Event(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок', default="")
-    author = models.CharField(u'Автор новости', help_text=u'', max_length=25, default='fauri')
+    author = models.CharField(u'Автор новости', help_text=u'', max_length=25, default='FAURI')
     image = models.ImageField(u'Картинка', help_text=u'', upload_to='', default='umolcanie.jpg')
     description = models.TextField(default="")
 
@@ -127,6 +133,7 @@ class Slider(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок или описание', default="")
     image = models.ImageField(u'Картинка', upload_to='partners_and_slider/')
+
     # urls_slide = models.TextField(u'Ссылка', default="")
 
     def str(self):

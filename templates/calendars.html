@@ -71,27 +71,41 @@
 <table style='border-collapse: collapse;width: 100%;'>
   <thead>
     <tr style="background-color: #f2f2f2;">
-      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 30%;">Информация</th>
-      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 35%;">Бюллетень</th>
-      <th style="border: 1px solid #e0e0e0; padding: 10px; text-align: center; width: 35%;">Результаты</th>
+      <th style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; width: 15%;">Информация</th>
+      <th style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; width: 15%;">Бюллетень</th>
+      <th style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; width: 15%;">Результаты</th>
+      <th style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; width: 15%;">Регистрация</th>
     </tr>
   </thead>
   <tbody>
     {% for pdf in pdfs_list %}
     <tr>
-      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">{{ pdf.bazeinfo }}</td>
-      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">
-        {% if pdf.info_pdf %}
-          <a href="{{ pdf.info_pdf.url }}" style="text-decoration: none;">{{ pdf.info_pdf.name }}</a>
-        {% else %}
-          {{ pdf.info_text }}
+      <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">{{ pdf.bazeinfo }}</td>
+      <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">
+        {% for info_file in pdf.info_files.all %}
+        <a href="{{ info_file.file.url }}" style="text-decoration: none;">{{ info_file.text_info }}</a>
+        <br>
+        {% empty %}
+        {% if pdf.info_text %}
+        {{ pdf.info_text }}
         {% endif %}
+        {% endfor %}
       </td>
-      <td style="border: 1px solid #e0e0e0; padding: 10px; text-align: center;">
-        {% if pdf.rezul_pdf %}
-          <a href="{{ pdf.rezul_pdf.url }}" style="text-decoration: none;">{{ pdf.rezul_pdf.name }}</a>
+      <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center;">
+        {% for result_file in pdf.rezul_files.all %}
+        <a href="{{ result_file.file.url }}" style="text-decoration: none;">{{ result_file.text_result }}</a>
+        <br>
+        {% empty %}
+        {% if pdf.rezul_text %}
+        {{ pdf.rezul_text }}
+        {% endif %}
+        {% endfor %}
+      </td>
+      <td style="border: 1px solid rgba(1, 30, 65, 0.5); padding: 10px; text-align: center; {% if pdf.register %} background-color: rgba(46, 217, 195, 0.5); {% else %} background-color: #F4D3D6; {% endif %}">
+        {% if pdf.register %}
+          <a href="{{ pdf.register }}" style="text-decoration: none;">Открыта</a>
         {% else %}
-          {{ pdf.rezul_text }}
+        <p> Закрыто </p>
         {% endif %}
       </td>
     </tr>
