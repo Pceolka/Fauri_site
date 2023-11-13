@@ -374,13 +374,14 @@
 
                     <div>
                         <p class="f1-s-1 cl11 p-b-16">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempor magna eget elit
-                            efficitur, at accumsan sem placerat. Nulla tellus libero, mattis nec molestie at, facilisis
-                            ut turpis. Vestibulum dolor metus, tincidunt eget odio
+                            Спортивный клуб FAURI -
+                            это некоммерческая организация, которая занимается развитием и популяризацией
+                            спортивного ориентирования. Мы регулярно проводим открытые тренировки и соревнования,
+                            а наши спортсмены участвуют в международных стартах!
                         </p>
 
                         <p class="f1-s-1 cl11 p-b-16">
-                            Any questions? Call us on (+1) 96 716 6879
+                            Есть вопрос? Звоните по  номеру +373 67573548
                         </p>
 
                         <div class="p-t-15">
@@ -402,65 +403,31 @@
                 <div class="col-sm-6 col-lg-4 p-b-20">
                     <div class="size-h-3 flex-s-c">
                         <h5 class="f1-m-7 cl0">
-                            Popular Posts
+                            Популярные посты
                         </h5>
                     </div>
-
+                    {% for popular_posts in popular_posts %}
                     <ul>
                         <li class="flex-wr-sb-s p-b-20">
-                            <a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
-                                <img src="{% static 'assets/img/no_event.png' %}" alt="IMG">
+                            <a href="{% url 'single' popular_posts.id %}" class="size-w-4 wrap-pic-w hov1 trans-03">
+                                <img src="{{ popular_posts.image.url }}" alt="IMG">
                             </a>
 
                             <div class="size-w-5">
                                 <h6 class="p-b-5">
-                                    <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
-                                        Интересные статьи пока отсутствуют)
+                                    <a href="{% url 'single' popular_posts.id %}" class="f1-s-5 cl11 hov-cl10 trans-03">
+                                        {{ popular_posts.header }}
                                     </a>
                                 </h6>
 
                                 <span class="f1-s-3 cl6">
-										Feb 17
+										{{ popular_posts.creation_day|date:"d M" }}
 									</span>
                             </div>
                         </li>
 
-                        <li class="flex-wr-sb-s p-b-20">
-                            <a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
-                                <img src="{% static 'assets/img/no_event.png' %}" alt="IMG">
-                            </a>
-
-                            <div class="size-w-5">
-                                <h6 class="p-b-5">
-                                    <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
-                                        Интересные статьи пока отсутствуют)
-                                    </a>
-                                </h6>
-
-                                <span class="f1-s-3 cl6">
-										Feb 16
-									</span>
-                            </div>
-                        </li>
-
-                        <li class="flex-wr-sb-s p-b-20">
-                            <a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
-                                <img src="{% static 'assets/img/no_event.png' %}" alt="IMG">
-                            </a>
-
-                            <div class="size-w-5">
-                                <h6 class="p-b-5">
-                                    <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
-                                        Интересные статьи пока отсутствуют)
-                                    </a>
-                                </h6>
-
-                                <span class="f1-s-3 cl6">
-										Feb 15
-									</span>
-                            </div>
-                        </li>
                     </ul>
+                    {% endfor %}
                 </div>
 
                 <div class="col-sm-6 col-lg-4 p-b-20">
@@ -472,25 +439,25 @@
 
                     <ul class="m-t--12">
                         <li class="how-bor1 p-rl-5 p-tb-10">
-                            <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                            <a href="{% url 'news_by_category' category='соревнования' %}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
                                 Соревнования ({{count_competition}})
                             </a>
                         </li>
 
                         <li class="how-bor1 p-rl-5 p-tb-10">
-                            <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                            <a href="{% url 'news_by_category' category='международные соревнования' %}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
                                 Международные соревнования ({{count_worldcomp}})
                             </a>
                         </li>
 
                         <li class="how-bor1 p-rl-5 p-tb-10">
-                            <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                            <a href="{% url 'news_by_category' category='событие' %}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
                                 События ({{count_event}})
                             </a>
                         </li>
 
                         <li class="how-bor1 p-rl-5 p-tb-10">
-                            <a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                            <a href="{% url 'news_by_category' category='тренировка' %}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
                                 Тренировки ({{count_train}})
                             </a>
                         </li>
@@ -504,7 +471,7 @@
     <div class="bg11">
         <div class="container size-h-4 flex-c-c p-tb-15">
 				<span class="f1-s-1 cl0 txt-center">
-					Fauri © 2023 <a href="{% url 'news' %}" class="f1-s-1 cl10 hov-link1">Evghenii </a>
+					Fauri © 2023 <a href="https://t.me/real_pceolka" class="f1-s-1 cl10 hov-link1">Pceolka </a>
 				</span>
         </div>
     </div>
@@ -558,7 +525,7 @@ function getClosestEventId() {
     if (closestEventId === null) {
         // Если событий в текущем месяце нет, выводим определенную картинку
         $('#calendar-image').css('background-image', 'url("/static/assets/img/no_event.png")');
-        $('#calendar-header').html('<a>События в этом месяце еще не добавлены</a>');
+        $('#calendar-header').html('<a>События в этом месяце не добавлены</a>');
 
         // Попробуем найти события в прошлых месяцах
         for (var i = 0; i < events.length; i++) {
