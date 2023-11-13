@@ -26,7 +26,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/calendarsmall.css' %}">
     <!--===============================================================================================-->
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <title>Fauri</title>
 </head>
@@ -74,8 +74,10 @@
                 <li>
                     <a href="{% url 'news' %}">Новости</a>
                 </li>
+                <li>
 
 
+        </li>
                 <li>
                     <a href="{% url 'calendars' %}">Календарь</a>
                 </li>
@@ -90,7 +92,9 @@
                 </li>
 
             </ul>
+
         </div>
+
 
         <!--Logo desktop  -->
         <div class="wrap-logo no-banner container">
@@ -340,14 +344,29 @@
                         <li class="mega-menu-item">
                             <a href="{% url 'archive' %}"> Архив</a>
                         </li>
+<!--                        <li class="mega-menu-item">-->
+<!--                            <form action="{% url 'search' %}" method="GET" style="display: flex; ">-->
+
+<!--&lt;!&ndash;                                <button type="submit"><img src="{% static 'assets/img/search_img.png' %}" alt="SEARCH">&ndash;&gt;-->
+<!--&lt;!&ndash;                                </button>&ndash;&gt;-->
+<!--&lt;!&ndash;                                <input type="text" name="query" placeholder="Поиск статей">&ndash;&gt;-->
+
+<!--                                    <div class="containersearched">-->
+<!--                                    <input type="text" name="query" placeholder="Поиск статей">-->
+<!--                                    <div class="search"></div>-->
+<!--                                </div>-->
+<!--                            </form>-->
+<!--                        </li>-->
                         <li>
+                             <form action="{% url 'search' %}" method="GET" style="display: flex; ">
                             <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
-                                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search"
+                                <input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="query"
                                        placeholder="Search">
                                 <button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </div>
+                                  </form>
                         </li>
                     </ul>
                 </nav>

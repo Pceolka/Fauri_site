@@ -259,7 +259,7 @@ a.left-topbar-item:hover {
 [ Topbar mobile ]*/
 .topbar-mobile {
   background-color: #011e41;
-  padding: 8px 25px 5px 25px;
+  padding: 5px 25px 5px 25px;
 }
 
 .topbar-mobile li {
@@ -1996,63 +1996,125 @@ select.form-control::-ms-expand {
 
 
 
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 25px;
-  font-family: 'Lato', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:700");
 
-  background: transparent;
+.containersearched {
+
+  position: absolute;
+  margin: auto;
+  top: 50;
+  left: 50;
+  right: 50;
+  bottom: 0;
+  width: 150px;
+  height: 100px;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px;
+}
+.containersearched .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: rgba(46, 217, 194, 1);
+  border-radius: 0%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(46, 217, 194, 0.4);
+
+}
+.containersearched .search:hover {
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-   7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+}
+.containersearched .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+.containersearched .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+.containersearched input {
+  font-family: "Montserrat-Regular", monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 70px;
+  width: 50px;
+  height: 50px;
   outline: none;
-}
-.btn-1 {
-  background: rgb(46,217,195);
-  background: linear-gradient(0deg, rgba(46,217,195,1) 0%, rgba(48,213,200,1) 100%);
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(46, 217, 194, 1);
+  color: white;
+  text-shadow: 0 0 10px rgba(46, 217, 194, 1);
+  padding: 0 80px 0 20px;
+  border-radius: 0;
+  box-shadow: 0 0 25px 0 rgba(46, 217, 194, 1), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
 }
-.btn-1:hover {
-   background: rgb(0,3,255);
-background: linear-gradient(0deg, rgba(50,220,190,1) 0%, rgba(46,230,179,1) 100%);
+.containersearched input:hover {
+  cursor: pointer;
 }
-.btn-reset {
-width: 40px;
-  background: rgb(46,217,195);
-  background: linear-gradient(0deg, rgba(46,217,195,1) 0%, rgba(48,213,200,1) 100%);
+.containersearched input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+.containersearched input:focus ~ .search {
+  right: 250px;
+  background: #151515;
+  z-index: 6;
+}
+.containersearched input:focus ~ .search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+.containersearched input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
   border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
 }
-.btn-reset:hover {
-   background: rgb(0,3,255);
-background: linear-gradient(0deg, rgba(50,220,190,1) 0%, rgba(46,230,179,1) 100%);
-}
-
-@media screen and (max-width: 600px) {
-
-.filter-container {
-  flex-direction: column;
-  align-items: flex-start;
-  width 100%;
-}
-
-.filter-control {
-  width: 100%;
-}
+.containersearched input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-weight: bolder;
 }
 
 .search {

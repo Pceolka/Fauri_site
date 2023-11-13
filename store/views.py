@@ -7,6 +7,7 @@ import datetime
 from .models import Event, Pdfs, Partners, Slider
 from datetime import datetime
 from django.db.models import Q
+from django.db import models
 
 
 # Создание видов
@@ -69,6 +70,21 @@ def news_by_category(request, category):
 
 def contact(request):
     return render(request, "contact.html")
+
+def search_articles(request):
+    query = request.GET.get('query', '')
+
+    articles = Event.objects.filter(
+        (models.Q(header__icontains=query) | models.Q(description__icontains=query))
+    )
+
+    context = {
+        'query': query,
+        'articles': articles,
+    }
+
+
+    return render(request, "search.html", context)
 
 
 # def archive(request):
