@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag'
 import os
+import dj_database_url
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
@@ -27,6 +28,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ["*"]
+
+DATABASE_URL = "postgres://postgres:eBc*gDE2A3EA34Cg*45F1bEdGA6aGdfb@postgres.railway.internal:5432/railway"
 
 # Application definition
 
@@ -80,8 +83,9 @@ WSGI_APPLICATION = 'fauri.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'datebase.db',
+        dj_database_url.config(default=DATABASE_URL, conn_max_age=1800)
+        #     'ENGINE': 'django.db.backends.sqlite3',
+        #      'NAME': BASE_DIR / 'datebase.db',
     }
 }
 
@@ -114,7 +118,6 @@ CKEDITOR_CONFIGS = {
     },
 }
 
-
 LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Europe/Moscow'
@@ -132,11 +135,10 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 20 * 1024 * 1024  # 20MB в байтах
 STATIC_URL = '/static/'
 STATIC_DIR = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [STATIC_DIR]
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
