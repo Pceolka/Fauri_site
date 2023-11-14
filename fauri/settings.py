@@ -29,7 +29,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ["*"]
 
-DATABASE_URL = "mysql://root:2-g2Cg-G1FHa6-bGfCBdgGg1DbCfDe5C@monorail.proxy.rlwy.net:55573/railway"
+DATABASE_URL = "mysql://root:2-g2Cg-G1FHa6-bGfCBdgGg1DbCfDe5C@mysql.railway.internal:3306/railway"
 # Конфигурация базы данных Django
 DATABASES = {
     'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
