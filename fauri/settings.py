@@ -82,12 +82,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'fauri.wsgi.application'
 
 DATABASES = {
-    'default': {
-        dj_database_url.config(default=DATABASE_URL, conn_max_age=1800)
-        #     'ENGINE': 'django.db.backends.sqlite3',
-        #      'NAME': BASE_DIR / 'datebase.db',
-    }
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'), conn_max_age=1800),
 }
+
+#     'ENGINE': 'django.db.backends.sqlite3',
+#      'NAME': BASE_DIR / 'datebase.db',
 
 CSRF_TRUSTED_ORIGINS = [
     'https://faurisite-production.up.railway.app',
