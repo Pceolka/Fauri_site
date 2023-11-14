@@ -2158,3 +2158,8 @@ select.form-control::-ms-expand {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+::selection {
+    background-color: #2ED9C3; /* Здесь укажите цвет фона выделенного текста */
+    color: #000; /* Здесь укажите цвет текста в выделенном блоке */
+}

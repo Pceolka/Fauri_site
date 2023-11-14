@@ -119,7 +119,7 @@ class Partners(models.Model):
     id = models.AutoField(primary_key=True)
     header = models.TextField(u'Заголовок или описание', default="")
     image = models.ImageField(u'Картинка', upload_to='partners_and_slider/')
-    ssilka = models.TextField(u'Заголовок или описание', default="")
+    ssilka = models.TextField(u'Ссылка', default="")
 
     def __str__(self):
         return self.header
@@ -134,9 +134,7 @@ class Slider(models.Model):
     header = models.TextField(u'Заголовок или описание', default="")
     image = models.ImageField(u'Картинка', upload_to='partners_and_slider/')
 
-    # urls_slide = models.TextField(u'Ссылка', default="")
-
-    def str(self):
+    def __str__(self):
         return self.header
 
     class Meta:
