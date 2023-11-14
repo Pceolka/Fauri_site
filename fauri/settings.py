@@ -32,7 +32,14 @@ ALLOWED_HOSTS = ["*"]
 DATABASE_URL = "mysql://root:2-g2Cg-G1FHa6-bGfCBdgGg1DbCfDe5C@monorail.proxy.rlwy.net:55573/railway"
 # Конфигурация базы данных Django
 DATABASES = {
+
+}
+DATABASES = {
     "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+    'old_db': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'datebase.db',
+    },
 }
 #     'ENGINE': 'django.db.backends.sqlite3',
 #      'NAME': BASE_DIR / 'datebase.db',
