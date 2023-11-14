@@ -29,7 +29,7 @@ DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ["*"]
 
-DATABASE_URL = "postgres://postgres:eBc*gDE2A3EA34Cg*45F1bEdGA6aGdfb@postgres.railway.internal:5432/railway"
+DATABASE_URL = "mysql://root:2-g2Cg-G1FHa6-bGfCBdgGg1DbCfDe5C@monorail.proxy.rlwy.net:55573/railway"
 
 # Application definition
 
