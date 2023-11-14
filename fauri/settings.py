@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 from pathlib import Path
 
+import dj_database_url
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +29,13 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
 ALLOWED_HOSTS = ["*"]
+
+DATABASE_URL = "postgres://postgres:B1Af14CDfd5fGC4GEg131GBcBa4d4fgb@viaduct.proxy.rlwy.net:26982/railway"
+# Конфигурация базы данных Django
+DATABASES = {
+    "default": dj_database_url.config(default=DATABASE_URL, conn_max_age=1800),
+}
+
 
 # Application definition
 
@@ -77,13 +86,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'fauri.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'datebase.db',
-    }
-}
 
 CSRF_TRUSTED_ORIGINS = [
     'https://faurisite-production.up.railway.app',
