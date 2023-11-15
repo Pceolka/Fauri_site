@@ -2005,43 +2005,46 @@ select.form-control::-ms-expand {
   top: 50;
   left: 50;
   right: 50;
-  bottom: 0;
+  bottom: -20px;
   width: 150px;
   height: 100px;
-  align-items: center;
+
   font-size: 14px;
   padding: 10px;
 }
 .containersearched .search {
+
   position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 80px;
-  height: 80px;
-  background: rgba(46, 217, 194, 1);
+
+  margin-top: 22px;
+  margin-left: 20px;
+
+  width: 40px;
+  height: 40px;
+  background: rgba(46, 217, 194, 0);
   border-radius: 0%;
   transition: all 1s;
   z-index: 4;
-  box-shadow: 0 0 25px 0 rgba(46, 217, 194, 0.4);
+
+
 
 }
 .containersearched .search:hover {
   cursor: pointer;
+
 }
+
 .containersearched .search::before {
   content: "";
   position: absolute;
   margin: auto;
-  top: 22px;
+  top: 10px;
   right: 0;
   bottom: 0;
-  left: 22px;
-  width: 12px;
+  left: 10px;
+  width: 8px;
   height: 2px;
-  background: white;
+  background: black;
   transform: rotate(45deg);
   transition: all 0.5s;
 }
@@ -2053,30 +2056,31 @@ select.form-control::-ms-expand {
   right: 0;
   bottom: 0;
   left: -5px;
-  width: 25px;
-  height: 25px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  border: 2px solid white;
+  border: 2px solid black;
   transition: all 0.5s;
 }
+
 .containersearched input {
-  font-family: "Montserrat-Regular", monospace;
+  font-family: "Montserrat-Medium", monospace;
   position: absolute;
   margin: auto;
   top: 0;
   right: 0;
   bottom: 0;
-  left: 70px;
+  left: -30px;
   width: 50px;
-  height: 50px;
+  height: 40px;
   outline: none;
   border: none;
-  background: rgba(46, 217, 194, 1);
+  background: rgba(46, 217, 194, 0.8);
   color: white;
-  text-shadow: 0 0 10px rgba(46, 217, 194, 1);
+
   padding: 0 80px 0 20px;
   border-radius: 0;
-  box-shadow: 0 0 25px 0 rgba(46, 217, 194, 1), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+
   transition: all 1s;
   opacity: 0;
   z-index: 5;
@@ -2085,15 +2089,19 @@ select.form-control::-ms-expand {
 }
 .containersearched input:hover {
   cursor: pointer;
+
 }
 .containersearched input:focus {
   width: 300px;
   opacity: 1;
   cursor: text;
+  position: absolute;
+  margin: auto;
+  left: 40px;
 }
 .containersearched input:focus ~ .search {
   right: 250px;
-  background: #151515;
+  background: #ffffff;
   z-index: 6;
 }
 .containersearched input:focus ~ .search::before {
@@ -2107,7 +2115,7 @@ select.form-control::-ms-expand {
   width: 25px;
   height: 2px;
   border: none;
-  background: white;
+  background: black;
   border-radius: 0%;
   transform: rotate(-45deg);
 }
@@ -2115,24 +2123,20 @@ select.form-control::-ms-expand {
   color: white;
   opacity: 0.5;
   font-weight: bolder;
+
 }
 
 .search {
   width: 100%;
-  position: relative;
+  position: absolute;
+  margin: auto;
+  top: 10px;
+  right: 0;
+  bottom: 0;
+  left: -20px;
   display: flex;
 }
 
-.searchTerm {
-  width: 100%;
-  border: 3px solid #00B4CC;
-  border-right: none;
-  padding: 5px;
-  height: 20px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9DBFAF;
-}
 
 .searchTerm:focus{
   color: #00B4CC;
@@ -2159,7 +2163,118 @@ select.form-control::-ms-expand {
   transform: translate(-50%, -50%);
 }
 
+
+.containersearched_mob {
+
+
+ display: flex;
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+
+
+.containersearched_mob .search_mob::before {
+  content: "";
+  position: relative;
+  margin: auto;
+  top: 8px;
+  right: 0;
+  bottom: 0;
+  left: 18px;
+  width: 8px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+
+
+}
+.containersearched_mob .search_mob::after {
+  content: "";
+  position: relative;
+
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid white;
+
+}
+
+.containersearched_mob input {
+
+  font-family: "Montserrat-Regular";
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+
+
+  height: 40px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(46, 217, 194, 1);
+  color: white;
+
+
+
+  color: white;
+  opacity: 1;
+
+padding: 10px;
+
+  letter-spacing: 0.1em;
+  display: flex;
+}
+.containersearched_mob input:hover {
+  cursor: pointer;
+}
+.containersearched_mob input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+  position: absolute;
+  margin: auto;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+
+
+.search_mob {
+  width: 100%;
+  padding-bottom: 3px;
+  display: flex;
+
+
+}
+
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.searchButton {
+  width: 40px;
+  background: rgba(46, 217, 194, 0.8);
+  height: 36px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  text-align: left;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+
+
+
 ::selection {
     background-color: #2ED9C3; /* Здесь укажите цвет фона выделенного текста */
     color: #000; /* Здесь укажите цвет текста в выделенном блоке */
+}
+
+
+
+#gtx-trans {
+display: none !important;
 }
