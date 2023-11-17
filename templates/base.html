@@ -135,12 +135,13 @@
 
                             <div class="sub-mega-menu">
                                 <div class="nav flex-column nav-pills" role="tablist">
-                                    <a class="nav-link active" data-toggle="pill" href="#news-0" role="tab">Всё</a>
-                                    <a class="nav-link" data-toggle="pill" href="#news-1" role="tab">Соревнования</a>
-                                    <a class="nav-link" data-toggle="pill" href="#news-2" role="tab">Международные
+
+                                    <a class="nav-link active" data-toggle="pill" href="#news-0" role="tab" onclick="movePage(); window.location.href = '{% url 'news' %}';">Всё</a>
+                                    <a class="nav-link" data-toggle="pill" href="#news-1" role="tab" onclick="movePage(); window.location.href = '{% url 'news_by_category' category='соревнования' %}';">Соревнования</a>
+                                    <a class="nav-link" data-toggle="pill" href="#news-2" role="tab" onclick="movePage(); window.location.href = '{% url 'news_by_category' category='международные соревнования' %}';">Международные
                                         соревнования</a>
-                                    <a class="nav-link" data-toggle="pill" href="#news-3" role="tab">События</a>
-                                    <a class="nav-link" data-toggle="pill" href="#news-4" role="tab">Тренировки</a>
+                                    <a class="nav-link" data-toggle="pill" href="#news-3" role="tab" onclick="movePage(); window.location.href = '{% url 'news_by_category' category='события' %}';">События</a>
+                                    <a class="nav-link" data-toggle="pill" href="#news-4" role="tab" onclick="movePage(); window.location.href = '{% url 'news_by_category' category='тренировки' %}';">Тренировки</a>
                                 </div>
 
                                 <div class="tab-content">
@@ -485,7 +486,7 @@
                         </li>
 
                         <li class="how-bor1 p-rl-5 p-tb-10">
-                            <a href="{% url 'news_by_category' category='событие' %}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+                            <a href="{% url 'news_by_category' category='события' %}" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
                                 События ({{count_event}})
                             </a>
                         </li>
@@ -599,7 +600,11 @@ bindEventHandlers();
 
 
 </script>
+<script>
+function movePage() {
 
+}
+</script>
 <!--===============================================================================================-->
 <script src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->

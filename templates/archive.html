@@ -121,7 +121,7 @@
         <select class="control-field filter-field form-control" style = "padding-left: 40px;" name="category" id="category">
           <option value="">Все категории</option>
           <option value="Соревнование" {% if request.GET.category == 'Соревнование' %}selected{% endif %}>Соревнование</option>
-          <option value="Международные соревнования" {% if request.GET.category == 'Международные соревнования' %}selected{% endif %}>Международные соревнования</option>
+          <option value="Международное соревнование" {% if request.GET.category == 'Международное соревнование' %}selected{% endif %}>Международные соревнования</option>
           <option value="Тренировка" {% if request.GET.category == 'Тренировка' %}selected{% endif %}>Тренировка</option>
 
           <!-- Добавь остальные категории, если необходимо -->
