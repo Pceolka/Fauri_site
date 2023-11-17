@@ -1908,7 +1908,7 @@ ul.pagination li a:hover {
 @media (max-width: 600px) {
   .control {
     float: none;
-    width: auto;
+    width: 100%;
     margin: 0 0 15px 0;
   }
   .control.layout {
