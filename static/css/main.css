@@ -1905,11 +1905,21 @@ ul.pagination li a:hover {
   width: 25%;
   padding: 0 10px;
 }
+@media (max-width: 600px){
+
+.filter-container {
+display: flex;
+flex-wrap: wrap;
+}
+
+}
 @media (max-width: 600px) {
   .control {
     float: none;
     width: 100%;
     margin: 0 0 15px 0;
+
+
   }
   .control.layout {
     margin: 0;
