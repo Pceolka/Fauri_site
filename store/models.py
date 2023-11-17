@@ -6,7 +6,7 @@ from django.urls import reverse
 # Создание моделей
 class Trending(models.Model):
     id = models.AutoField(primary_key=True)
-    text = models.TextField(default="")
+    text = models.TextField(help_text="НЕЛЬЗЯ:-ставить заголовок 1 и 2, -шрифт 36 и более", default="")
 
     def __str__(self):
         return self.text
