@@ -24,8 +24,8 @@ def count_records(request):
     news_all = Event.objects.filter(day__gte=today).order_by('day')[:4]
     news_competition = Event.objects.filter(category='соревнования', day__gte=today).order_by('day')[:4]
     news_worldcomp = Event.objects.filter(category='международные соревнования', day__gte=today).order_by('day')[:4]
-    news_event = Event.objects.filter(category='события').order_by('day')[:4]
-    news_train = Event.objects.filter(category='тренировки').order_by('day')[:4]
+    news_event = Event.objects.filter(category='события', day__gte=today).order_by('day')[:4]
+    news_train = Event.objects.filter(category='тренировки', day__gte=today).order_by('day')[:4]
 
     popular_posts = Event.objects.filter(is_popular='True').order_by('day')[:3]
 

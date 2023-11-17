@@ -13,8 +13,7 @@ from django.db import models
 # Создание видов
 
 def news(request):
-    today = date.today()
-    latest_events = Event.objects.filter(day__gte=today).order_by('day')[:6]
+    latest_events = Event.objects.filter().order_by('-creation_day')[:6]
     return render(request, 'news.html', {'latest_events': latest_events})
 
 
@@ -41,9 +40,10 @@ def index(request):
 
 
 def news_by_category(request, category):
+    today = date.today()
     # Получаем список новостей для указанной категории
-    news_list = Event.objects.filter(category=category).order_by('-creation_day')
-    per_page = 6
+    news_list = Event.objects.filter(category=category, day__gte=today).order_by('-creation_day')
+    per_page = 8
 
     category_title = category
 
@@ -53,12 +53,13 @@ def news_by_category(request, category):
 
     # Получаем список всех категорий
     category_list = Event.objects.values_list('category', flat=True).distinct()
-
+    latest_events = Event.objects.filter().order_by('-creation_day')[:6]
     context = {
         'category_list': category_list,
         'category_title': category_title,
         'news_list': news_list,
         'page_obj': page_obj,
+        'latest_events': latest_events,
     }
 
     return render(request, 'news_by_category.html', context)

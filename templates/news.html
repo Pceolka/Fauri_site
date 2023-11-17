@@ -6,7 +6,7 @@
 
 <section class="bg0">
     <div class="row m-rl-0 justify-content-center">
-        {% with latest_events|slice:"-2:" as recent_news %}
+        {% with news_all|slice:"-2:" as recent_news %}
         <div class="col-md-4 p-rl-1 p-b-2">
             <div class="bg-img1 size-a-11 how1 pos-relative"
                  style="background-image: url({{recent_news.0.image.url}});">
