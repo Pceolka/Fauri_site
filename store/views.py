@@ -13,7 +13,8 @@ from django.db import models
 # Создание видов
 
 def news(request):
-    latest_events = Event.objects.order_by('-creation_day')[:6]
+    today = date.today()
+    latest_events = Event.objects.filter(day__gte=today).order_by('day')[:6]
     return render(request, 'news.html', {'latest_events': latest_events})
 
 
@@ -28,10 +29,6 @@ def single(request, id):
     popular_event = Event.objects.order_by('-is_popular')[:6]
     return render(request, 'single.html', {'news': news, "popular_event": popular_event})
 
-
-def pdf_detail(request, pdf_id):
-    pdf = get_object_or_404(Pdfs, pk=pdf_id)
-    return FileResponse(open(pdf.pdfile.path, 'rb'), content_type='application/pdf')
 
 
 def about(request):
