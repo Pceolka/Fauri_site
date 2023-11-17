@@ -43,17 +43,18 @@ def news_by_category(request, category):
     today = date.today()
     # Получаем список новостей для указанной категории
     news_list = Event.objects.filter(category=category, day__gte=today).order_by('-creation_day')
+    posts = Event.objects.filter(category=category).order_by('-day')
     per_page = 8
 
     category_title = category
 
-    paginator = Paginator(news_list, per_page)
+    paginator = Paginator(posts, per_page)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
     # Получаем список всех категорий
     category_list = Event.objects.values_list('category', flat=True).distinct()
-    latest_events = Event.objects.filter().order_by('-creation_day')[:6]
+    latest_events = Event.objects.filter().order_by('-creation_day')[:3]
     context = {
         'category_list': category_list,
         'category_title': category_title,
