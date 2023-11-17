@@ -30,7 +30,6 @@ def single(request, id):
     return render(request, 'single.html', {'news': news, "popular_event": popular_event})
 
 
-
 def about(request):
     return render(request, "about.html")
 
